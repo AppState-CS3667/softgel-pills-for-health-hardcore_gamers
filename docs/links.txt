@@ -1,0 +1,2 @@
+Instructions: https://student2.cs.appstate.edu/sapphirewe/3667/SoftGelPillsForHealth/SoftGelPills-Part1.pdf
+UML Diagram: https://student2.cs.appstate.edu/sapphirewe/3667/SoftGelPillsForHealth/SoftGelPills-Part1.png
