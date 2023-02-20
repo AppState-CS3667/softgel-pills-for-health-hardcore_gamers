@@ -1,0 +1,4 @@
+Subgroup A: Shawn, Savannah
+Subgroup B: Logan, Christian, Aidan
+
+Agile Practices: SCRUM Methodology, Pair Programming, Deciding as Late as Possible, Team Focus, Incremental Design
