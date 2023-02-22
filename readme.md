@@ -7,7 +7,7 @@ Project Description: Based on the requests from the executives, it sounds like w
 	Dreamly. Each pill should have a name, strength in mg, size in mm, color, casing material, aqueous solution, and active ingredient. 
 	We manufacture the pills by first creating a casing, then injecting an aqueous solution and active ingredient into the casing. 
 
-Team Name: hardcore_gamers
+Team Name: 	hardcore_gamers
 
 Team Members: 	Christian Hart, 
 		Aidan Cook, 
