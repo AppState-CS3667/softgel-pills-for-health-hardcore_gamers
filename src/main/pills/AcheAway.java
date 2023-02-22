@@ -20,7 +20,7 @@ public class AcheAway extends GelCap
 	protected void addCasing()
 	{
 		casing = "gelatin";
-		System.out.print("adding" + casing + "casing\n");
+		System.out.print("adding" + getCasing() + "casing\n");
 	}
 
 	/*
@@ -29,7 +29,7 @@ public class AcheAway extends GelCap
 	protected void addSolution()
 	{
 		solution = "saline";
-		System.out.print("adding" + solution + "solution\n");
+		System.out.print("adding" + getSolution() + "solution\n");
 	}
 
 	/*
@@ -38,6 +38,6 @@ public class AcheAway extends GelCap
 	protected void addActive()
 	{
 		active = "acetaminophen";
-		System.out.print("adding" + active + "active\n");
+		System.out.print("adding" + getActive() + "active\n");
 	}
 }
