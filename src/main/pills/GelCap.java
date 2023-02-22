@@ -18,11 +18,11 @@ public abstract class GelCap
     /*
      * GelCap Constructor
      * 
-     * @Parameters:
-     * name = pill name
-     * strength = pill strength
-     * size = pill size
-     * color = pill color
+     * Parameters:
+     * @param = pill name
+     * @param strength = pill strength
+     * @param size = pill size
+     * @param color = pill color
      */
     public GelCap(String name, double strength, double size, String color)
     {
@@ -142,8 +142,8 @@ public abstract class GelCap
     {
         System.out.println("Manufacturing... \n");
         addCasing();
-	addSolution();
-	addActive();
-	System.out.println("... completed manufacturing\n");
+        addSolution();
+        addActive();
+        System.out.println("... completed manufacturing\n");
     }
 }
