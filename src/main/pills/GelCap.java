@@ -142,8 +142,8 @@ public abstract class GelCap
     {
         System.out.println("Manufacturing... \n");
         addCasing();
-        addSolution();
-        addActive();
-        System.out.println("... completed manufacturing\n");
+	addSolution();
+	addActive();
+	System.out.println("... completed manufacturing\n");
     }
 }

@@ -1,4 +1,4 @@
-package main.pills;
+package pills;
 
 public class Dreamly extends GelCap 
 {
@@ -13,12 +13,13 @@ public class Dreamly extends GelCap
 	 */
 	public Dreamly (double strength, double size, String color) 
 	{
-		super(strength, size, color);
+		super("Dreamly", strength, size, color);
 	}
 
 	/*
 	 * This mehtod adds casing to the Dreamly pill.
 	 */
+	@Override
 	protected void addCasing() 
 	{
 		casing = "plasticizer";
@@ -28,6 +29,7 @@ public class Dreamly extends GelCap
 	/*
 	 * This method adds a solution to the Dreamly pill.
 	 */
+	@Override
 	protected void addSolution() 
 	{
 		solution = "oil";
@@ -37,6 +39,7 @@ public class Dreamly extends GelCap
 	/*
 	 * This method adds an active to the Dreamly pill.
 	 */
+	@Override
 	protected void addActive() 
 	{
 		active = "zolpiem";
