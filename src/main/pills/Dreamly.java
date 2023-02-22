@@ -3,8 +3,7 @@ package pills;
 public class Dreamly extends GelCap 
 {
 	/*
-	 * Constructor for class Dreamly that calls the super
-	 * constructor of the GelCap class.
+	 * Constructor for class Dreamly that calls the super constructor of the GelCap class.
 	 *
 	 * @param strength. Pill strength.
 	 * @param size. Pill size. 
