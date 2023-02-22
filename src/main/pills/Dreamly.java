@@ -3,8 +3,7 @@ package pills;
 public class Dreamly extends GelCap 
 {
 	/*
-	 * Constructor for class Dreamly that calls the super
-	 * constructor of the GelCap class.
+	 * Constructor for class Dreamly that calls the super constructor of the GelCap class.
 	 *
 	 * @param strength. Pill strength.
 	 * @param size. Pill size. 
@@ -23,7 +22,7 @@ public class Dreamly extends GelCap
 	protected void addCasing() 
 	{
 		casing = "plasticizer";
-		System.out.println("adding " + casing + " casing");
+		System.out.println("adding " + getCasing() + " casing");
 	}
 
 	/*
@@ -33,7 +32,7 @@ public class Dreamly extends GelCap
 	protected void addSolution() 
 	{
 		solution = "oil";
-		System.out.println("adding " + solution + " solution");
+		System.out.println("adding " + getSolution() + " solution");
 	}
 
 	/*
@@ -43,6 +42,6 @@ public class Dreamly extends GelCap
 	protected void addActive() 
 	{
 		active = "zolpiem";
-		System.out.println("adding " + active + " active");
+		System.out.println("adding " + getActive() + " active");
 	}
 }
