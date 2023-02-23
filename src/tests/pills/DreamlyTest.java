@@ -5,85 +5,81 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;	
+import java.io.PrintStream;
 
 public class DreamlyTest {
-	private final String CORRECT_NAME = "Dreamly";
-	private final String CORRECT_CASING = "plasticizer";
-	private final String CORRECT_SOLUTION = "oil";
-	private final String CORRECT_ACTIVE = "zolpiem";
-	private final String MANUFACTURE_FSTRING = "Manufacturing...\nadding plasticizer casing\nadding oil solution\nadding zolpidem active\n...completed manufacturing";
-    private Dreamly dreamly;
-	private ByteArrayOutputStream baos;	
-    private PrintStream oldOut;
+    private static final String CORRECT_NAME = "Dreamly";
+    private static final String CORRECT_CASING = "plasticizer";
+    private static final String CORRECT_SOLUTION = "oil";
+    private static final String CORRECT_ACTIVE = "zolpiem";
+    private static final double TEST_STRENGTH = 700;
+    private static final double TEST_SIZE = 0.5;
+    private static final String TEST_COLOR = "blue";
+    private static final String MANUFACTURE_FSTRING = "Manufacturing..."
+	                                        + "\nadding plasticizer casing"
+											+ "\nadding oil solution"
+											+ "\nadding zolpidem active"
+											+ "\n...completed manufacturing";
+    private static Dreamly dreamly;
+    private static ByteArrayOutputStream baos;
+    private static PrintStream oldOut;
 
     @BeforeEach
-	public void beforeEach()
-	{
-		dreamly= new Dreamly(700, 0.5, "blue");
-		this.oldOut = System.out;
-        this.baos = new ByteArrayOutputStream();	
-        System.setOut(new PrintStream(baos));	
-	}
-
-	@AfterEach
-    public void afterEach() 
-	{			
-        System.setOut(oldOut);		
+	public void beforeEach() {
+        dreamly = new Dreamly(TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
+        this.oldOut = System.out;
+        this.baos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(baos));
     }
 
-	@Test
-	public void testName()
-	{
-		assertEquals(CORRECT_NAME, dreamly.name);
-	}
+    @AfterEach
+	public void afterEach() {
+        System.setOut(oldOut);
+    }
 
-	@Test
-	public void testColor()
-	{
-		assertEquals("blue", dreamly.color);
-	}
+    @Test
+    public void testName() {
+        assertEquals(CORRECT_NAME, dreamly.name);
+    }
 
-	@Test
-	public void testSize()
-	{
-		assertEquals(0.5, dreamly.size);
-	}
+    @Test
+    public void testColor() {
+        assertEquals(TEST_COLOR, dreamly.color);
+    }
 
-	@Test
-	public void testStrength()
-	{
-		assertEquals(700, dreamly.strength);
-	}
+    @Test
+    public void testSize() {
+        assertEquals(TEST_SIZE, dreamly.size);
+    }
 
-	@Test
-	public void testCasing()
-	{
-		assertEquals(CORRECT_CASING, dreamly.getCasing());
-	}
+    @Test
+    public void testStrength() {
+        assertEquals(TEST_STRENGTH, dreamly.strength);
+    }
 
-	@Test
-	public void testSolution()
-	{
-		assertEquals(CORRECT_SOLUTION, dreamly.getSolution());
-	}
+    @Test
+    public void testCasing() {
+        assertEquals(CORRECT_CASING, dreamly.getCasing());
+    }
 
-	@Test
-	public void testActive()
-	{
-		assertEquals(CORRECT_ACTIVE, dreamly.getActive());
-	}
+    @Test
+    public void testSolution() {
+        assertEquals(CORRECT_SOLUTION, dreamly.getSolution());
+    }
 
-	@Test
-	public void testManufactureProcess()
-	{
-		dreamly.manufacture();			
+    @Test
+    public void testActive() {
+        assertEquals(CORRECT_ACTIVE, dreamly.getActive());
+    }
+
+    @Test
+    public void testManufactureProcess() {
+        dreamly.manufacture();
         assertEquals(MANUFACTURE_FSTRING, getOutput());
-	}
+    }
 
-	private String getOutput() 
-	{		
-        System.out.flush();	
-        return baos.toString().replaceAll("\r", "");     
+    private String getOutput() {
+        System.out.flush();
+        return baos.toString().replaceAll("\r", "");
     }
 }
