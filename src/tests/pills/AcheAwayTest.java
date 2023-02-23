@@ -6,22 +6,22 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AcheAwayTest {
-    public static final String CORRECT_NAME     = "AcheAway";
-    public static final String CORRECT_CASING   = "Gelatin";
-    public static final String CORRECT_SOLUTION = "Saline";
-    public static final String CORRECT_ACTIVE   = "Acetaminophen";
-    public static final String TEST_STRENGTH    = "2.00";
-    public static final String TEST_COLOR       = "Red";
-    public static final String TEST_SIZE        = "5.00";
-    public static final String MANUFACTURE_FSTRING = "Manufacturing..."
-						   + "\nadding Gelatin casing\nadding Saline solution"
-					           + "\nadding Acetaminophen active\n... "
-						   + "completed manufacturing\n";
 
+    public static final String CORRECT_NAME = "AcheAway";
+    public static final String CORRECT_CASING = "Gelatin";
+    public static final String CORRECT_SOLUTION = "Saline";
+    public static final String CORRECT_ACTIVE = "Acetaminophen";
+    public static final String TEST_STRENGTH = "2.00";
+    public static final String TEST_COLOR = "Red";
+    public static final String TEST_SIZE = "5.00";
+    public static final String MANUFACTURE_FSTRING = "Manufacturing..."
+						     + "\nadding Gelatin casing\nadding Saline solution"
+						     + "\nadding Acetaminophen active\n... completed"
+						     + "manufacturing\n";
     private AcheAway ac;
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
-    
+ 
     @BeforeEach
     public void beforeEach() {
         this.ac = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
