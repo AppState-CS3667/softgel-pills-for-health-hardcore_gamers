@@ -11,10 +11,10 @@ public class Demo {
     public static void main(String[] args) {
         AcheAway newAcheAway = new AcheAway(STRENGTH_ACHE, SIZE_ACHE, "Red");
         System.out.println(newAcheAway);
-        newAcheAway.description();
+        System.out.println(newAcheAway.description());
 
         Dreamly newDreamly = new Dreamly(STRENGTH_DREAM, SIZE_DREAM, "Green");
         System.out.println(newDreamly);
-        newDreamly.description();
+        System.out.println(newDreamly.description());
     }
 }
