@@ -24,8 +24,7 @@ public abstract class GelCap
      * @param size = pill size
      * @param color = pill color
      */
-    public GelCap(String name, double strength, double size, String color)
-    {
+    public GelCap(String name, double strength, double size, String color) {
         this.name = name;
         this.strength = strength;
         this.size = size;
@@ -39,8 +38,7 @@ public abstract class GelCap
      * return the strength and name of the pill.
      */
     @Override
-    public String toString()
-    {
+    public String toString() {
         return String.format("%.2fmg %S pill", strength, name);
     }
     /*
@@ -48,8 +46,7 @@ public abstract class GelCap
      * 
      * returns a string of every attribute of the pill.
      */
-    public String description()
-    {
+    public String description() {
         return String.format("%S Pill\n\tStrength: %.2f\n\tSize: %.2f"
             + "\n\tColor: %S\n\tCasing: %S\n\tSolution: %S\n\tActive: %S",
             name, strength, size, color, casing, solution, active);
@@ -60,8 +57,7 @@ public abstract class GelCap
      * 
      * returns the pill's name.
      */
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
@@ -70,8 +66,7 @@ public abstract class GelCap
      * 
      * returns the pill's strength.
      */
-    public double getStrength()
-    {
+    public double getStrength() {
         return strength;
     }
 
@@ -80,8 +75,7 @@ public abstract class GelCap
      * 
      * returns the pill's size.
      */
-    public double getSize()
-    {
+    public double getSize() {
         return size;
     }
 
@@ -90,8 +84,7 @@ public abstract class GelCap
      * 
      * returns the pill's color.
      */
-    public String getColor()
-    {
+    public String getColor() {
         return color;
     }
 
@@ -100,8 +93,7 @@ public abstract class GelCap
      * 
      * returns the pill's casing material.
      */
-    public String getCasing()
-    {
+    public String getCasing() {
         return casing;
     }
 
@@ -110,8 +102,7 @@ public abstract class GelCap
      * 
      * returns the pill's solution.
      */
-    public String getSolution()
-    {
+    public String getSolution() {
         return solution;
     }
 
@@ -120,8 +111,7 @@ public abstract class GelCap
      * 
      * returns the pill's active ingredient.
      */
-    public String getActive()
-    {
+    public String getActive() {
         return active;
     }
 
@@ -138,8 +128,7 @@ public abstract class GelCap
      * 
      * "creates" the pill
      */
-    protected void manufacture()
-    {
+    protected void manufacture() {
         System.out.println("Manufacturing... \n");
         addCasing();
         addSolution();
