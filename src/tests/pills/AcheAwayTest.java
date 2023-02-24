@@ -18,7 +18,7 @@ public class AcheAwayTest {
     public static final double TEST_SIZE = 5.00;
     public static final String MANUFACTURE_FSTRING = "Manufacturing..."
 						     + "\nadding gelatin casing\nadding saline solution"
-						     + "\nadding acetaminophen active\n... completed"
+						     + "\nadding acetaminophen active\n...completed"
 						     + "manufacturing\n";
     private AcheAway ac;
     private ByteArrayOutputStream baos;
