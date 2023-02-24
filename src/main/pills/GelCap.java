@@ -132,6 +132,6 @@ public abstract class GelCap {
         addCasing();
         addSolution();
         addActive();
-        System.out.print("... completed manufacturing\n");
+        System.out.print("...completed manufacturing\n");
     }
 }
