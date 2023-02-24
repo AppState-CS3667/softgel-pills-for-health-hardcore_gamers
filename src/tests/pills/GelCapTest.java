@@ -25,7 +25,7 @@ public class GelCapTest {
         + "%S\n\tCasing: %S\n\tSolution: %S\n\tActive: %S",
         NAME, STRENGTH, SIZE, COLOR, CASING, SOLUTION, ACTIVE);
     public static final String MANUFACTURE_FSTRING = 
-        String.format("Manufacturing... \n%S\n%S\n%S\n... " 
+        String.format("Manufacturing... \n%S\n%S\n%S\n..." 
         + "completed manufacturing\n", CASING, SOLUTION, ACTIVE);
 
     // field to store the new output location
