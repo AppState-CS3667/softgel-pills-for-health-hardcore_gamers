@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AcheAwayTest {
 
     public static final String CORRECT_NAME = "AcheAway";
-    public static final String CORRECT_CASING = "Gelatin";
-    public static final String CORRECT_SOLUTION = "Saline";
-    public static final String CORRECT_ACTIVE = "Acetaminophen";
-    public static final double TEST_STRENGTH = 2.00;
+    public static final String CORRECT_CASING = "gelatin";
+    public static final String CORRECT_SOLUTION = "saline";
+    public static final String CORRECT_ACTIVE = "acetaminophen";
+    public static final String TEST_STRENGTH = "2.00";
     public static final String TEST_COLOR = "Red";
     public static final double TEST_SIZE = 5.00;
     public static final String MANUFACTURE_FSTRING = "Manufacturing..."
