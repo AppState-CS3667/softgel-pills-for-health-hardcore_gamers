@@ -5,13 +5,17 @@ import pills.Dreamly;
 
 public class Demo 
 {
+    static final double STRENGTH_ACHE = 5.0;
+    static final double STRENGTH_DREAM = 2.0;
+    static final double SIZE_ACHE = 0.5;
+    static final double SIZE_DREAM = 1.5;
     public static void main(String[] args)
     {
-        AcheAway newAcheAway = new AcheAway(5.0, 0.5, "Red");
+        AcheAway newAcheAway = new AcheAway(STRENGTH_ACHE, SIZE_ACHE, "Red");
         System.out.println(newAcheAway);
         newAcheAway.description();
 
-        Dreamly newDreamly = new Dreamly(2.0, 1.5, "Green");
+        Dreamly newDreamly = new Dreamly(STRENGTH_DREAM, SIZE_DREAM, "Green");
         System.out.println(newDreamly);
         newDreamly.description();
     }
