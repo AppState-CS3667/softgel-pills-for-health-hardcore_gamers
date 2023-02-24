@@ -19,7 +19,7 @@ public class DreamlyTest {
 	                                        + "\nadding plasticizer casing"
 											+ "\nadding oil solution"
 											+ "\nadding zolpidem active"
-											+ "\n...completed manufacturing";
+											+ "\n...completed manufacturing\n";
     private static Dreamly dreamly;
     private static ByteArrayOutputStream baos;
     private static PrintStream oldOut;
