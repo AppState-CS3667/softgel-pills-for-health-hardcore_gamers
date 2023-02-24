@@ -1,4 +1,5 @@
 package pills;
+
 //Necessary Imports
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.ByteArrayOutputStream;
@@ -24,8 +25,9 @@ public class GelCapTest {
         + "%S\n\tCasing: %S\n\tSolution: %S\n\tActive: %S",
         NAME, STRENGTH, SIZE, COLOR, CASING, SOLUTION, ACTIVE);
     public static final String MANUFACTURE_FSTRING = 
-        String.format("Manufacturing... \n\n%S\n%S\n%S\n... " 
-        + "completed manufacturing\n\n", CASING, SOLUTION, ACTIVE);
+        String.format("Manufacturing... \n%S\n%S\n%S\n..." 
+        + "completed manufacturing\n", CASING, SOLUTION, ACTIVE);
+
     // field to store the new output location
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;	

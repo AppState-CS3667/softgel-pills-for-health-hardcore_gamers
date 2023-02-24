@@ -5,8 +5,7 @@ package pills;
  * GelCap Class -
  * hardcore_gamers
  */
-public abstract class GelCap
-{
+public abstract class GelCap {
     protected String name;
     protected double strength;
     protected double size;
@@ -129,10 +128,10 @@ public abstract class GelCap
      * "creates" the pill
      */
     protected void manufacture() {
-        System.out.println("Manufacturing... \n");
+        System.out.print("Manufacturing... \n");
         addCasing();
         addSolution();
         addActive();
-        System.out.println("... completed manufacturing\n");
+        System.out.print("...completed manufacturing\n");
     }
 }
