@@ -11,7 +11,7 @@ public class DreamlyTest {
     private static final String CORRECT_NAME = "Dreamly";
     private static final String CORRECT_CASING = "plasticizer";
     private static final String CORRECT_SOLUTION = "oil";
-    private static final String CORRECT_ACTIVE = "zolpiem";
+    private static final String CORRECT_ACTIVE = "zolpidem";
     private static final double TEST_STRENGTH = 700;
     private static final double TEST_SIZE = 0.5;
     private static final String TEST_COLOR = "blue";
