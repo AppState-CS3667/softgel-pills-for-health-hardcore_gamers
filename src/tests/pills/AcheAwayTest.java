@@ -16,7 +16,7 @@ public class AcheAwayTest {
     public static final double TEST_STRENGTH = 2.00;
     public static final String TEST_COLOR = "Red";
     public static final double TEST_SIZE = 5.00;
-    public static final String MANUFACTURE_FSTRING = "Manufacturing..."
+    public static final String MANUFACTURE_FSTRING = "Manufacturing... "
 						     + "\nadding gelatin casing\nadding saline solution"
 						     + "\nadding acetaminophen active\n...completed "
 						     + "manufacturing\n";

@@ -37,7 +37,7 @@ public class Dreamly extends GelCap {
      */
     @Override
     protected void addActive() {
-        active = "zolpiem";
+        active = "zolpidem";
 	System.out.println("adding " + getActive() + " active");
     }
 }
