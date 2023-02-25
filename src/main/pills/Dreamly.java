@@ -20,7 +20,7 @@ public class Dreamly extends GelCap {
     @Override
     protected void addCasing() {
         casing = "plasticizer";
-        System.out.println("adding " + getCasing() + " casing");
+        System.out.print("adding " + getCasing() + " casing\n");
     }
 
     /*
@@ -29,7 +29,7 @@ public class Dreamly extends GelCap {
     @Override
     protected void addSolution() {
         solution = "oil";
-	System.out.println("adding " + getSolution() + " solution");
+	    System.out.print("adding " + getSolution() + " solution\n");
     }
 
     /*
@@ -38,6 +38,6 @@ public class Dreamly extends GelCap {
     @Override
     protected void addActive() {
         active = "zolpidem";
-	System.out.println("adding " + getActive() + " active");
+	    System.out.print("adding " + getActive() + " active\n");
     }
 }
