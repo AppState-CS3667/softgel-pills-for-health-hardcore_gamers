@@ -128,7 +128,7 @@ public abstract class GelCap {
      * "creates" the pill
      */
     protected void manufacture() {
-        System.out.print("Manufacturing... \n");
+        System.out.print("Manufacturing...\n");
         addCasing();
         addSolution();
         addActive();
