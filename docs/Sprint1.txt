@@ -1,0 +1,31 @@
+Sprint Planning:
+
+Sprint Backlog:
+● Update GelCap
+● Update the tests for GelCap
+● Update Dreamly and AcheAway
+● Update the tests for Dreamly and AcheAway
+● Create child and adult versions of Dreamly
+● Create tests for the child and adult version of Dreamly
+● Create child and adult versions of AcheAway
+● Create tests for the child and adult versions of AcheAway
+
+Subteams:
+    Subteam A: Savannah, Shawn
+    Subteam B: Christian, Logan, Aidan
+
+Backlog for Team A: 
+- Update GelCap Tests
+- Update the tests for Dreamly
+- Update AcheAway
+- Create tests for the child and adult version of AcheAway
+- Create child and adult versions of Dreamly
+
+Backlog for Team B: 
+- Update GelCap
+- Update the tests for AcheAway
+- Update Dreamly
+- Create tests for the child and adult version of Dreamly
+- Create child and adult versions of AcheAway
+
+
