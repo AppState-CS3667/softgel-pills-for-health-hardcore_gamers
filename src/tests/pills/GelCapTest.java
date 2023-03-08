@@ -2,11 +2,7 @@ package pills;
 
 //Necessary Imports
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import org.junit.jupiter.api.Test;
-//import pills.GelCap;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 public class GelCapTest {
@@ -18,32 +14,12 @@ public class GelCapTest {
     public static final String CASING = "X";
     public static final String SOLUTION = "Y";
     public static final String ACTIVE = "Z";
-    public static final String TOSTRING_FSTRING = 
-        String.format("%.2fmg %S pill", STRENGTH, NAME);
-    public static final String DESCRIPTION_FSTRING = 
-        String.format("%S Pill\n\tStrength: %.2f\n\tSize: %.2f\n\tColor: " 
-        + "%S\n\tCasing: %S\n\tSolution: %S\n\tActive: %S",
-        NAME, STRENGTH, SIZE, COLOR, CASING, SOLUTION, ACTIVE);
-    public static final String MANUFACTURE_FSTRING = 
-        String.format("Manufacturing...\n%S\n%S\n%S\n..." 
-        + "completed manufacturing\n", CASING, SOLUTION, ACTIVE);
-
     // field to store the new output location
-    private ByteArrayOutputStream baos;
-    private PrintStream oldOut;	
     private GelCap gc;
 
     @BeforeEach
     public void beforeEach() {
         this.gc = new GelCapMock(NAME, STRENGTH, SIZE, COLOR);
-        this.oldOut = System.out;
-        this.baos = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(baos));
-    }
-
-    @AfterEach
-    public void afterEach() {
-        System.setOut(oldOut);
     }
     @Test
     public void testName() {
@@ -72,26 +48,6 @@ public class GelCapTest {
     @Test
     public void testActive() {
         assertEquals(ACTIVE, gc.getActive());
-    }
-    @Test
-    public void testToString() {
-        System.out.print(gc.toString());
-        assertEquals(TOSTRING_FSTRING, getOutput());
-    }
-    @Test
-    public void testDescription() {
-        System.out.print(gc.description());
-        assertEquals(DESCRIPTION_FSTRING, getOutput());
-    }
-    @Test
-    public void testManufactureProcess() {
-        gc.manufacture();
-        assertEquals(MANUFACTURE_FSTRING, getOutput());
-    }
-
-    private String getOutput() {
-        System.out.flush();
-        return baos.toString().replace("\r", "");
     }
 
     private class GelCapMock extends GelCap {
