@@ -23,11 +23,14 @@ public abstract class GelCap {
      * @param size = pill size
      * @param color = pill color
      */
-    public GelCap(String name, double strength, double size, String color) {
+    public GelCap(String name, double strength, double size, String color, String casing, String solution, String active) {
         this.name = name;
         this.strength = strength;
         this.size = size;
         this.color = color;
+        this.casing = casing;
+        this.solution = solution;
+        this.active = active;
     }
 
     /*
@@ -112,11 +115,4 @@ public abstract class GelCap {
     public String getActive() {
         return active;
     }
-
-    /*
-     * Abstract methods to be implemented by child classes
-     */
-    protected abstract void addCasing();
-    protected abstract void addSolution();
-    protected abstract void addActive();
 }
