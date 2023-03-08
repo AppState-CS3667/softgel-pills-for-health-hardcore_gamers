@@ -18,14 +18,14 @@ Backlog for Team A:
 - Update GelCap Tests
 - Update the tests for Dreamly
 - Update AcheAway
-- Create tests for the child and adult version of AcheAway
-- Create child and adult versions of Dreamly
+- Create tests for the child and adult version of Dreamly
+- Create child and adult versions of AcheAway
 
 Backlog for Team B: 
 - Update GelCap
 - Update the tests for AcheAway
 - Update Dreamly
-- Create tests for the child and adult version of Dreamly
-- Create child and adult versions of AcheAway
+- Create tests for the child and adult version of AcheAway
+- Create child and adult versions of Dreamly
 
 
