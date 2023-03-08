@@ -112,11 +112,4 @@ public abstract class GelCap {
     public String getActive() {
         return active;
     }
-
-    /*
-     * Abstract methods to be implemented by child classes
-     */
-    protected abstract void addCasing();
-    protected abstract void addSolution();
-    protected abstract void addActive();
 }
