@@ -1,9 +1,9 @@
 package pills;
 
 public class ChildDreamly extends Dreamly {
-    double final STRENGTH;
-    double final SIZE;
-    String final COLOR;
+    final double STRENGTH = 1.25;
+    final double SIZE = 4.5;
+    final String COLOR = "fuchsia";
     
     /*
      * Constructor for ChildDreamly class that calls the super constructor.
