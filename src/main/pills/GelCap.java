@@ -28,7 +28,6 @@ public abstract class GelCap {
         this.strength = strength;
         this.size = size;
         this.color = color;
-        manufacture();
     }
 
     /*
@@ -120,18 +119,4 @@ public abstract class GelCap {
     protected abstract void addCasing();
     protected abstract void addSolution();
     protected abstract void addActive();
-
-
-    /*
-     * manufacture method
-     * 
-     * "creates" the pill
-     */
-    protected void manufacture() {
-        System.out.print("Manufacturing...\n");
-        addCasing();
-        addSolution();
-        addActive();
-        System.out.print("...completed manufacturing\n");
-    }
 }
