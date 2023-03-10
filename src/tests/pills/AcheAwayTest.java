@@ -3,43 +3,34 @@ package pills;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AcheAwayTest {
 
-    public static final String CORRECT_NAME = "AcheAway";
-    public static final String CORRECT_CASING = "gelatin";
-    public static final String CORRECT_SOLUTION = "saline";
-    public static final String CORRECT_ACTIVE = "acetaminophen";
-    public static final double TEST_STRENGTH = 2.00;
-    public static final String TEST_COLOR = "Red";
+    public static final String TEST_CASING = "gelatin";
+    public static final String TEST_SOLUTION = "saline";
+    public static final String TEST_ACTIVE = "acetaminophen";
+    public static final double TEST_STRENGTH = 500.00;
+    public static final double ADULT_STRENGTH = 825.00;
+    public static final double CHILD_STRENGTH = 415.00;
+    public static final String TEST_COLOR = "red";
+    public static final String ADULT_COLOR = "white";
+    public static final String CHILD_COLOR = "cyan";
     public static final double TEST_SIZE = 5.00;
-    public static final String MANUFACTURE_FSTRING = "Manufacturing..."
-						     + "\nadding gelatin casing\nadding saline solution"
-						     + "\nadding acetaminophen active\n...completed "
-						     + "manufacturing\n";
+    public static final double ADULT_SIZE = 8.50;
+    public static final double CHILD_SIZE = 3.25;
     private AcheAway ac;
-    private ByteArrayOutputStream baos;
-    private PrintStream oldOut;
+    private ChildAcheAway caa;
+    private AdultAcheAway aaa;
  
     @BeforeEach
     public void beforeEach() {
-        this.ac = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR);
-        this.oldOut = System.out;
-        this.baos = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(baos));
-    }
-
-    @AfterEach
-    public void afterEach() {
-        System.setOut(oldOut);
-    }
-
-    @Test
-    public void testName() {
-        assertEquals(CORRECT_NAME, ac.getName());
+        this.ac = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR,
+                               TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
+        this.caa = new ChildAcheAway(TEST_STRENGTH, TEST_SOLUTION,
+                                     TEST_ACTIVE);
+        this.aaa = new AdultAcheAway(TEST_STRENGTH, TEST_SOLUTION,
+                                     TEST_ACTIVE);
     }
 
     @Test
@@ -59,27 +50,24 @@ public class AcheAwayTest {
 
     @Test
     public void testCasing() {
-        assertEquals(CORRECT_CASING, ac.getCasing());
+        assertEquals(TEST_CASING, ac.getCasing());
     }
 
     @Test
     public void testSolution() {
-        assertEquals(CORRECT_SOLUTION, ac.getSolution());
+        assertEquals(TEST_SOLUTION, ac.getSolution());
     }
 
     @Test
     public void testActive() {
-        assertEquals(CORRECT_ACTIVE, ac.getActive());
+        assertEquals(TEST_ACTIVE, ac.getActive());
     }
 
-    @Test
-    public void testManufactureProcess() {
-        ac.manufacture();
-        assertEquals(MANUFACTURE_FSTRING, getOutput());
-    }
-
-    private String getOutput() {
-        System.out.flush();
-        return baos.toString().replaceAll("\r", "");
+    private class AcheAwayMock extends AcheAway {
+        public AcheAway(double strength, double size,
+                        String color, String casing,
+                        String solution, String active){
+            super(strength, size, color, casing, solution, active);
+        }
     }
 }
