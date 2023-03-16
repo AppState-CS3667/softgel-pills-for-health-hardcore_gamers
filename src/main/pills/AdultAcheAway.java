@@ -1,6 +1,6 @@
 package pills;
 
-public class AdultAcheAway extends Dreamly {
+public class AdultAcheAway extends AcheAway {
     public double final STRENGTH = 825.00;
     public double final SIZE = 8.50;
     public String final COLOR = "white";
