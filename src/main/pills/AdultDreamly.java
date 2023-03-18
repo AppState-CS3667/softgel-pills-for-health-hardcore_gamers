@@ -1,9 +1,9 @@
 package pills;
 
 public class AdultDreamly extends Dreamly {
-    double final STRENGTH = 5.2;
-    double final SIZE = 12.24;
-    String final COLOR = "tan";
+    public static final double STRENGTH = 5.2;
+    public static final double SIZE = 12.24;
+    public static final String COLOR = "tan";
     
     /*
      * Constructor for AdultDreamly class that calls the super constructor.
