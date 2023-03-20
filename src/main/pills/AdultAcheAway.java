@@ -1,9 +1,9 @@
 package pills;
 
 public class AdultAcheAway extends AcheAway {
-    public double final STRENGTH = 825.00;
-    public double final SIZE = 8.50;
-    public String final COLOR = "white";
+    public static final double STRENGTH = 825.00;
+    public static final double SIZE = 8.50;
+    public static final String COLOR = "white";
     
     /*
      * Constructor for AdultAcheAway class that calls the super constructor.
