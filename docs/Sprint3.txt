@@ -1,0 +1,27 @@
+Sprint 3 Planning:
+
+Backlog:
+● Create the CasingGenerator interface and the two types of Casing Generators
+● Create tests for the two types of casing generators
+● Create the SolutionGenerator interface and the two types of Solution Generators
+● Create tests for the two types of solution generators
+● Create the ActiveGenerator interface and the two types of Active Generators
+● Create tests for the two types of active generators
+● Create the GelCapRecipes class
+● Create tests for GelCapRecipes
+
+Subteams:
+    Subteam A: Savannah, Aidan, Logan
+    Subteam B: Shawn, Christian
+
+Backlog for Team A:
+● Create the CasingGenerator interface and the two types of Casing Generators
+● Create tests for the two types of solution generators
+● Create tests for the two types of active generators
+● Create the GelCapRecipes class
+
+Backlog for Team B:
+● Create the SolutionGenerator interface and the two types of Solution Generators
+● Create tests for the two types of casing generators
+● Create the ActiveGenerator interface and the two types of Active Generators
+● Create tests for GelCapRecipes
