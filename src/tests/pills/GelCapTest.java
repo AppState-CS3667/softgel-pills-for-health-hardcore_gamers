@@ -19,7 +19,7 @@ public class GelCapTest {
 
     @BeforeEach
     public void beforeEach() {
-        this.gc = new GelCapMock(NAME, STRENGTH, SIZE, COLOR);
+        this.gc = new GelCapMock(NAME, STRENGTH, SIZE, COLOR, CASING, SOLUTION, ACTIVE);
     }
     @Test
     public void testName() {
@@ -52,8 +52,8 @@ public class GelCapTest {
 
     private class GelCapMock extends GelCap {
         public GelCapMock(String name, double strength,
-            double size, String color) {
-            super(name, strength, size, color);
+            double size, String color, String casing, String solution, String active) {
+            super(name, strength, size, color, casing, solution, active);
         }
         protected void addCasing() {
             casing = "X";
@@ -69,3 +69,4 @@ public class GelCapTest {
         }
     }
 }
+ 
