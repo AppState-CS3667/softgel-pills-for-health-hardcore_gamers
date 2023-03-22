@@ -10,7 +10,8 @@ public abstract class Dreamly extends GelCap {
      * @param strength. Pill color. 
      *
      */
-    public Dreamly(double strength, double size, String color, String casing, String solution, String active) {
+    public Dreamly(double strength, double size, 
+        String color, String casing, String solution, String active) {
         super("Dreamly", strength, size, color, casing, solution, active);
     }
 }

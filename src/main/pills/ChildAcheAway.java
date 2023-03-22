@@ -1,6 +1,6 @@
 package pills;
 
-public class ChildAcheAway extends AcheAway{
+public class ChildAcheAway extends AcheAway {
     public static final double STRENGTH = 415.00;
     public static final double SIZE = 3.25;
     public static final String COLOR = "cyan";
