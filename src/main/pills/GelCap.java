@@ -23,8 +23,10 @@ public abstract class GelCap {
      * @param size = pill size
      * @param color = pill color
      */
-    public GelCap(String name, double strength, double size, 
-        String color, String casing, String solution, String active) {
+
+    public GelCap(String name, double strength, double size, String color, 
+        String casing, String solution, String active) {
+
         this.name = name;
         this.strength = strength;
         this.size = size;
