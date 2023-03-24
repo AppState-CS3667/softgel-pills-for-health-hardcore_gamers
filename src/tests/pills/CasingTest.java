@@ -14,9 +14,12 @@ public class CasingTest {
                                        + "\nReturning gelatin casing...\n";
     private static final String PLAST = "Mixing gelatin, water, opacifier, and glycerin...\nShaping..." 
                                        + "\nReturning plasticizer casing...\n";
+    private static final String GELATIN = "gelatin";
+    private static final String PLASTICIZER = "plasticizer";
 
     public void beforeEach() {
-        this.obj = new ClassToTest();	
+        this.gelCase = new GelatinCasing();
+        this.plastCase = new PlasticizerCasing();
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
@@ -24,16 +27,25 @@ public class CasingTest {
 
     @Test
     public void testGelatinCasing() {
-        assertEquals();
-	assertEquals();
+        String tempGel = gelCase.generateCasing();
+        assertEquals(GEL, getOutput());
+	assertEquals(GELATIN, tempGel);
     }
 
     @Test
     public void testPlasticizerCasing() {
+        String tempPlast = plastCase.generateCasing();
+        assertEquals(PLAST, getOutput());
+	assertEquals(PLASTICIZER, tempPlast);
     }
 
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
+    }
+
+    private String getOutput() {
+        System.out.flush();
+	return baos.toString.replaceAll("\r", "");
     }
 }
