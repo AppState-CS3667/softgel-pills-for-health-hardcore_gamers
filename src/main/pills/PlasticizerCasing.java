@@ -4,11 +4,11 @@ public class PlasticizerCasing implements CasingGenerator {
     
     public String generateCasing()
     {
-        String ret = "Mixing starch, water, opacifier, and" +
+        System.out.println("Mixing starch, water, opacifier, and" +
         "glycerin ...\n" +
         "Shaping ...\n" +
-        "Returning plasticizer casing .\n";
-        return ret;
+        "Returning plasticizer casing .\n");
+        return "plasticizer";
     }
 
 }
