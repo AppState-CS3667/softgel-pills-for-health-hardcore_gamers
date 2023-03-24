@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 public class DreamlyTest {
-    private static final String TEST_NAME = "D";
+    private static final String TEST_NAME = "Dreamly";
     private static final String TEST_CASING = "X";
     private static final String TEST_SOLUTION = "Y";
     private static final String TEST_ACTIVE = "Z";
@@ -19,86 +19,90 @@ public class DreamlyTest {
     private static final double MOCK_SIZE = 0.5;
     private static final String MOCK_COLOR = "blue";
 
-    private static Dreamly AdultDreamly;
-    private static Dreamly ChildDreamly;
-    private static Dreamly MockDreamly;
+    private static Dreamly adultDreamly;
+    private static Dreamly childDreamly;
+    private static Dreamly mockDreamly;
 
     @BeforeEach
 	public void beforeEach() {
-        AdultDreamly = new Dreamly(ADULT_STRENGTH, ADULT_SIZE, ADULT_COLOR);
-        ChildDreamly = new Dreamly(CHILD_STRENGTH, CHILD_SIZE, CHILD_COLOR);
-        MockDreamly = new DreamlyMock(TEST_NAME, MOCK_STRENGTH, MOCK_SIZE, MOCK_COLOR);
+        adultDreamly = new AdultDreamly(TEST_CASING, TEST_SOLUTION, 
+            TEST_ACTIVE);
+        childDreamly = new ChildDreamly(TEST_CASING, TEST_SOLUTION, 
+            TEST_ACTIVE);
+        mockDreamly = new DreamlyMock(MOCK_STRENGTH, MOCK_SIZE, 
+            MOCK_COLOR, TEST_SOLUTION, TEST_CASING, TEST_ACTIVE);
     }
 
     @Test
     public void testMockName() {
-        assertEquals(TEST_NAME, MockDreamly.getName());
+        assertEquals(TEST_NAME, mockDreamly.getName());
     }
 
     @Test
     public void testMockColor() {
-        assertEquals(MOCK_COLOR, MockDreamly.getColor());
+        assertEquals(MOCK_COLOR, mockDreamly.getColor());
     }
 
     @Test
     public void testMockSize() {
-        assertEquals(MOCK_SIZE, MockDreamly.getSize());
+        assertEquals(MOCK_SIZE, mockDreamly.getSize());
     }
 
     @Test
     public void testStrength() {
-        assertEquals(MOCK_STRENGTH, MockDreamly.getStrength());
+        assertEquals(MOCK_STRENGTH, mockDreamly.getStrength());
     }
 
     @Test
     public void testAdultColor() {
-        assertEquals(ADULT_COLOR, AdultDreamly.getColor());
+        assertEquals(ADULT_COLOR, adultDreamly.getColor());
     }
 
     @Test
     public void testAdultSize() {
-        assertEquals(ADULT_SIZE, AdultDreamly.getSize());
+        assertEquals(ADULT_SIZE, adultDreamly.getSize());
     }
 
     @Test
     public void testAdultStrength() {
-        assertEquals(ADULT_STRENGTH, AdultDreamly.getStrength());
+        assertEquals(ADULT_STRENGTH, adultDreamly.getStrength());
     }
 
     @Test
     public void testChildColor() {
-        assertEquals(CHILD_COLOR, ChildDreamly.getColor());
+        assertEquals(CHILD_COLOR, childDreamly.getColor());
     }
 
     @Test
     public void testChildSize() {
-        assertEquals(CHILD_SIZE, ChildDreamly.getSize());
+        assertEquals(CHILD_SIZE, childDreamly.getSize());
     }
 
     @Test
     public void testChildStrength() {
-        assertEquals(CHILD_STRENGTH, ChildDreamly.getStrength());
+        assertEquals(CHILD_STRENGTH, childDreamly.getStrength());
     }
 
     @Test
     public void testCasing() {
-        assertEquals(TEST_CASING, MockDreamly.getCasing());
+        assertEquals(TEST_CASING, mockDreamly.getCasing());
     }
 
     @Test
     public void testSolution() {
-        assertEquals(TEST_SOLUTION, MockDreamly.getSolution());
+        assertEquals(TEST_SOLUTION, mockDreamly.getSolution());
     }
 
     @Test
     public void testActive() {
-        assertEquals(TEST_ACTIVE, MockDreamly.getActive());
+        assertEquals(TEST_ACTIVE, mockDreamly.getActive());
     }
 
     private class DreamlyMock extends Dreamly {
-        public DreamlyMock(String name, double strength,
-            double size, String color, String solution, String casing, String active) {
-            super(name, strength, size, color, casing, solution, active);
+        public DreamlyMock(double strength,
+            double size, String color, String solution, 
+            String casing, String active) {
+            super(strength, size, color, casing, solution, active);
         }
     }
 }

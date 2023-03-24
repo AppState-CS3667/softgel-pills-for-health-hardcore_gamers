@@ -9,6 +9,6 @@ public class AdultDreamly extends Dreamly {
      * Constructor for AdultDreamly class that calls the super constructor.
      */
     public AdultDreamly(String casing, String solution, String active) {
-        super("AdultDreamly", strength, size, color, casing, solution, active);
+        super(STRENGTH, SIZE, COLOR, casing, solution, active);
     }
 }

@@ -2,7 +2,6 @@ package pills;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AcheAwayTest {
@@ -25,12 +24,10 @@ public class AcheAwayTest {
  
     @BeforeEach
     public void beforeEach() {
-        this.ac = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR,
+        this.ac = new AcheAwayMock(TEST_STRENGTH, TEST_SIZE, TEST_COLOR,
                                TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
-        this.caa = new ChildAcheAway(CHILD_STRENGTH, CHILD_SIZE,
-                                     CHILD_COLOR);
-        this.aaa = new AdultAcheAway(ADULT_STRENGTH, ADULT_SIZE,
-                                     ADULT_COLOR);
+        this.caa = new ChildAcheAway(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
+        this.aaa = new AdultAcheAway(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
     }
 
     @Test
@@ -70,9 +67,9 @@ public class AcheAwayTest {
     }
 
     private class AcheAwayMock extends AcheAway {
-        public AcheAway(double strength, double size,
+        public AcheAwayMock(double strength, double size,
                         String color, String casing,
-                        String solution, String active){
+                        String solution, String active) {
             super(strength, size, color, casing, solution, active);
         }
     }
