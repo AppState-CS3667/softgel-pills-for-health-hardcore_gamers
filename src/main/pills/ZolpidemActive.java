@@ -1,5 +1,5 @@
 package pills;
-public class ZolpidemActive implements AcitveGenerator {
+public class ZolpidemActive implements ActiveGenerator {
     public String generateActive(double amount) {
         System.out.println("Opening secure storage area...");
         System.out.printf("Carefully extracting" 
