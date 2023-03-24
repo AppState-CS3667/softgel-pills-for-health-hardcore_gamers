@@ -3,6 +3,9 @@ package pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class CasingTest {
     private GelatinCasing gelCase; 
@@ -17,6 +20,7 @@ public class CasingTest {
     private static final String GELATIN = "gelatin";
     private static final String PLASTICIZER = "plasticizer";
 
+    @BeforeEach
     public void beforeEach() {
         this.gelCase = new GelatinCasing();
         this.plastCase = new PlasticizerCasing();
