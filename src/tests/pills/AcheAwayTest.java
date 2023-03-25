@@ -24,12 +24,10 @@ public class AcheAwayTest {
  
     @BeforeEach
     public void beforeEach() {
-        this.ac = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR,
+        this.ac = new AcheAwayMock(TEST_STRENGTH, TEST_SIZE, TEST_COLOR,
                                TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
-        this.caa = new ChildAcheAway(CHILD_STRENGTH, CHILD_SIZE,
-                                     CHILD_COLOR);
-        this.aaa = new AdultAcheAway(ADULT_STRENGTH, ADULT_SIZE,
-                                     ADULT_COLOR);
+        this.caa = new ChildAcheAway(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
+        this.aaa = new AdultAcheAway(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
     }
 
     @Test

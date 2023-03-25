@@ -1,5 +1,5 @@
 package pills; 
-public class AcetaminophenActive implements AcitveGenerator {
+public class AcetaminophenActive implements ActiveGenerator {
     public String generateActive(double amount) {
         System.out.println("Acetylating para-aminophenol" 
             + " with acetic anhydride");

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 public class DreamlyTest {
-    private static final String TEST_NAME = "D";
+    private static final String TEST_NAME = "Dreamly";
     private static final String TEST_CASING = "X";
     private static final String TEST_SOLUTION = "Y";
     private static final String TEST_ACTIVE = "Z";
@@ -25,10 +25,12 @@ public class DreamlyTest {
 
     @BeforeEach
 	public void beforeEach() {
-        adultDreamly = new Dreamly(ADULT_STRENGTH, ADULT_SIZE, ADULT_COLOR);
-        childDreamly = new Dreamly(CHILD_STRENGTH, CHILD_SIZE, CHILD_COLOR);
-        mockDreamly = new DreamlyMock(TEST_NAME, MOCK_STRENGTH,
-            MOCK_SIZE, MOCK_COLOR);
+        adultDreamly = new AdultDreamly(TEST_CASING, TEST_SOLUTION, 
+            TEST_ACTIVE);
+        childDreamly = new ChildDreamly(TEST_CASING, TEST_SOLUTION, 
+            TEST_ACTIVE);
+        mockDreamly = new DreamlyMock(MOCK_STRENGTH, MOCK_SIZE, 
+            MOCK_COLOR, TEST_SOLUTION, TEST_CASING, TEST_ACTIVE);
     }
 
     @Test
@@ -97,10 +99,12 @@ public class DreamlyTest {
     }
 
     private class DreamlyMock extends Dreamly {
-        public DreamlyMock(String name, double strength,
-            double size, String color, 
-                String solution, String casing, String active) {
-            super(name, strength, size, color, casing, solution, active);
+
+        public DreamlyMock(double strength,
+            double size, String color, String solution, 
+            String casing, String active) {
+            super(strength, size, color, casing, solution, active);
+
         }
     }
 }

@@ -1,5 +1,5 @@
 package pills;
 
-public interface AcitveGenerator {
+public interface ActiveGenerator {
     public String generateActive(double amount);
 }
