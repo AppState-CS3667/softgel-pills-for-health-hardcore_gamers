@@ -8,10 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ActiveTests {
-    private AcetaminophenActive aceActive;
-    private ZolpidemActive zolActive;
-    private ByteArrayOutputStream baos;	
-    private PrintStream oldOut;
     private static final String ACETAMINOPHEN_RETURN = "acetaminophen";
     private static final double TEST_AMOUNT = 2.00;
     private static final String ZOLPIDEM_RETURN = "zolpidem";
@@ -24,6 +20,11 @@ public class ActiveTests {
     private static final String ZOLPIDEM_PRINT = "Opening secure storage " 
         + "area ... \n" + "Carefully extracting 2.00mg of zolpidem\n"
         + "Returning 2.00mg of zolpidem\n";
+
+    private AcetaminophenActive aceActive;
+    private ZolpidemActive zolActive;
+    private ByteArrayOutputStream baos;	
+    private PrintStream oldOut;
 
 
     @BeforeEach
