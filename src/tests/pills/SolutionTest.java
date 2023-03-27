@@ -13,11 +13,11 @@ public class SolutionTest{
     private static final String TEST_SALINE_OUT = 
                             "Mixing salt and water ... \n"
                             + "Verifying ratio ... \n"
-                            + "Returning saline solution\n"
+                            + "Returning saline solution\n";
     private static final String TEST_OIL_OUT =  
                             "Extracting pill-sized quantity of "
                             + "oil ... \n"
-                            + "Returning oil solution\n"
+                            + "Returning oil solution\n";
 
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
