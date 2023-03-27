@@ -50,6 +50,6 @@ public class CasingTest {
 
     private String getOutput() {
         System.out.flush();
-	return baos.toString.replaceAll("\r", "");
+	return baos.toString().replaceAll("\r", "");
     }
 }
