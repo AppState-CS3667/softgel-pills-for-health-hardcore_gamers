@@ -12,12 +12,12 @@ public class GelCapRecipies {
         return CASINGS;
     }
 
-    private static HashMap<String, CasingSolutions> getSolutions()
+    private static HashMap<String, SolutionGenerator> getSolutions()
     {
         return SOLUTIONS;
     }
 
-    private static HashMap<String, CasingActives> getActives()
+    private static HashMap<String, ActiveGenerator> getActives()
     {
         return ACTIVES;
     }
