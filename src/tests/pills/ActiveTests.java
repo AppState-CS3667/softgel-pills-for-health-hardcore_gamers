@@ -27,8 +27,7 @@ public class ActiveTests {
 
 
     @BeforeEach
-    public void beforeEach() 
-    {			
+    public void beforeEach() {			
         this.aceActive = new AcetaminophenActive();
         this.zolActive = new ZolpidemActive();	
         this.oldOut = System.out;
@@ -36,27 +35,23 @@ public class ActiveTests {
         System.setOut(new PrintStream(baos));
     }
     @AfterEach
-    public void afterEach() 
-    {
+    public void afterEach() {
         System.setOut(oldOut);
     }
 
     @Test
-    public void testAcetaminophenGenerator()
-    {
+    public void testAcetaminophenGenerator() {
         assertEquals(ACETAMINOPHEN_RETURN, aceActive.generateActive(TEST_AMOUNT));
         assertEquals(ACETAMINOPHEN_PRINT, getOutput());
     }
 
     @Test
-    public void testZolpidemGenerator()
-    {
+    public void testZolpidemGenerator() {
         assertEquals(ZOLPIDEM_RETURN, aceActive.generateActive(TEST_AMOUNT));
         assertEquals(ZOLPIDEM_PRINT, getOutput());
     }
 
-    private String getOutput()
-    {
+    private String getOutput() {
         System.out.flush();
         return baos.toString().replaceAll("\r", "");
     }
