@@ -22,7 +22,7 @@ public class ActiveTests {
         + "Carefully extracting 2.00mg of acetaminophen\n"
         + "Returning 2.00mg of acetaminophen\n";
     private static final String ZOLPIDEM_PRINT = "Opening secure storage " 
-        + "area...\n" + "Carefully extracting 2.00mg of zolpidem\n"
+        + "area ... \n" + "Carefully extracting 2.00mg of zolpidem\n"
         + "Returning 2.00mg of zolpidem\n";
 
 
@@ -46,8 +46,7 @@ public class ActiveTests {
     }
 
     @Test
-    public void testZolpidemGenerator()
-    {
+    public void testZolpidemGenerator() {
         assertEquals(ZOLPIDEM_RETURN, zolActive.generateActive(TEST_AMOUNT));
         assertEquals(ZOLPIDEM_PRINT, getOutput());
     }
