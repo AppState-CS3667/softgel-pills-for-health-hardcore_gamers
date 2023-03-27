@@ -17,11 +17,11 @@ public class ActiveTests {
     private static final String ZOLPIDEM_RETURN = "zolpidem";
 
 
-    private static final String ACETAMINOPHEN_PRINT = "Acetylating" 
+    private static final String ACETAMINOPHEN_PRINT = "Acetylating " 
         + "para-aminophenol with acetic anhydride\n"
         + "Carefully extracting 2.00mg of acetaminophen\n"
         + "Returning 2.00mg of acetaminophen\n";
-    private static final String ZOLPIDEM_PRINT = "Opening secure storage" 
+    private static final String ZOLPIDEM_PRINT = "Opening secure storage " 
         + "area...\n" + "Carefully extracting 2.00mg of zolpidem\n"
         + "Returning 2.00mg of zolpidem\n";
 
@@ -46,8 +46,9 @@ public class ActiveTests {
     }
 
     @Test
-    public void testZolpidemGenerator() {
-        assertEquals(ZOLPIDEM_RETURN, aceActive.generateActive(TEST_AMOUNT));
+    public void testZolpidemGenerator()
+    {
+        assertEquals(ZOLPIDEM_RETURN, zolActive.generateActive(TEST_AMOUNT));
         assertEquals(ZOLPIDEM_PRINT, getOutput());
     }
 
