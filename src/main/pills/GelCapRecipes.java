@@ -2,7 +2,7 @@ package pills;
 
 import java.util.HashMap;
 
-public class GelCapRecipies {
+public class GelCapRecipes {
     public static final HashMap<String, CasingGenerator> CASINGS = new HashMap<String, CasingGenerator>();
     public static final HashMap<String, SolutionGenerator> SOLUTIONS = new HashMap<String, SolutionGenerator>();
     public static final HashMap<String, ActiveGenerator> ACTIVES = new HashMap<String, ActiveGenerator>();

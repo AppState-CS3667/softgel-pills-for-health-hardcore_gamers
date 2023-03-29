@@ -8,17 +8,17 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class CasingTest {
+    private static final String GEL = "Mixing gelatin, water, opacifier, and glycerin ... \nShaping ... " 
+                                       + "\nReturning gelatin casing ... \n";
+    private static final String PLAST = "Mixing starch, water, opacifier, and glycerin ... \nShaping ... " 
+                                       + "\nReturning plasticizer casing ... \n";
+    private static final String GELATIN = "gelatin";
+    private static final String PLASTICIZER = "plasticizer";
+
     private GelatinCasing gelCase; 
     private PlasticizerCasing plastCase; 
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
-
-    private static final String GEL = "Mixing gelatin, water, opacifier, and glycerin...\nShaping..." 
-                                       + "\nReturning gelatin casing...\n";
-    private static final String PLAST = "Mixing gelatin, water, opacifier, and glycerin...\nShaping..." 
-                                       + "\nReturning plasticizer casing...\n";
-    private static final String GELATIN = "gelatin";
-    private static final String PLASTICIZER = "plasticizer";
 
     @BeforeEach
     public void beforeEach() {

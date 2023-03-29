@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
-public class SolutionTest{
+public class SolutionTest {
     private static final String TEST_OIL = "oil";
     private static final String TEST_SALINE = "saline";
     private static final String TEST_SALINE_OUT = 
@@ -18,12 +18,11 @@ public class SolutionTest{
                             "Extracting pill-sized quantity of "
                             + "oil ... \n"
                             + "Returning oil solution\n";
+    private static SalineSolution ss;
+    private static OilSolution os;
 
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
-
-    private static SalineSolution ss;
-    private static OilSolution os;
 
     @BeforeEach
     public void beforeEach() {
