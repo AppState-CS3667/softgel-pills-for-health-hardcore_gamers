@@ -23,6 +23,9 @@ public class DreamlyTest {
     private static Dreamly childDreamly;
     private static Dreamly mockDreamly;
 
+    /*
+     * initializes Adult, Child, and Dreamly mock by calling constructors.
+     */
     @BeforeEach
 	public void beforeEach() {
         adultDreamly = new AdultDreamly(TEST_CASING, TEST_SOLUTION, 
@@ -33,66 +36,105 @@ public class DreamlyTest {
             MOCK_COLOR, TEST_SOLUTION, TEST_CASING, TEST_ACTIVE);
     }
 
+    /*
+     * Dreamly name is Dreamly.
+     */
     @Test
     public void testMockName() {
         assertEquals(TEST_NAME, mockDreamly.getName());
     }
 
+    /*
+     * Dreamly color is blue.
+     */
     @Test
     public void testMockColor() {
         assertEquals(MOCK_COLOR, mockDreamly.getColor());
     }
 
+    /*
+     * Dreamly size is 0.5
+     */
     @Test
     public void testMockSize() {
         assertEquals(MOCK_SIZE, mockDreamly.getSize());
     }
 
+    /*
+     * Dreamly strength is 700.
+     */
     @Test
     public void testStrength() {
         assertEquals(MOCK_STRENGTH, mockDreamly.getStrength());
     }
 
+    /*
+     * Adult Dreamly color is tan.
+     */
     @Test
     public void testAdultColor() {
         assertEquals(ADULT_COLOR, adultDreamly.getColor());
     }
 
+    /*
+     * Adult Dreamly size is 12.24.
+     */
     @Test
     public void testAdultSize() {
         assertEquals(ADULT_SIZE, adultDreamly.getSize());
     }
 
+    /*
+     * Adult Dreamly strength is 5.20.
+     */
     @Test
     public void testAdultStrength() {
         assertEquals(ADULT_STRENGTH, adultDreamly.getStrength());
     }
 
+    /*
+     * Child Dreamly color is fuschia.
+     */
     @Test
     public void testChildColor() {
         assertEquals(CHILD_COLOR, childDreamly.getColor());
     }
 
+    /*
+     * Child Dreamly size is 4.5.
+     */
     @Test
     public void testChildSize() {
         assertEquals(CHILD_SIZE, childDreamly.getSize());
     }
 
+    /*
+     * Child Dreamly strength is 1.25.
+     */
     @Test
     public void testChildStrength() {
         assertEquals(CHILD_STRENGTH, childDreamly.getStrength());
     }
 
+    /*
+     * Dreamly casing is X.
+     */
     @Test
     public void testCasing() {
         assertEquals(TEST_CASING, mockDreamly.getCasing());
     }
 
+    /*
+     * Dreamly solution is Y.
+     */
     @Test
     public void testSolution() {
         assertEquals(TEST_SOLUTION, mockDreamly.getSolution());
     }
 
+    /*
+     * Dreamly active is Z.
+     */
     @Test
     public void testActive() {
         assertEquals(TEST_ACTIVE, mockDreamly.getActive());
