@@ -1,9 +1,13 @@
 package pills;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class GelCapFactoryTest {
     //Fields for testing
@@ -14,20 +18,27 @@ public class GelCapFactoryTest {
     public static final String CASING = "X";
     public static final String SOLUTION = "Y";
     public static final String ACTIVE = "Z";
-    public static final String DreamlyCorrectOutput = "Creating a Dreamly pill ... \nReturning a good Dreamly"
+
+    public static final String DREAMLY_GOOD = "Creating a Dreamly pill ... \nReturning a good Dreamly"
         + " GelCap pill\n";
-    public static final String DreamlyIncorrectOutput = "Creating a Dreamly pill ... \nError during Dreamly"
+    public static final String DREAMLY_BAD = "Creating a Dreamly pill ... \nError during Dreamly"
         + " production. Returning null\n";
-    public static final String AcheAwayCorrectOutput = "Creating a AcheAway pill ... \nReturning a good AcheAway"
+    public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill ... \nReturning a good AcheAway"
         + " GelCap pill\n";
-    public static final String AcheAwayIncorrectOutput = "Creating a AcheAway pill ... \nError during AcheAway"
+    public static final String ACHEAWAY_BAD = "Creating a AcheAway pill ... \nError during AcheAway"
         + " production. Returning null\n";
+
     // field to store the new output location
     private GelCapFactory gcf;
+    private ByteArrayOutputStream baos;
+    private PrintStream oldOut;
 
     @BeforeEach
     public void beforeEach() {
         this.gcf = new GelCapFactoryMock();
+	this.oldOut = System.out;
+	this.baos = new ByteArrayOutputStream();
+	System.setOut(new PrintStream(baos));
     }
 
     @Test
@@ -37,13 +48,16 @@ public class GelCapFactoryTest {
 	// count of failures
 	int f = 0;
 
+        Dreamly temp = gcf.produceDreamly();
         for (int i = 0; i < 100; i++) {
-            Dreamly temp = gcf.produceDreamly();
-	    if (temp instanceof Dreamly) {
+	    if (DREAMLY_GOOD.equals(getOutput())) {
                 s++;
 	    }
-	    else {
+	    else if (DREAMLY_BAD.equals(getOutput())){
                 f++;
+	    }
+	    else {
+                fail("ERROR: Output was not as expected.");
 	    }
 	}
         assertTrue(temp instanceof Dreamly || temp == null);
@@ -57,20 +71,30 @@ public class GelCapFactoryTest {
 	// count of failures
 	int f = 0;
 
+        AcheAway temp = gcf.produceAcheAway();
         for (int i = 0; i < 100; i++) {
-            AcheAway temp = gcf.produceAcheAway();
-	    if (constant.equals(getOutput())) {
+	    if (ACHEAWAY_GOOD.equals(getOutput())) {
                 s++;
 	    }
-	    else if (badconstant.getOutput()){
+	    else if (ACHEAWAY_BAD.equals(getOutput())){
                 f++;
 	    }
 	    else {
-                fail("string here to describe bad output");
+                fail("ERROR: Output was not as expected.");
 	    }
 	}
         assertTrue(temp instanceof AcheAway || temp == null);
 	assertTrue(s >= 85 && s <= 95);
+    }
+
+    @AfterEach
+    public void afterEach() {
+        System.setOut(oldOut);
+    }
+
+    private String getOutput() {
+        System.out.flush();
+	return baos.toString().replaceAll("\r", "");
     }
 
     private class GelCapFactoryMock extends GelCapFactory {
