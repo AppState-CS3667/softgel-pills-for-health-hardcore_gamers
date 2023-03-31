@@ -1,6 +1,7 @@
 package pills;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -13,6 +14,14 @@ public class GelCapFactoryTest {
     public static final String CASING = "X";
     public static final String SOLUTION = "Y";
     public static final String ACTIVE = "Z";
+    public static final String DreamlyCorrectOutput = "Creating a Dreamly pill ... \nReturning a good Dreamly"
+        + " GelCap pill\n";
+    public static final String DreamlyIncorrectOutput = "Creating a Dreamly pill ... \nError during Dreamly"
+        + " production. Returning null\n";
+    public static final String AcheAwayCorrectOutput = "Creating a AcheAway pill ... \nReturning a good AcheAway"
+        + " GelCap pill\n";
+    public static final String AcheAwayIncorrectOutput = "Creating a AcheAway pill ... \nError during AcheAway"
+        + " production. Returning null\n";
     // field to store the new output location
     private GelCapFactory gcf;
 
@@ -22,62 +31,67 @@ public class GelCapFactoryTest {
     }
 
     @Test
-    public void testName() {
-        assertEquals(NAME, gc.getName());
+    public void testProduceDreamly() {
+        // count of successes
+        int s = 0;
+	// count of failures
+	int f = 0;
+
+        for (int i = 0; i < 100; i++) {
+            Dreamly temp = gcf.produceDreamly();
+	    if (temp instanceof Dreamly) {
+                s++;
+	    }
+	    else {
+                f++;
+	    }
+	}
+        assertTrue(temp instanceof Dreamly || temp == null);
+	assertTrue(s >= 85 && s <= 95);
     }
 
     @Test
-    public void testStrength() {
-        assertEquals(STRENGTH, gc.getStrength());
-    }
+    public void testProduceAcheAway() {
+        // count of successes
+        int s = 0;
+	// count of failures
+	int f = 0;
 
-    @Test
-    public void testColor() {
-        assertEquals(COLOR, gc.getColor());
-    }
-
-    @Test
-    public void testSize() {
-        assertEquals(SIZE, gc.getSize());
-    }
-
-    @Test
-    public void testCasing() {
-        assertEquals(CASING, gc.getCasing());
-    }
-
-    @Test
-    public void testSolution() {
-        assertEquals(SOLUTION, gc.getSolution());
-    }
-    @Test
-    public void testActive() {
-        assertEquals(ACTIVE, gc.getActive());
+        for (int i = 0; i < 100; i++) {
+            AcheAway temp = gcf.produceAcheAway();
+	    if (constant.equals(getOutput())) {
+                s++;
+	    }
+	    else if (badconstant.getOutput()){
+                f++;
+	    }
+	    else {
+                fail("string here to describe bad output");
+	    }
+	}
+        assertTrue(temp instanceof AcheAway || temp == null);
+	assertTrue(s >= 85 && s <= 95);
     }
 
     private class GelCapFactoryMock extends GelCapFactory {
-        public Dreamly produceDreamly() {
-
-	}
-
-        public AcheAway produceAcheAway() {
-
-	}
-
         protected Dreamly constructDreamly(String casing, String solution, String active) {
-            solution = "Y";
-            System.out.print("Y\n");
+	    System.out.print("constructDreamly called.");
+	    return new DreamlyMock(STRENGTH, SIZE, COLOR, SOLUTION, CASING, ACTIVE);
         }
 
         protected AcheAway constructAcheAway(String casing, String solution, String active) {
-            solution = "Y";
-            System.out.print("Y\n");
+	    System.out.print("constructAcheAway called.");
+	    return new AcheAwayMock(STRENGTH, SIZE, COLOR, SOLUTION, CASING, ACTIVE);
         }
 
         protected double getDreamlyStrength() {
-        }
+	    System.out.print("getDreamly called.");
+	    return 0;        
+	}
 
         protected double getAcheAwayStrength() {
+	    System.out.print("getAcheAway called.");
+	    return 0;        
         }
     }
 }
