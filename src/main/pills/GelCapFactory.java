@@ -42,12 +42,12 @@ public abstract class GelCapFactory{
 		}
     	}
 
-    	public abstract Dreamly constructDreamly(String casing, String solution, String active);
+    	protected abstract Dreamly constructDreamly(String casing, String solution, String active);
 
-    	public abstract Dreamly constructAcheAway(String casing, String solution, String active);
+    	protected abstract Dreamly constructAcheAway(String casing, String solution, String active);
 
-    	public abstract double getDreamlyStrength();
+    	protected abstract double getDreamlyStrength();
 
-    	public abstract double getAcheAwayStrength();
+    	protected abstract double getAcheAwayStrength();
 	}
 
