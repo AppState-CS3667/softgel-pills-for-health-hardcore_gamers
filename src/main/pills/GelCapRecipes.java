@@ -7,6 +7,10 @@ public class GelCapRecipes {
     public static final HashMap<String, SolutionGenerator> SOLUTIONS = getSolutions();
     public static final HashMap<String, ActiveGenerator> ACTIVES = getActives();
 
+    /*
+     * puts Dreamly and plasticizer casing, AcheAway and gelatin casing in hashmap
+     * returns casings hashmap.
+     */
     private static HashMap<String, CasingGenerator> getCasings() {
         HashMap<String, CasingGenerator> casingsTemp = new HashMap<String, CasingGenerator>();
         casingsTemp.put("Dreamly", new PlasticizerCasing());
@@ -14,6 +18,10 @@ public class GelCapRecipes {
         return casingsTemp;
     }
 
+    /*
+     * puts Dreamly and oil solution, AcheAway and saline solution in hashmap
+     * returns solutions hashamp.
+     */
     private static HashMap<String, SolutionGenerator> getSolutions() {
         HashMap<String, SolutionGenerator> solutionsTemp = new HashMap<String, SolutionGenerator>();
         solutionsTemp.put("Dreamly", new OilSolution());
@@ -21,6 +29,10 @@ public class GelCapRecipes {
         return solutionsTemp;
     }
 
+    /*
+     * puts Dreamly and zolpidem active, AcheAway and acetaminophen active in hashmap
+     * returns actives hashmap.
+     */
     private static HashMap<String, ActiveGenerator> getActives() {
         HashMap<String, ActiveGenerator> activesTemp = new HashMap<String, ActiveGenerator>();
         activesTemp.put("Dreamly", new ZolpidemActive());
