@@ -1,0 +1,24 @@
+public abstract class GelCapFactory{
+    
+    public final Dreamly produceDreamly(){
+       // System.out.print("Creating a Dreamly pill ... \n");
+        //Dreamly dp = constructDreamly();
+    }
+
+    public final AcheAway produceAcheAway(){
+        //System.out.print("Creating a AcheAway pill ... \n");
+        //AcheAway ap = constructAcheAway();
+    }
+
+    private final boolean qualityCheck(){
+
+    }
+
+    public abstract Dreamly constructDreamly(String casing, String solution, String active);
+
+    public abstract Dreamly constructAcheAway(String casing, String solution, String active);
+
+    public abstract double getDreamlyStrength();
+
+    public abstract double getAcheAwayStrength();
+}
