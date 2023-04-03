@@ -20,11 +20,11 @@ public class GelCapFactoryTest {
     public static final String ACTIVE = "Z";
 
     public static final String DREAMLY_GOOD = "Creating a Dreamly pill ... \nReturning a good Dreamly"
-        + " GelCap pill\n";
+        + " GelCap Pill\n";
     public static final String DREAMLY_BAD = "Creating a Dreamly pill ... \nError during Dreamly"
         + " production. Returning null\n";
     public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill ... \nReturning a good AcheAway"
-        + " GelCap pill\n";
+        + " GelCap Pill\n";
     public static final String ACHEAWAY_BAD = "Creating a AcheAway pill ... \nError during AcheAway"
         + " production. Returning null\n";
 
@@ -50,14 +50,16 @@ public class GelCapFactoryTest {
 
         Dreamly temp = gcf.produceDreamly();
         for (int i = 0; i < 100; i++) {
-	    if (DREAMLY_GOOD.equals(getOutput())) {
+            temp = gcf.produceDreamly();
+	    String o = getOutput();
+	    if (DREAMLY_GOOD.equals(o)) {
                 s++;
 	    }
-	    else if (DREAMLY_BAD.equals(getOutput())){
+	    else if (DREAMLY_BAD.equals(o)){
                 f++;
 	    }
 	    else {
-                fail("ERROR: Output was not as expected.");
+                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
 	    }
 	}
         assertTrue(temp instanceof Dreamly || temp == null);
@@ -73,14 +75,18 @@ public class GelCapFactoryTest {
 
         AcheAway temp = gcf.produceAcheAway();
         for (int i = 0; i < 100; i++) {
-	    if (ACHEAWAY_GOOD.equals(getOutput())) {
+            temp = gcf.produceAcheAway();
+	    String o = getOutput();
+	    // Clear middle of output for testing
+	    o = o.substring(0, 28) + o.substring(753, 789);
+	    if (ACHEAWAY_GOOD.equals(o)) {
                 s++;
 	    }
-	    else if (ACHEAWAY_BAD.equals(getOutput())){
+	    else if (ACHEAWAY_BAD.equals(o)){
                 f++;
 	    }
 	    else {
-                fail("ERROR: Output was not as expected.");
+                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
 	    }
 	}
         assertTrue(temp instanceof AcheAway || temp == null);
@@ -94,7 +100,9 @@ public class GelCapFactoryTest {
 
     private String getOutput() {
         System.out.flush();
-	return baos.toString().replaceAll("\r", "");
+	String output = baos.toString().replaceAll("\r", "");
+	baos.reset();
+	return output;
     }
 
     private class GelCapFactoryMock extends GelCapFactory {
