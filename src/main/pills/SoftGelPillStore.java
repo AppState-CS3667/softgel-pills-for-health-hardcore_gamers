@@ -127,7 +127,7 @@ public class SoftGelPillStore {
         }
 
         isLoggedIn = true;
-        currentOrder = new ArrayList();
+        currentOrder = new ArrayList<GelCap>();
     }
 
     public boolean logOut() {
