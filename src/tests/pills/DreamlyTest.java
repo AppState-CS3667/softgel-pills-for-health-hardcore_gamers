@@ -139,14 +139,4 @@ public class DreamlyTest {
     public void testActive() {
         assertEquals(TEST_ACTIVE, mockDreamly.getActive());
     }
-
-    private class DreamlyMock extends Dreamly {
-
-        public DreamlyMock(double strength,
-            double size, String color, String solution, 
-            String casing, String active) {
-            super(strength, size, color, casing, solution, active);
-
-        }
-    }
 }

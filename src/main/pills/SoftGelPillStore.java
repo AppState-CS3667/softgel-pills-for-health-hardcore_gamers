@@ -33,7 +33,7 @@ public class SoftGelPillStore {
     }
 
     public GelCap[] checkOut() {
-        if(isLoggedIn == false || currentOrder == null) {
+        if (isLoggedIn == false || currentOrder == null) {
             System.out.print("You need to log in and order before you can checkout\n");
             return null;
         }
@@ -46,11 +46,11 @@ public class SoftGelPillStore {
         Object[] orderarr = currentOrder.toArray();
         currentOrder.clear();
 
-        return (GelCap[])orderarr;
+        return (GelCap[]) orderarr;
     }
 
     public void order() {
-        if(isLoggedIn == false) {
+        if (isLoggedIn == false) {
             System.out.print("You must log in before you can order.\n");
             return;
         }
@@ -60,31 +60,26 @@ public class SoftGelPillStore {
 
         boolean loop = true;
         int choice;
-        while(loop)
-        {
-            try
-            {
+        while (loop) {
+            try {
                 System.out.print("Options:\n 1) Dreamly\n 2) AcheAway\n 3) Cancel\n");
                 choice = input.nextInt();
 
-                if(choice == 1)
-                {
-                    //use the factory field to produce the type of pill selected and store it in the currentOrder ArrayList.
+                if (choice == 1) {
+                    //use the factory field to produce the type of pill 
+                    //selected and store it in the currentOrder ArrayList.
                     currentOrder.add(factory.produceDreamly());
                     loop = false;
                 }
-                else if(choice == 2)
-                {
+                else if (choice == 2) {
                     currentOrder.add(factory.produceAcheAway());
                     loop = false;
                 }
-                else if(choice == 3)
-                {
+                else if (choice == 3) {
                     loop = false;
                 }
             }
-            catch(InputMismatchException e)
-            {
+            catch (InputMismatchException e) {
                 System.out.print("Please enter a 1, 2, or 3\n");
                 input.nextLine();
             }
@@ -98,15 +93,12 @@ public class SoftGelPillStore {
         
         boolean loop = true;
         int age = -1;
-        while(loop)
-        {
-            try
-            {
+        while (loop) {
+            try {
                 System.out.println("What is your age?");
                 age = input.nextInt();
             }
-            catch(InputMismatchException e)
-            {
+            catch (InputMismatchException e) {
                 System.out.print("Please enter a valid age.");
                 input.nextLine();
             }
@@ -127,35 +119,30 @@ public class SoftGelPillStore {
         }
 
         isLoggedIn = true;
-        currentOrder = new ArrayList();
+        currentOrder = new ArrayList<GelCap>();
     }
 
     public boolean logOut() {
-        if(isLoggedIn == false) {
+        if (isLoggedIn == false) {
             System.out.print("You are not logged in.");
             return false;
         }
-        else if(currentOrder.size() > 0) {
+        else if (currentOrder.size() > 0) {
             boolean loop = true;
             String yn;
-            while(loop)
-            {
-                try
-                {
+            while (loop) {
+                try {
                     System.out.print("You have an order that you have not checked out. Are you sure you want to log out? (y/N)");
                     yn = input.nextLine();
     
-                    if(yn == "y")
-                    {
+                    if (yn == "y") {
                         continue;
                     }
-                    else
-                    {
+                    else {
                         return false;
                     }
                 }
-                catch(InputMismatchException e)
-                {
+                catch (InputMismatchException e) {
                     System.out.print("Please enter a valid character.");
                     input.nextLine();
                 }
