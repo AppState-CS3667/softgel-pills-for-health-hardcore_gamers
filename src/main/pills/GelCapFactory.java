@@ -50,7 +50,7 @@ public abstract class GelCapFactory {
     protected abstract Dreamly constructDreamly(String casing, 
 										String solution, String active);
 
-    protected abstract Dreamly constructAcheAway(String casing, 
+    protected abstract AcheAway constructAcheAway(String casing, 
 										String solution, String active);
 
     protected abstract double getDreamlyStrength();
