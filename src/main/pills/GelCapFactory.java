@@ -1,3 +1,4 @@
+package pills;
 public abstract class GelCapFactory{
 
 	public final Dreamly produceDreamly(){
