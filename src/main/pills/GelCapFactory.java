@@ -25,9 +25,9 @@ public abstract class GelCapFactory {
 					GelCapRecipes.SOLUTIONS.get("AcheAway").generateSolution(),
 					GelCapRecipes.ACTIVES.get("AcheAway").generateActive(
                         getAcheAwayStrength()));
-	if (qualityCheck()){
-	System.out.print("Returning a good AcheAway GelCap Pill\n");
-	return ap;
+	if (qualityCheck()) {
+		System.out.print("Returning a good AcheAway GelCap Pill\n");
+		return ap;
 	}
 	else {
 		System.out.print("Error during AcheAway production. Returning null\n");
@@ -37,7 +37,7 @@ public abstract class GelCapFactory {
 
     private final boolean qualityCheck() {
 	double check = Math.random();
-	if (check <= 0.9){
+	if (check <= 0.9) {
 		System.out.print("quality check passed\n");
 		return true;
 	}
