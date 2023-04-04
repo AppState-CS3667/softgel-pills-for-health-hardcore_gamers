@@ -11,10 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.Test;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -23,7 +19,6 @@ public class SoftGelPillStoreTest {
     private static final Scanner INPUT = new Scanner(System.in);
     private static final PrintStream OUTPUT = System.out;
     private SoftGelPillStore store;
-    private SoftGelPillStore storeV2;
 
     // Tests to make sure the constructors works as intended
     @Test
@@ -69,21 +64,24 @@ public class SoftGelPillStoreTest {
     // log out without logging in
     @Test
     public void noLogOutWithoutLogin() {
-        assertFalse(storeV2.logOut());
+        this.store = new SoftGelPillStore();
+        assertFalse(store.logOut());
     }
     // Test to make sure you can't
     // checkout without logging in
     @Test
     public void noCheckOutWithoutLogin() {
-        assertNull(storeV2.checkOut());
+        this.store = new SoftGelPillStore();
+        assertNull(store.checkOut());
     }
     // Test to make sure logOut works
     @Test
     public void successfulLogOut() {
+        this.store = new SoftGelPillStore();
         String n = "Mr. X";
         final int A = 7;
-        storeV2.logIn(n, A);
-        assertTrue(storeV2.logOut());
+        store.logIn(n, A);
+        assertTrue(store.logOut());
     }
     
 }
