@@ -65,12 +65,4 @@ public class AcheAwayTest {
     public void testActive() {
         assertEquals(TEST_ACTIVE, ac.getActive());
     }
-
-    private class AcheAwayMock extends AcheAway {
-        public AcheAwayMock(double strength, double size,
-                        String color, String casing,
-                        String solution, String active) {
-            super(strength, size, color, casing, solution, active);
-        }
-    }
 }
