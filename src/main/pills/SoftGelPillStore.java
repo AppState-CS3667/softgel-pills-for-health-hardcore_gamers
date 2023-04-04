@@ -142,6 +142,7 @@ public class SoftGelPillStore {
                 System.out.print("Please enter a valid age.");
                 input.nextLine();
             }
+            loop = false;
         }
 
         logIn(name, age);
