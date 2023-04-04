@@ -24,35 +24,42 @@ public class GelCapTest {
             SOLUTION, ACTIVE);
 
     }
+    //Simple test to make sure that name is correct
     @Test
     public void testName() {
         assertEquals(NAME, gc.getName());
     }
+    //Simple test to make sure that strength is correct
     @Test
     public void testStrength() {
         assertEquals(STRENGTH, gc.getStrength());
     }
+    //Simple test to make sure that color is correct
     @Test
     public void testColor() {
         assertEquals(COLOR, gc.getColor());
     }
+    //Simple test to make sure that size is correct
     @Test
     public void testSize() {
         assertEquals(SIZE, gc.getSize());
     }
+    //Simple test to make sure that casing is correct
     @Test
     public void testCasing() {
         assertEquals(CASING, gc.getCasing());
     }
+    //Simple test to make sure that solution is correct
     @Test
     public void testSolution() {
         assertEquals(SOLUTION, gc.getSolution());
     }
+    //Simple test to make sure that active is correct
     @Test
     public void testActive() {
         assertEquals(ACTIVE, gc.getActive());
     }
-
+    // Private Helper Class
     private class GelCapMock extends GelCap {
         public GelCapMock(String name, double strength,
 
