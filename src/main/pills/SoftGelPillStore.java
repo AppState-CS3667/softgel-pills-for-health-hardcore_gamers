@@ -194,6 +194,7 @@ public class SoftGelPillStore {
     
                     if (yn == "y") {
                         loop = false;
+                        continue;
                     }
                     else {
                         return false;
