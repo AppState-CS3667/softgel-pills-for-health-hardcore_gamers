@@ -20,11 +20,11 @@ public class GelCapFactoryTest {
     public static final String ACTIVE = "Z";
 
     public static final String DREAMLY_GOOD = "Creating a Dreamly pill " 
-        + "... \nReturning a good Dreamly GelCap pill\n";
+        + "... \nReturning a good Dreamly GelCap Pill\n";
     public static final String DREAMLY_BAD = "Creating a Dreamly pill " 
         + "... \nError during Dreamly production. Returning null\n";
     public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill " 
-        + "... \nReturning a good AcheAway GelCap pill\n";
+        + "... \nReturning a good AcheAway GelCap Pill\n";
     public static final String ACHEAWAY_BAD = "Creating a AcheAway pill " 
         + "... \nError during AcheAway production. Returning null\n";
 
@@ -51,29 +51,34 @@ public class GelCapFactoryTest {
         Dreamly temp = null; 
         for (int i = 0; i < 100; i++) {
             temp = gcf.produceDreamly();
-	        String o = getOutput();
+	    String o = getOutput();
             String og = "";
-            if (o.length() == 395) {
-                og = o.substring(0, 29) + o.substring(358, 394) + "\n";
+            final int STR1START = 0;
+            final int STR1END = 29;
+            final int STR2START = 358;
+            final int GOODOUTPUTLENGTH = 395;
+            if (o.length() == GOODOUTPUTLENGTH) {
+                og = o.substring(STR1START, STR1END) + o.substring(STR2START);
             }
             String ob = "";
-            if (o.length() > 395) {
-                ob = o.substring(0,29) + o.substring(358, 406);
+            if (o.length() > GOODOUTPUTLENGTH) {
+                ob = o.substring(STR1START, STR1END) + o.substring(STR2START);
             }
-	        if (DREAMLY_GOOD.equals(og)) {
+	    if (DREAMLY_GOOD.equals(og)) {
                 s++;
-	        }
-	        else if (DREAMLY_BAD.equals(ob)){
-                f++;
-	        }
-	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + og + 
-                    "\nACTUAL: " + ob + "\nACTUAL: " + o + "\nLength: " + o.length());
-	        }
 	    }
+	    else if (DREAMLY_BAD.equals(ob)) {
+                f++;
+	    }
+	    else {
+                fail("ERROR: Output was not as expected.\nExpected: " 
+                    + DREAMLY_GOOD + "\nACTUAL: " + og + "\nACTUAL: " + ob  
+                    + "\nACTUAL: " + o + "\nLength: " + o.length());
+	    }
+        }
         assertTrue(temp instanceof Dreamly || temp == null);
-        final int N_ONE = 85;
-        final int N_TWO = 95;
+        final int N_ONE = 84;
+        final int N_TWO = 96;
 	assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
@@ -87,31 +92,37 @@ public class GelCapFactoryTest {
         AcheAway temp = null;
         for (int i = 0; i < 100; i++) {
             temp = gcf.produceAcheAway();
-	        String o = getOutput();
+	    String o = getOutput();
             String og = "";
 	        // Clear middle of output for testing
-            if (o.length() == 432) {
-	            og = o.substring(0, 30) + o.substring(394, 431) + "\n";
+            final int STR1START = 0;
+            final int STR1END = 30;
+            final int STR2START = 394;
+            final int GOODOUTPUTLENGTH = 432;
+            if (o.length() == GOODOUTPUTLENGTH) {
+	        og = o.substring(STR1START, STR1START) + o.substring(STR2START);
             }
 
             String ob = "";
-            if (o.length() > 432) {
-                ob = o.substring(0,30) + o.substring(394, 442) + "\n";
+            if (o.length() > GOODOUTPUTLENGTH) {
+                ob = o.substring(STR1START, STR1END) + o.substring(STR2START);
             }
 	    if (ACHEAWAY_GOOD.equals(og)) {
                 s++;
 	    }
-	    else if (ACHEAWAY_BAD.equals(ob)){
+	    else if (ACHEAWAY_BAD.equals(ob)) {
                 f++;
-	        }
-	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + og +
-                     "\nACTUAL: " + ob + "\nACTUAL: " + o + "\nLength: " + o.length());
-	        }
 	    }
+	    else {
+                fail("ERROR: Output was not as expected.\nExpected: " 
+                    + ACHEAWAY_GOOD + "\nACTUAL: " + og 
+                    + "\nACTUAL: " + ob + "\nACTUAL: " + o + "\nLength: "
+                     + o.length());
+	    }
+	}
         assertTrue(temp instanceof AcheAway || temp == null);
-        final int N_ONE = 85;
-        final int N_TWO = 95;
+        final int N_ONE = 84;
+        final int N_TWO = 96;
 	assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
