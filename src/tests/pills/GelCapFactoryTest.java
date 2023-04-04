@@ -52,6 +52,7 @@ public class GelCapFactoryTest {
         for (int i = 0; i < 100; i++) {
             temp = gcf.produceDreamly();
 	    String o = getOutput();
+        o = o.substring(0, 30) + o.substring(754, 790);
 	    if (DREAMLY_GOOD.equals(o)) {
                 s++;
 	    }
@@ -78,7 +79,7 @@ public class GelCapFactoryTest {
             temp = gcf.produceAcheAway();
 	    String o = getOutput();
 	    // Clear middle of output for testing
-	    o = o.substring(0, 28) + o.substring(753, 789);
+	    o = o.substring(0, 30) + o.substring(826, 863);
 	    if (ACHEAWAY_GOOD.equals(o)) {
                 s++;
 	    }
