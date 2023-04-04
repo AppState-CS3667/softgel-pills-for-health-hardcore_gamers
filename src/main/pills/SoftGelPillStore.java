@@ -34,7 +34,8 @@ public class SoftGelPillStore {
 
     public GelCap[] checkOut() {
         if (isLoggedIn == false || currentOrder == null) {
-            System.out.print("You need to log in and order before you can checkout\n");
+            System.out.print("You need to log in and" 
+                + "order before you can checkout\n");
             return null;
         }
         else {
@@ -55,14 +56,16 @@ public class SoftGelPillStore {
             return;
         }
         else {
-            System.out.println("Hello " + customerName + ". What would you like to order?\n");
+            System.out.println("Hello " + customerName 
+                +  ". What would you like to order?\n");
         }
 
         boolean loop = true;
         int choice;
         while (loop) {
             try {
-                System.out.print("Options:\n 1) Dreamly\n 2) AcheAway\n 3) Cancel\n");
+                System.out.print("Options:\n 1) " 
+                    + "Dreamly\n 2) AcheAway\n 3) Cancel\n");
                 choice = input.nextInt();
 
                 if (choice == 1) {
@@ -110,8 +113,8 @@ public class SoftGelPillStore {
     public void logIn(String name, int age) {
         customerName = name;
         customerAge = age;
-
-        if (customerAge < 18) {
+        final int ADULTAGE = 18;
+        if (customerAge < ADULTAGE) {
             factory = new ChildGelCapFactory();
         }
         else {
@@ -132,7 +135,9 @@ public class SoftGelPillStore {
             String yn;
             while (loop) {
                 try {
-                    System.out.print("You have an order that you have not checked out. Are you sure you want to log out? (y/N)");
+                    System.out.print("You have an order that you have not " 
+                        + "checked out. Are you sure you"
+                        + " want to log out? (y/N)");
                     yn = input.nextLine();
     
                     if (yn == "y") {

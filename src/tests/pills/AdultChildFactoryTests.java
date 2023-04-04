@@ -36,7 +36,7 @@ public class AdultChildFactoryTests {
     private PrintStream oldOut;
 
     @BeforeEach
-    public void BeforeEach() {
+    public void beforeEach() {
         agcf = new AdultGelCapFactory();
         cgcf = new ChildGelCapFactory();
         this.oldOut = System.out;

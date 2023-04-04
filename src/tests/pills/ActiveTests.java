@@ -42,7 +42,8 @@ public class ActiveTests {
 
     @Test
     public void testAcetaminophenGenerator() {
-        assertEquals(ACETAMINOPHEN_RETURN, aceActive.generateActive(TEST_AMOUNT));
+        assertEquals(ACETAMINOPHEN_RETURN, 
+            aceActive.generateActive(TEST_AMOUNT));
         assertEquals(ACETAMINOPHEN_PRINT, getOutput());
     }
 

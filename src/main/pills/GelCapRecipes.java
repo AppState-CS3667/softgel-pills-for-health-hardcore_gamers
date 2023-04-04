@@ -35,7 +35,8 @@ public class GelCapRecipes {
     }
 
     /*
-     * puts Dreamly and zolpidem active, AcheAway and acetaminophen active in hashmap
+     * puts Dreamly and zolpidem active, 
+     * AcheAway and acetaminophen active in hashmap
      * returns actives hashmap.
      */
     private static HashMap<String, ActiveGenerator> getActives() {

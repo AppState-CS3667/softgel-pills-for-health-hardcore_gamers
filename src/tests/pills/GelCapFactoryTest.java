@@ -1,6 +1,6 @@
 package pills;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
@@ -19,14 +19,14 @@ public class GelCapFactoryTest {
     public static final String SOLUTION = "Y";
     public static final String ACTIVE = "Z";
 
-    public static final String DREAMLY_GOOD = "Creating a Dreamly pill ... \nReturning a good Dreamly"
-        + " GelCap Pill\n";
-    public static final String DREAMLY_BAD = "Creating a Dreamly pill ... \nError during Dreamly"
-        + " production. Returning null\n";
-    public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill ... \nReturning a good AcheAway"
-        + " GelCap Pill\n";
-    public static final String ACHEAWAY_BAD = "Creating a AcheAway pill ... \nError during AcheAway"
-        + " production. Returning null\n";
+    public static final String DREAMLY_GOOD = "Creating a Dreamly pill " 
+        + "... \nReturning a good Dreamly GelCap pill\n";
+    public static final String DREAMLY_BAD = "Creating a Dreamly pill " 
+        + "... \nError during Dreamly production. Returning null\n";
+    public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill " 
+        + "... \nReturning a good AcheAway GelCap pill\n";
+    public static final String ACHEAWAY_BAD = "Creating a AcheAway pill " 
+        + "... \nError during AcheAway production. Returning null\n";
 
     // field to store the new output location
     private GelCapFactory gcf;
@@ -72,7 +72,9 @@ public class GelCapFactoryTest {
 	        }
 	    }
         assertTrue(temp instanceof Dreamly || temp == null);
-	assertTrue(s >= 85 && s <= 95);
+        final int N_ONE = 85;
+        final int N_TWO = 95;
+	assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
     @Test
@@ -108,7 +110,9 @@ public class GelCapFactoryTest {
 	        }
 	    }
         assertTrue(temp instanceof AcheAway || temp == null);
-	assertTrue(s >= 85 && s <= 95);
+        final int N_ONE = 85;
+        final int N_TWO = 95;
+	assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
     @AfterEach
@@ -124,14 +128,18 @@ public class GelCapFactoryTest {
     }
 
     private class GelCapFactoryMock extends GelCapFactory {
-        protected Dreamly constructDreamly(String casing, String solution, String active) {
+        protected Dreamly constructDreamly(String casing,
+            String solution, String active) {
 	    System.out.print("constructDreamly called.");
-	    return new DreamlyMock(STRENGTH, SIZE, COLOR, SOLUTION, CASING, ACTIVE);
+	    return new DreamlyMock(STRENGTH, SIZE, COLOR,
+            SOLUTION, CASING, ACTIVE);
         }
 
-        protected AcheAway constructAcheAway(String casing, String solution, String active) {
+        protected AcheAway constructAcheAway(String casing,
+            String solution, String active) {
 	    System.out.print("constructAcheAway called.");
-	    return new AcheAwayMock(STRENGTH, SIZE, COLOR, SOLUTION, CASING, ACTIVE);
+	    return new AcheAwayMock(STRENGTH, SIZE, COLOR,
+            SOLUTION, CASING, ACTIVE);
         }
 
         protected double getDreamlyStrength() {
