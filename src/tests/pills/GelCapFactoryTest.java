@@ -52,10 +52,10 @@ public class GelCapFactoryTest {
         for (int i = 0; i < 100; i++) {
             temp = gcf.produceDreamly();
 	        String o = getOutput();
-            String og = o.substring(0, 30) + o.substring(754, 789);
+            String og = o.substring(0, 29) + o.substring(753, 789);
             String ob = "";
             if (o.length() > 790) {
-                ob = o.substring(0,30) + o.substring(754, 801);
+                ob = o.substring(0,29) + o.substring(753, 801);
             }
 	        if (DREAMLY_GOOD.equals(og)) {
                 s++;
@@ -64,7 +64,7 @@ public class GelCapFactoryTest {
                 f++;
 	        }
 	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
+                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + og + "\nLength: " + o.length());
 	        }
 	    }
         assertTrue(temp instanceof Dreamly || temp == null);
@@ -95,7 +95,7 @@ public class GelCapFactoryTest {
                 f++;
 	        }
 	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
+                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + og + "\nLength: " + o.length());
 	        }
 	    }
         assertTrue(temp instanceof AcheAway || temp == null);
