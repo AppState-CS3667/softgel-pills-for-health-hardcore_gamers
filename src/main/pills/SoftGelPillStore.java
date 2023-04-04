@@ -73,9 +73,11 @@ public class SoftGelPillStore {
         currentOrder.toString();
 
         Object[] orderarr = currentOrder.toArray();
+        GelCap[] gcOrderArr = new GelCap[orderarr.length];
+        System.arraycopy(orderarr, 0, gcOrderArr, 0, gcOrderArr.length);
         currentOrder.clear();
 
-        return (GelCap[]) orderarr;
+        return gcOrderArr;
     }
 
     /*
