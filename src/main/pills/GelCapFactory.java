@@ -1,6 +1,8 @@
 package pills;
 public abstract class GelCapFactory {
 
+    public final double qp = 0.9;
+
     public final Dreamly produceDreamly() {
         System.out.print("Creating a Dreamly pill ... \n");
         Dreamly dp = 
@@ -25,25 +27,28 @@ public abstract class GelCapFactory {
 					GelCapRecipes.SOLUTIONS.get("AcheAway").generateSolution(),
 					GelCapRecipes.ACTIVES.get("AcheAway").generateActive(
                         getAcheAwayStrength()));
-	if (qualityCheck()){
-	System.out.print("Returning a good AcheAway GelCap Pill\n");
-	return ap;
-	}
-	else {
-		System.out.print("Error during AcheAway production. Returning null\n");
-		return null;
-	}
+
+        if (qualityCheck()) {
+	    System.out.print("Returning a good AcheAway GelCap Pill\n");
+	    return ap;
+        }
+        else {
+            System.out.print(
+				"Error during AcheAway production. Returning null\n");
+            return null;
+        }
+
     }
 
     private final boolean qualityCheck() {
 	double check = Math.random();
-	if (check <= 0.9){
-		System.out.print("quality check passed\n");
-		return true;
+	if (check <= qp) {
+	    System.out.print("quality check passed\n");
+	    return true;
 	}
 	else {
-	System.out.print("quality check failed\n");
-	return false;
+	    System.out.print("quality check failed\n");
+	    return false;
 	}
     }
 
