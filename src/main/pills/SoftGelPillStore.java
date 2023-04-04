@@ -193,7 +193,7 @@ public class SoftGelPillStore {
                     yn = input.nextLine();
     
                     if (yn == "y") {
-                        continue;
+                        loop = false;
                     }
                     else {
                         return false;
