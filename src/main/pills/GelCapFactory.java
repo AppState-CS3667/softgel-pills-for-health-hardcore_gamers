@@ -27,6 +27,7 @@ public abstract class GelCapFactory {
 					GelCapRecipes.SOLUTIONS.get("AcheAway").generateSolution(),
 					GelCapRecipes.ACTIVES.get("AcheAway").generateActive(
                         getAcheAwayStrength()));
+
         if (qualityCheck()) {
 	    System.out.print("Returning a good AcheAway GelCap Pill\n");
 	    return ap;
@@ -36,6 +37,7 @@ public abstract class GelCapFactory {
 				"Error during AcheAway production. Returning null\n");
             return null;
         }
+
     }
 
     private final boolean qualityCheck() {
@@ -53,7 +55,7 @@ public abstract class GelCapFactory {
     protected abstract Dreamly constructDreamly(String casing, 
 										String solution, String active);
 
-    protected abstract Dreamly constructAcheAway(String casing, 
+    protected abstract AcheAway constructAcheAway(String casing, 
 										String solution, String active);
 
     protected abstract double getDreamlyStrength();
