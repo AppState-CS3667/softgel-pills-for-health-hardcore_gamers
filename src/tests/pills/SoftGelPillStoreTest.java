@@ -4,9 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
-import java.io.ByteArrayInputStream;		// import for new input location
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
@@ -22,14 +21,14 @@ public class SoftGelPillStoreTest {
     private ByteArrayInputStream bais;
 
     @BeforeEach
-    public void beforeEach() {			// runs before every test
-        this.storeV2 = new SoftGelPillStore();		// initialize object we are testing
-        this.oldIn = System.in;			// save original System.in
+    public void beforeEach() {			
+        this.storeV2 = new SoftGelPillStore();
+        this.oldIn = System.in;	
     }
 
     @AfterEach
-    public void afterEach() {			// runs after every test
-        System.setIn(oldIn);			// resets System.in to the keyboard
+    public void afterEach() {			
+        System.setIn(oldIn);
     }
 
     @Test
@@ -72,22 +71,22 @@ public class SoftGelPillStoreTest {
         assertEquals(OUTPUT, store.getOutput());
     }
 
+
     @Test
-    public void noLogOutWithoutLogin()
-    {
+    public void noLogOutWithoutLogin() {
         assertFalse(storeV2.logOut());
     }
 
     @Test
-    public void noCheckOutWithoutLogin()
-    {
+    public void noCheckOutWithoutLogin() {
         assertNull(storeV2.checkOut());
     }
-
     @Test
-    public void successfulLogOut()
-    {
-        storeV2.logIn("Mr. X", 27);
+    public void successfulLogOut() {
+        String n = "Mr. X";
+        final int A = 7;
+        storeV2.logIn(n, A);
         assertTrue(storeV2.logOut());
     }
+    
 }
