@@ -1,11 +1,11 @@
 package pills;
 
 /*
- * AdultGelCapFactory class
+ * AdultGelCapFactory class.
  */
 public class AdultGelCapFactory extends GelCapFactory {
 
-    /**
+    /*
      * constructDreamly method
      * 
      * returns a new Dreamly pill with specified casing, solution, active
@@ -19,7 +19,7 @@ public class AdultGelCapFactory extends GelCapFactory {
         System.out.print("Constructing adult version of Dreamly\n");
         return new AdultDreamly(casing, solution, active);
     }
-    /**
+    /*
      * constructAcheAway method
      * 
      * returns a new AcheAway pill with specified casing, solution, active
@@ -34,14 +34,14 @@ public class AdultGelCapFactory extends GelCapFactory {
         return new AdultAcheAway(casing, solution, active);
     }
 
-    /**
+    /*
      * getter for Dreamly strength
      */
     protected double getDreamlyStrength() {
         return AdultDreamly.STRENGTH;
     }
 
-    /**
+    /*
      * getter for AcheAway strength
      */
     protected double getAcheAwayStrength() {
