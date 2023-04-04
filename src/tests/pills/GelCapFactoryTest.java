@@ -64,7 +64,7 @@ public class GelCapFactoryTest {
                 f++;
 	        }
 	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
+                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + og + "\nLength: " + o.length());
 	        }
 	    }
         assertTrue(temp instanceof Dreamly || temp == null);
@@ -95,7 +95,7 @@ public class GelCapFactoryTest {
                 f++;
 	        }
 	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
+                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + og + "\nLength: " + o.length());
 	        }
 	    }
         assertTrue(temp instanceof AcheAway || temp == null);
