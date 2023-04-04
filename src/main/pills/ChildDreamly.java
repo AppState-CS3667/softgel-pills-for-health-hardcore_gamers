@@ -1,5 +1,9 @@
 package pills;
 
+/*
+ * GelCap Class -
+ * hardcore_gamers
+ */
 public class ChildDreamly extends Dreamly {
     public static final double STRENGTH = 1.25;
     public static final double SIZE = 4.5;
