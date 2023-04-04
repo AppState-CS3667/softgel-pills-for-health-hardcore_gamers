@@ -48,7 +48,7 @@ public class GelCapFactoryTest {
 	// count of failures
 	int f = 0;
 
-        Dreamly temp = gcf.produceDreamly();
+        Dreamly temp = null; 
         for (int i = 0; i < 100; i++) {
             temp = gcf.produceDreamly();
 	        String o = getOutput();
@@ -64,11 +64,11 @@ public class GelCapFactoryTest {
                 f++;
 	        }
 	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + og + "\nLength: " + o.length());
+                fail("ERROR: Output was not as expected.\nExpected: " + DREAMLY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
 	        }
 	    }
         assertTrue(temp instanceof Dreamly || temp == null);
-	    assertTrue(s >= 85 && s <= 95);
+	assertTrue(s >= 85 && s <= 95);
     }
 
     @Test
@@ -78,28 +78,28 @@ public class GelCapFactoryTest {
 	// count of failures
 	int f = 0;
 
-        AcheAway temp = gcf.produceAcheAway();
+        AcheAway temp = null;
         for (int i = 0; i < 100; i++) {
             temp = gcf.produceAcheAway();
-	        String o = getOutput();
-	        // Clear middle of output for testing
-	        String og = o.substring(0, 30) + o.substring(826, 863);
+	    String o = getOutput();
+	    // Clear middle of output for testing
+	    String og = o.substring(0, 30) + o.substring(826, 863);
             String ob = "";
             if (o.length() > 864) {
                 ob = o.substring(0,30) + o.substring(826, 874);
             }
-	        if (ACHEAWAY_GOOD.equals(og)) {
+	    if (ACHEAWAY_GOOD.equals(og)) {
                 s++;
-	        }
-	        else if (ACHEAWAY_BAD.equals(ob)){
-                f++;
-	        }
-	        else {
-                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + og + "\nLength: " + o.length());
-	        }
 	    }
+	    else if (ACHEAWAY_BAD.equals(ob)){
+                f++;
+	    }
+	    else {
+                fail("ERROR: Output was not as expected.\nExpected: " + ACHEAWAY_GOOD + "\nACTUAL: " + o + "\nLength: " + o.length());
+	    }
+	}
         assertTrue(temp instanceof AcheAway || temp == null);
-	    assertTrue(s >= 85 && s <= 95);
+	assertTrue(s >= 85 && s <= 95);
     }
 
     @AfterEach
@@ -109,9 +109,9 @@ public class GelCapFactoryTest {
 
     private String getOutput() {
         System.out.flush();
-	    String output = baos.toString().replaceAll("\r", "");
-	    baos.reset();
-	    return output;
+	String output = baos.toString().replaceAll("\r", "");
+	baos.reset();
+	return output;
     }
 
     private class GelCapFactoryMock extends GelCapFactory {
