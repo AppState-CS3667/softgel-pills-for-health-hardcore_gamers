@@ -1,8 +1,17 @@
 package pills;
+/*
+	Class that produces AcheAway and Dreamly pills
+	Abstract with two child classes
+*/
 public abstract class GelCapFactory {
 
+    //probability a quality check passes
     public final double qp = 0.9;
 
+    /*
+        constructs a Dreamly pill and performs a
+		quality check on said pill
+	*/
     public final Dreamly produceDreamly() {
         System.out.print("Creating a Dreamly pill ... \n");
         Dreamly dp = 
@@ -20,6 +29,10 @@ public abstract class GelCapFactory {
         }
     }
 
+    /*
+        constructs an AcheAway pill and performs a
+		quality check on said pill
+	*/
     public final AcheAway produceAcheAway() {
         System.out.print("Creating a AcheAway pill ... \n");
         AcheAway ap = constructAcheAway(GelCapRecipes.CASINGS.get(
@@ -38,6 +51,10 @@ public abstract class GelCapFactory {
         }
     }
 
+    /*
+        performs a quality check on a pill.
+		quality check has a 90% chance of passing
+	*/
     private final boolean qualityCheck() {
 	double check = Math.random();
 	if (check <= qp) {
@@ -49,15 +66,15 @@ public abstract class GelCapFactory {
 	    return false;
 	}
     }
-
+    //abstract method to create a Dreamly pill
     protected abstract Dreamly constructDreamly(String casing, 
 										String solution, String active);
-
+    //abstract method to create an AcheAway pill
     protected abstract Dreamly constructAcheAway(String casing, 
 										String solution, String active);
-
+    //Helper method that returns a Dreamly pills strength
     protected abstract double getDreamlyStrength();
-
+    //Helper method that returns a Dreamly pills strength
     protected abstract double getAcheAwayStrength();
 }
 
