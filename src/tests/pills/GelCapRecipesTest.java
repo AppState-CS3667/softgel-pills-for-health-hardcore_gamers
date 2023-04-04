@@ -17,7 +17,7 @@ public class GelCapRecipesTest {
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
     }
-
+    // Test that GelCapRecipes Casings are correct
     @Test
     public void testCasings() {
         assertTrue(GelCapRecipes.CASINGS.get("Dreamly")
@@ -25,7 +25,7 @@ public class GelCapRecipesTest {
         assertTrue(GelCapRecipes.CASINGS.get("AcheAway")
             instanceof GelatinCasing);
     }
-
+    // Test that GelCapRecipes Solutions are correct
     @Test
     public void testSolutions() {
         assertTrue(GelCapRecipes.SOLUTIONS.get("Dreamly")
@@ -33,7 +33,7 @@ public class GelCapRecipesTest {
         assertTrue(GelCapRecipes.SOLUTIONS.get("AcheAway")
             instanceof SalineSolution);
     }
-
+    // Test that GelCapRecipes Actives are correct
     @Test
     public void testActives() {
         assertTrue(GelCapRecipes.ACTIVES.get("Dreamly")
