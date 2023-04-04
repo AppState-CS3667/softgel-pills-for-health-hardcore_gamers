@@ -70,7 +70,7 @@ public class SoftGelPillStore {
             System.out.print("Thanks for shopping!\nHere is your order\n");
         }
 
-        currentOrder.toString();
+        System.out.println(currentOrder.toString());
 
         Object[] orderarr = currentOrder.toArray();
         GelCap[] gcOrderArr = new GelCap[orderarr.length];
@@ -139,12 +139,12 @@ public class SoftGelPillStore {
             try {
                 System.out.println("What is your age?");
                 age = input.nextInt();
+                loop = false;
             }
             catch (InputMismatchException e) {
-                System.out.print("Please enter a valid age.");
+                System.out.println("Please enter a valid age.");
                 input.nextLine();
             }
-            loop = false;
         }
 
         logIn(name, age);
