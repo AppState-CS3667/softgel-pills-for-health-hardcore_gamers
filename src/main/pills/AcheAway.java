@@ -1,7 +1,7 @@
 package pills;
 
 public abstract class AcheAway extends GelCap {
-	/*
+	/**
 	 * Constructor for the AcheAway class that calls the GelCaps constructor.
 	 * 
 	 * @param strength pill strength
