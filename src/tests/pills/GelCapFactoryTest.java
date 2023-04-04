@@ -64,7 +64,8 @@ public class GelCapFactoryTest {
 	    // o = String for output
 	    String o = getOutput();
 
-	    // og = String for good output (output if it returns a good Dreamly pill)  
+	    // og = String for good output 
+        //(output if it returns a good Dreamly pill)  
             String og = "";
 
 	    // Constants for the stringsubset methods to trim the output
@@ -130,7 +131,8 @@ public class GelCapFactoryTest {
 	    // o = String for output
 	    String o = getOutput();
 
-	    // og = String for good output (output if it returns a good Dreamly pill)  
+	    // og = String for good output 
+        //(output if it returns a good Dreamly pill)  
             String og = "";
 
 	    // Constants for the stringsubset methods to trim the output
@@ -204,7 +206,13 @@ public class GelCapFactoryTest {
     private class GelCapFactoryMock extends GelCapFactory {
 
   /**
-	 * Constructs a new Dreamly mock object
+	 * Constructs a new Dreamly mock object.
+     * 
+     * @param casing AcheAway casing
+     * @param solution AcheAway solution
+     * @param active ScheAway active
+     * 
+     * @return DreamlyMock Dreamly pill
 	 */
 
         protected Dreamly constructDreamly(String casing,
@@ -216,7 +224,13 @@ public class GelCapFactoryTest {
 
 
   /**
-	 * Constructs a new AcheAway mock object
+	 * Constructs a new AcheAway mock object.
+     * 
+     * @param casing AcheAway casing
+     * @param solution AcheAway solution
+     * @param active ScheAway active
+     * 
+     * @return DreamlyMock Dreamly pill
 	 */
         protected AcheAway constructAcheAway(String casing,
             String solution, String active) {
@@ -226,7 +240,7 @@ public class GelCapFactoryTest {
         }
 
         /*
-	 * gets the strength of a Dreamly pill
+	 * gets the strength of a Dreamly pill.
 	 *
 	 * for testing purposes this method returns 0
 	 */
@@ -236,7 +250,7 @@ public class GelCapFactoryTest {
 	}
 
         /*
-	 * gets the strength of a AcheAway pill
+	 * gets the strength of a AcheAway pill.
 	 *
 	 * for testing purposes this method returns 0
 	 */
