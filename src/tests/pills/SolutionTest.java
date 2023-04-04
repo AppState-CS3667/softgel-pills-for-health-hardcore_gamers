@@ -25,6 +25,10 @@ public class SolutionTest {
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
 
+    /*
+        lifecycle hook that sets up the solution
+        objects and redirects System.out
+    */
     @BeforeEach
     public void beforeEach() {
         this.ss = new SalineSolution();
@@ -35,23 +39,41 @@ public class SolutionTest {
         System.setOut(new PrintStream(baos));
     }
 
+    /*
+        sets System to out
+    */
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
     }
 
+    /*
+        tests the return value from
+        generateSolution and the print
+        statement
+    */
     @Test
     public void testSaline() {
         assertEquals(TEST_SALINE, ss.generateSolution());
         assertEquals(TEST_SALINE_OUT, getOutput());
     }
 
+    /*
+        tests the return value from
+        generateSolution and the print
+        statement
+    */
     @Test
     public void testOil() {
         assertEquals(TEST_OIL, os.generateSolution());
         assertEquals(TEST_OIL_OUT, getOutput());
     }
 
+    /*
+        displays the print statement
+        so it can be compared in testOil
+        and testSaline
+    */
     private String getOutput() {
         System.out.flush();
         return baos.toString().replaceAll("\r", "");
