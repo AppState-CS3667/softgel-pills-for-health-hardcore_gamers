@@ -20,20 +20,26 @@ public class GelCapRecipesTest {
 
     @Test
     public void testCasings() {
-        assertTrue(GelCapRecipes.CASINGS.get("Dreamly") instanceof PlasticizerCasing);
-        assertTrue(GelCapRecipes.CASINGS.get("AcheAway") instanceof GelatinCasing);
+        assertTrue(GelCapRecipes.CASINGS.get("Dreamly")
+            instanceof PlasticizerCasing);
+        assertTrue(GelCapRecipes.CASINGS.get("AcheAway")
+            instanceof GelatinCasing);
     }
 
     @Test
     public void testSolutions() {
-        assertTrue(GelCapRecipes.SOLUTIONS.get("Dreamly") instanceof OilSolution);
-        assertTrue(GelCapRecipes.SOLUTIONS.get("AcheAway") instanceof SalineSolution);
+        assertTrue(GelCapRecipes.SOLUTIONS.get("Dreamly")
+            instanceof OilSolution);
+        assertTrue(GelCapRecipes.SOLUTIONS.get("AcheAway")
+            instanceof SalineSolution);
     }
 
     @Test
     public void testActives() {
-        assertTrue(GelCapRecipes.ACTIVES.get("Dreamly") instanceof ZolpidemActive);
-        assertTrue(GelCapRecipes.ACTIVES.get("AcheAway") instanceof AcetaminophenActive);
+        assertTrue(GelCapRecipes.ACTIVES.get("Dreamly")
+            instanceof ZolpidemActive);
+        assertTrue(GelCapRecipes.ACTIVES.get("AcheAway") 
+            instanceof AcetaminophenActive);
     }
 
     @AfterEach
