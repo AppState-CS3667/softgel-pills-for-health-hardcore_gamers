@@ -1,0 +1,29 @@
+Sprint 4 Planning:
+
+Backlog:
+● Create the GelCapFactory class
+● Create tests for GelCapFactory
+● Create the Adult and Child factory classes
+● Create tests for the Adult and Child factories
+● Create the Store
+● Create tests for the store
+
+Subteams:
+    Subteam A: Shawn Logan 
+    Subteam B: Aidan, Savannah, Christian
+
+Backlog for Team A:
+● Create the GelCapFactory class
+● Create the Adult and Child factory classes
+● Create tests for the store
+
+Backlog for Team B:
+● Create the Store
+● Create tests for the Adult and Child factories
+● Create tests for GelCapFactory
+
+Review:
+At this point we have completed the UML and are ready
+to move on to Part 3 of the project. The code is updated and works as expected.
+We are happy with the code we have created and are excited to share it with our client.
+Next sprint we will focus more on teamwork.

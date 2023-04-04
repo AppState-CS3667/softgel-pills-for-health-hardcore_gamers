@@ -22,16 +22,22 @@ public class AcheAwayTest {
     private ChildAcheAway caa;
     private AdultAcheAway aaa;
  
+    /*
+     * initializes Adult, Child, and AcheAway mock by calling constructors.
+     */
     @BeforeEach
     public void beforeEach() {
-        this.ac = new AcheAway(TEST_STRENGTH, TEST_SIZE, TEST_COLOR,
+        this.ac = new AcheAwayMock(TEST_STRENGTH, TEST_SIZE, TEST_COLOR,
                                TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
-        this.caa = new ChildAcheAway(CHILD_STRENGTH, CHILD_SIZE,
-                                     CHILD_COLOR);
-        this.aaa = new AdultAcheAway(ADULT_STRENGTH, ADULT_SIZE,
-                                     ADULT_COLOR);
+        this.caa = new ChildAcheAway(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
+        this.aaa = new AdultAcheAway(TEST_CASING, TEST_SOLUTION, TEST_ACTIVE);
     }
 
+    /*
+     * Mock strength is 500.00
+     * Adult strength is 825.00
+     * Child strength is 415.00
+     */
     @Test
     public void testStength() {
         assertEquals(TEST_STRENGTH, ac.getStrength());
@@ -39,6 +45,11 @@ public class AcheAwayTest {
         assertEquals(ADULT_STRENGTH, aaa.getStrength());
     }
 
+    /*
+     * Mock size is 5.00
+     * Adult size is 8.25
+     * Child size is 3.25
+     */
     @Test
     public void testSize() {
         assertEquals(TEST_SIZE, ac.getSize());
@@ -46,6 +57,11 @@ public class AcheAwayTest {
         assertEquals(ADULT_SIZE, aaa.getSize());
     }
 
+    /*
+     * Mock color is red
+     * Adult color is white
+     * Child color is cyan
+     */
     @Test
     public void testColor() {
         assertEquals(TEST_COLOR, ac.getColor());
@@ -53,26 +69,27 @@ public class AcheAwayTest {
         assertEquals(ADULT_COLOR, aaa.getColor());
     }
 
+    /*
+     * casing is gelatin
+     */
     @Test
     public void testCasing() {
         assertEquals(TEST_CASING, ac.getCasing());
     }
 
+    /*
+     * solution is saline
+     */
     @Test
     public void testSolution() {
         assertEquals(TEST_SOLUTION, ac.getSolution());
     }
 
+    /*
+     * acive is acetaminophen
+     */
     @Test
     public void testActive() {
         assertEquals(TEST_ACTIVE, ac.getActive());
-    }
-
-    private class AcheAwayMock extends AcheAway {
-        public AcheAwayMock(double strength, double size,
-                        String color, String casing,
-                        String solution, String active) {
-            super(strength, size, color, casing, solution, active);
-        }
     }
 }

@@ -25,3 +25,8 @@ Backlog for Team B:
 ● Create tests for the two types of casing generators
 ● Create the ActiveGenerator interface and the two types of Active Generators
 ● Create tests for GelCapRecipes
+
+Review:
+At this point we have completed all of the small aspects of the UML and are ready
+to move on to the Store and Factory classes. The code is updated and works as expected.
+We are happy with the code we have created and are excited to share it with our client.

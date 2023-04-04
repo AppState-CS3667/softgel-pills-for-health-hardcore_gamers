@@ -8,9 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
 public class SolutionTest {
-    public static final String TEST_OIL = "oil";
-    public static final String TEST_SALINE = "saline";
-    public static final String TEST_SALINE_OUT = 
+
+    private static final String TEST_OIL = "oil";
+    private static final String TEST_SALINE = "saline";
+    private static final String TEST_SALINE_OUT = 
+
                             "Mixing salt and water ... \n"
                             + "Verifying ratio ... \n"
                             + "Returning saline solution\n";
@@ -18,12 +20,15 @@ public class SolutionTest {
                             "Extracting pill-sized quantity of "
                             + "oil ... \n"
                             + "Returning oil solution\n";
+    private static SalineSolution ss;
+    private static OilSolution os;
 
     public SalineSolution ss;
     public OilSolution os;
 
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
+
 
     /*
         lifecycle hook that sets up the solution
