@@ -9,6 +9,12 @@ public abstract class AcheAway extends GelCap {
 	 * @param size pill size
 	 * 
 	 * @param color pill color
+	 * 
+	 * @param casing pill casing
+	 * 
+	 * @param solution pill solution
+	 * 
+	 * @param active pill active
 	 */
     public AcheAway(double strength, double size, String color,
 	                String casing, String solution, String active) {
