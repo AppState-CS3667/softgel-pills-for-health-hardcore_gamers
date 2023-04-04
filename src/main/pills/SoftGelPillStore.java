@@ -15,23 +15,51 @@ public class SoftGelPillStore {
     private int customerAge;
     private boolean isLoggedIn;
 
+    /*
+     * 2 arg constructor to get Scanner input and 
+     * Printstream output.
+     * 
+     * @param input Scanner input
+     * @param output Printstream output
+     */
     public SoftGelPillStore(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
     }
 
+    /*
+     * 1 arg constructor to set output from param
+     * and passes in new scanner for input.
+     * 
+     * @param output Printstream output
+     */
     public SoftGelPillStore(PrintStream output) {
         this(new Scanner(System.in), output);
     }
 
+    /*
+     * 1 arg constructor to set input from param
+     * and passes in new Printstream for output.
+     * 
+     * @param input Scanner input
+     */
     public SoftGelPillStore(Scanner input) {
         this(input, System.out);
     }
 
+    /*
+     * no arg constructor to pass to 2-arg constructor.
+     * passes in new Scanner and System.out.
+     */
     public SoftGelPillStore() {
         this(new Scanner(System.in), System.out);
     }
 
+    /*
+     * checks to make sure logged in. 
+     * if logged in print the order, converts to array
+     * and returns the array.
+     */
     public GelCap[] checkOut() {
         if (isLoggedIn == false || currentOrder == null) {
             System.out.print("You need to log in and" 
@@ -45,11 +73,18 @@ public class SoftGelPillStore {
         currentOrder.toString();
 
         Object[] orderarr = currentOrder.toArray();
+        GelCap[] gcOrderArr = new GelCap[orderarr.length];
+        System.arraycopy(orderarr, 0, gcOrderArr, 0, gcOrderArr.length);
         currentOrder.clear();
 
-        return (GelCap[]) orderarr;
+        return gcOrderArr;
     }
 
+    /*
+     * checks to make sure logged in. if logged in
+     * prints menu and checks to make sure user input
+     * is valid.
+     */
     public void order() {
         if (isLoggedIn == false) {
             System.out.print("You must log in before you can order.\n");
@@ -90,6 +125,10 @@ public class SoftGelPillStore {
         }
     }
 
+    /*
+     * asks user for name and age.
+     * once gets valid age passes to 2 arg log-in.
+     */
     public void logIn() {
         System.out.println("What is your name?");
         String name = input.nextLine();
@@ -105,11 +144,18 @@ public class SoftGelPillStore {
                 System.out.print("Please enter a valid age.");
                 input.nextLine();
             }
+            loop = false;
         }
 
         logIn(name, age);
     }
 
+    /*
+     * checks to see if age is less than 18.
+     * if less than 18 sets factory to child
+     * else sets factory to adult.
+     * sets logged in to true.
+     */
     public void logIn(String name, int age) {
         customerName = name;
         customerAge = age;
@@ -125,6 +171,12 @@ public class SoftGelPillStore {
         currentOrder = new ArrayList<GelCap>();
     }
 
+    /*
+     * checks to see if logged in first.
+     * if logged in and order still is not checked out
+     * asks for override. 
+     * clears order and resets all variables.
+     */
     public boolean logOut() {
         if (isLoggedIn == false) {
             System.out.print("You are not logged in.");
@@ -160,18 +212,38 @@ public class SoftGelPillStore {
         return true;
     }
 
+    /*
+     * sets output.
+     * 
+     * @param output PrintStream output
+     */
     public void setOutput(PrintStream output) {
         this.output = output;
     }
 
+    /*
+     * sets input.
+     * 
+     * @param input Scanner input
+     */
     public void setInput(Scanner input) {
         this.input = input;
     }
 
+    /*
+     * gets output.
+     * 
+     * @return output PrintStream output
+     */
     public PrintStream getOutput() {
         return output;
     }
 
+    /*
+     * gets input.
+     * 
+     * @return input Scanner input
+     */
     public Scanner getInput() {
         return input;
     }

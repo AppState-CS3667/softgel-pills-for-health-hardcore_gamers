@@ -1,5 +1,6 @@
 package pills;
 
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
@@ -24,6 +25,7 @@ public class GelCapFactoryTest {
         + "... \nError during Dreamly production. Returning null\n";
     public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill " 
         + "... \nReturning a good AcheAway GelCap Pill\n";
+
     public static final String ACHEAWAY_BAD = "Creating a AcheAway pill " 
         + "... \nError during AcheAway production. Returning null\n";
 
@@ -87,6 +89,7 @@ public class GelCapFactoryTest {
                 s++;
 	    }
 
+
 	    // if output is bad and equals expected output
 	    else if (DREAMLY_BAD.equals(ob)) {
                 f++;
@@ -106,7 +109,6 @@ public class GelCapFactoryTest {
         final int N_ONE = 84;
         final int N_TWO = 96;
 
-	// Test successes are in accepted range
 	assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
@@ -173,7 +175,6 @@ public class GelCapFactoryTest {
         final int N_ONE = 84;
         final int N_TWO = 96;
 
-	// Test successes are in accepted range
 	assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
@@ -202,9 +203,10 @@ public class GelCapFactoryTest {
      */
     private class GelCapFactoryMock extends GelCapFactory {
 
-        /*
+  /**
 	 * Constructs a new Dreamly mock object
 	 */
+
         protected Dreamly constructDreamly(String casing,
             String solution, String active) {
 	    System.out.print("constructDreamly called.");
@@ -212,7 +214,8 @@ public class GelCapFactoryTest {
             SOLUTION, CASING, ACTIVE);
         }
 
-        /*
+
+  /**
 	 * Constructs a new AcheAway mock object
 	 */
         protected AcheAway constructAcheAway(String casing,
