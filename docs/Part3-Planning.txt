@@ -1,0 +1,33 @@
+Part 3 Planning:
+- keep sprints to a week
+- keep subteams the same throughout
+
+Subteams:
+- Subteam A: Savannah, Aidan, Christian
+- Subteam B: Logan, Shawn
+
+Backlog:
+- Update GelCap
+- Update Dreamly
+- Update AcheAway
+- Update SoftGelPillStore
+- Update Child AcheAway
+- Update Child Dreamly
+- Update Adult AcheAway
+- Update Adult Dreamly
+- Create null Dreamly
+- Create null AcheAway
+- Update SolutionGenerator
+- Update ActiveGenerator
+- Update CasingGenerator
+- Update 6 Generator classes
+- Update GelCapRecipes
+- Update GelCapFactory
+- Update AdultGelCapFactory
+- Update ChildGelCapFactory
+- Update all tests
+- Create Inspector class
+- Create 3 Inspector subclasses
+- Test GelCapFactory Singleton
+- Test SoftGelPillStore
+- Create Demo
