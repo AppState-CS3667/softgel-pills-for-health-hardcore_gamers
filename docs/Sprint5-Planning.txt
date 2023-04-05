@@ -1,0 +1,22 @@
+Sprint 5 Planning:
+
+Subteams:
+- Subteam A: Savannah, Aidan, Christian
+- Subteam B: Logan, Shawn
+
+Backlog:
+- Subteam A:
+    - Update SoftGelPillStore
+    - Update GelCapFactory Tests
+    - Update GelCapRecipes
+    - Create GelCapRecipes Proxy
+    - Create Inspector class
+
+- Subteam B:
+    - Update SoftGelPillStore Test
+    - Update GelCapFactory
+    - Update Generators with Proxy
+        - Update SolutionGenerator
+        - Update ActiveGenerator
+        - Update CasingGenerator
+        - Update 6 Generator classes
