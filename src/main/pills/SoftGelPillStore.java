@@ -1,11 +1,13 @@
 package pills;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class SoftGelPillStore {
+public class SoftGelPillStore  {
 
     private GelCapFactory factory;
     private ArrayList<GelCap> currentOrder;
@@ -57,13 +59,28 @@ public class SoftGelPillStore {
 
     /*
      * checks to make sure logged in. 
+     * checks to make sure consistent.
+     * checks to make sure fail rate is not too big.
      * if logged in print the order, converts to array
      * and returns the array.
+     * 
+     * @return null if error
+     * @return gcOrderArr array of gel caps in the current order.
      */
     public GelCap[] checkOut() {
         if (isLoggedIn == false || currentOrder == null) {
             System.out.print("You need to log in and" 
                 + "order before you can checkout\n");
+            return null;
+        }
+        else if(consistentOrder() == false) 
+        {
+            System.out.print("Your order is not consistent\n");
+            return null;
+        }
+        else if(tooBigFailRate(FailureInspector.getFailRate()))
+        {
+            System.out.print("The fail rate on your order is too large\n");
             return null;
         }
         else {
@@ -247,6 +264,75 @@ public class SoftGelPillStore {
      */
     public Scanner getInput() {
         return input;
+    }
+
+    /*
+     * uses a strength inspector to calculate order strengths.
+     * 
+     * @return Dreamly order strength.
+     */
+    public double getDreamlyStrength(int orderNum)
+    {
+        //use a strength inspector to calc
+        return 0.0;
+    }
+
+    /*
+     * uses a strength inspector to calculate order strengths.
+     * 
+     * @return AcheAway order strength.
+     */
+    public double getAcheAwayStrength(int oderNum)
+    {
+        //use a strength inspector to calc
+        return 0.0;
+    }
+
+    /*
+     * prints the current order from the ArrayList.
+     */
+    public void printCurrentOrder()
+    {
+        System.out.println(currentOrder.toString());
+    }
+
+    /*
+     * checks the fail rate. 10 is the average. 15 is too
+     * large.
+     * 
+     * @return boolean true if order fail rate too large.
+     * @return boolean false if order fail rate ok.
+     */
+    private boolean tooBigFailRate(double failRate)
+    {
+        if (failRate >= 15)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    /*
+     * uses a FailureInspector to calculate and return the 
+     * current fail rate.
+     * 
+     * @return fail rate.
+     */
+    private double checkFailRate()
+    {
+        return 0.0;
+    }
+
+    /*
+     * uses a ConsistencyInspector to check if the current 
+     * order is consistent.
+     * 
+     * @return true if consistent.
+     * @return false if not consistent.
+     */
+    private boolean consistentOrder()
+    {
+        return true;
     }
 
 }
