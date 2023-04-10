@@ -1,4 +1,6 @@
 package pills;
+
+import java.rmi.RemoteException;
 /*
 	Class that produces AcheAway and Dreamly pills
 	Abstract with two child classes
@@ -14,18 +16,27 @@ public abstract class GelCapFactory {
 	*/
     public final Dreamly produceDreamly() {
         System.out.print("Creating a Dreamly pill ... \n");
-        Dreamly dp = 
-	    constructDreamly(GelCapRecipes.CASINGS.get("Dreamly").generateCasing(),
-			GelCapRecipes.SOLUTIONS.get("Dreamly").generateSolution(),
-			GelCapRecipes.ACTIVES.get("Dreamly").generateActive(
-			getDreamlyStrength()));
-	if (qualityCheck()) {
-	    System.out.print("Returning a good Dreamly GelCap Pill\n");
-	    return dp;
-	}
-	else {
-	    System.out.print("Error during Dreamly production. Returning null\n");
-	    return null;
+
+        try {
+            Dreamly dp = 
+	        constructDreamly(GelCapRecipes.CASINGS.get(
+                "Dreamly").generateCasing(),
+			    GelCapRecipes.SOLUTIONS.get("Dreamly").generateSolution(),
+			    GelCapRecipes.ACTIVES.get("Dreamly").generateActive(
+			    getDreamlyStrength()));
+
+            if (qualityCheck()) {
+                System.out.print("Returning a good Dreamly GelCap Pill\n");
+                return dp;
+            }
+            else {
+                System.out.print(
+                    "Error during Dreamly production. Returning null\n");
+                return null;
+            }
+        }
+        catch (RemoteException e) {
+            return null;
         }
     }
 
