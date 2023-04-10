@@ -1,10 +1,9 @@
 package pills;
-import java.rmi.server.RemoteObject;
-import java.rmi.server.RemoteServer;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
-public class OilSolution extends UnicastRemoteObject implements SolutionGenerator {
+public class OilSolution extends UnicastRemoteObject 
+    implements SolutionGenerator {
     
     public OilSolution(int port) throws RemoteException {
         super(port);
