@@ -1,10 +1,9 @@
 package pills;
-import java.rmi.server.RemoteObject;
-import java.rmi.server.RemoteServer;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
-public class PlasticizerCasing extends UnicastRemoteObject implements CasingGenerator {
+public class PlasticizerCasing extends UnicastRemoteObject 
+    implements CasingGenerator {
 
     public PlasticizerCasing(int port) throws RemoteException {
         super(port);
