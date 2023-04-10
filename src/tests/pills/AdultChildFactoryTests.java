@@ -37,8 +37,8 @@ public class AdultChildFactoryTests {
 
     @BeforeEach
     public void beforeEach() {
-        agcf = new AdultGelCapFactory();
-        cgcf = new ChildGelCapFactory();
+        agcf = agcf.getInstance();
+        cgcf = cgcf.getInstance();
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
@@ -87,6 +87,16 @@ public class AdultChildFactoryTests {
         assertTrue(cgcf.constructAcheAway(ACHEAWAY_CASING, ACHEAWAY_SOLUTION,
             ACHEAWAY_ACTIVE) instanceof AcheAway);
         assertEquals(CHILD_ACHEAWAY_PRINT, getOutput());
+    }
+
+    @Test
+    public void testAdultSingleton() {
+        assertEquals(agcf.getInstance(), agcf.getInstance());
+    }
+
+    @Test
+    public void testChildSingleton() {
+        assertEquals(cgcf.getInstance(), cgcf.getInstance());
     }
 
     private String getOutput() {
