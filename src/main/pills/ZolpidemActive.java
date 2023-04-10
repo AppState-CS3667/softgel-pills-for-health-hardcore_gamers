@@ -1,6 +1,16 @@
 package pills;
-public class ZolpidemActive implements ActiveGenerator {
-    public String generateActive(double amount) {
+import java.rmi.server.RemoteObject;
+import java.rmi.server.RemoteServer;
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.RemoteException;
+
+public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerator {
+    
+    public ZolpidemActive(int port) throws RemoteException {
+        super(port);
+    }
+
+    public String generateActive(double amount) throws RemoteException{
         System.out.println("Opening secure storage area ... ");
         System.out.printf("Carefully extracting" 
             + " %.2fmg of zolpidem\n", amount);

@@ -1,13 +1,15 @@
 package pills; 
-import java.rmi.*;
-import java.rmi.server.*;
+import java.rmi.server.RemoteObject;
+import java.rmi.server.RemoteServer;
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.RemoteException;
 
 /*
  * AcetaminophenActive class.
  */
 public class AcetaminophenActive extends UnicastRemoteObject implements ActiveGenerator {
     
-    public AcetaminophenActive(int port) throws Exception {
+    public AcetaminophenActive(int port) throws RemoteException {
         super(port);
     }
     /*
@@ -16,7 +18,7 @@ public class AcetaminophenActive extends UnicastRemoteObject implements ActiveGe
      * @param amount mg of acetaminophen to print
      * @return the string "acetaminophen"
      */
-    public String generateActive(double amount) throws Exception {
+    public String generateActive(double amount) throws RemoteException {
         System.out.println("Acetylating para-aminophenol" 
             + " with acetic anhydride");
         System.out.printf("Carefully extracting" 
