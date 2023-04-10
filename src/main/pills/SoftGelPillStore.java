@@ -68,6 +68,8 @@ public class SoftGelPillStore  {
      * @return gcOrderArr array of gel caps in the current order.
      */
     public GelCap[] checkOut() {
+        FailureInspector fi = new FailureInspector();
+
         if (isLoggedIn == false || currentOrder == null) {
             System.out.print("You need to log in and" 
                 + "order before you can checkout\n");
@@ -78,7 +80,7 @@ public class SoftGelPillStore  {
             System.out.print("Your order is not consistent\n");
             return null;
         }
-        else if(tooBigFailRate(FailureInspector.getFailRate()))
+        else if(tooBigFailRate(fi.getFailRate()))
         {
             System.out.print("The fail rate on your order is too large\n");
             return null;
@@ -274,7 +276,15 @@ public class SoftGelPillStore  {
     public double getDreamlyStrength(int orderNum)
     {
         //use a strength inspector to calc
-        return 0.0;
+        StrengthInspector si = new StrengthInspector();
+        si.reset();
+        for(int i = 0; i < currentOrder.size(); i++)
+        {
+            GelCap pill = currentOrder.get(i);
+            //call accept in double dispatch to get the GelCap type
+            pill.accept(si);
+        }
+        return si.getDreamlyStrength();
     }
 
     /*
@@ -285,7 +295,15 @@ public class SoftGelPillStore  {
     public double getAcheAwayStrength(int oderNum)
     {
         //use a strength inspector to calc
-        return 0.0;
+        StrengthInspector si = new StrengthInspector();
+        si.reset();
+        for(int i = 0; i < currentOrder.size(); i++)
+        {
+            GelCap pill = currentOrder.get(i);
+            //call accept in double dispatch to get the GelCap type
+            pill.accept(si);
+        }
+        return si.getAcheAwayStrength();
     }
 
     /*
@@ -320,7 +338,15 @@ public class SoftGelPillStore  {
      */
     private double checkFailRate()
     {
-        return 0.0;
+        FailureInspector fi = new FailureInspector();
+        fi.reset();
+        for(int i = 0; i < currentOrder.size(); i++)
+        {
+            GelCap pill = currentOrder.get(i);
+            //call accept in double dispatch to get the GelCap type
+            pill.accept(fi);
+        }
+        return fi.getFailRate();
     }
 
     /*
@@ -332,7 +358,15 @@ public class SoftGelPillStore  {
      */
     private boolean consistentOrder()
     {
-        return true;
+        ConsistencyInspector ci = new ConsistencyInspector();
+        ci.reset();
+        for(int i = 0; i < currentOrder.size(); i++)
+        {
+            GelCap pill = currentOrder.get(i);
+            //call accept in double dispatch to get the GelCap type
+            pill.accept(ci);
+        }
+        return ci.soFarConsistent();
     }
 
 }
