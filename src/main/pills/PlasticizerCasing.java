@@ -1,13 +1,21 @@
 package pills;
+import java.rmi.server.RemoteObject;
+import java.rmi.server.RemoteServer;
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.RemoteException;
 
-public class PlasticizerCasing implements CasingGenerator {
+public class PlasticizerCasing extends UnicastRemoteObject implements CasingGenerator {
+
+    public PlasticizerCasing(int port) throws RemoteException {
+        super(port);
+    }
     
     /*
      * overrides the generateCasing string from the CasingGenerator interface.
      * prints the returned plasticizer casing and returns plasticizer.
      */
     @Override
-    public String generateCasing() {
+    public String generateCasing() throws RemoteException {
         System.out.print("Mixing starch, water, opacifier, and " 
             + "glycerin ... \n" 
             + "Shaping ... \n" 
