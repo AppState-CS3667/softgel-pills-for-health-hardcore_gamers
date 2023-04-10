@@ -1,6 +1,10 @@
 package pills;
 
 import java.util.HashMap;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.NotBoundException;
 
 public class GelCapRecipes {
     public static final HashMap<String, CasingGenerator> CASINGS = getCasings();
@@ -17,8 +21,12 @@ public class GelCapRecipes {
     private static HashMap<String, CasingGenerator> getCasings() {
         HashMap<String, CasingGenerator> 
             casingsTemp = new HashMap<String, CasingGenerator>();
-        casingsTemp.put("Dreamly", new PlasticizerCasing());
-        casingsTemp.put("AcheAway", new GelatinCasing());
+        try
+        {
+            casingsTemp.put("Dreamly", (PlasticizerCasing) Naming.lookup("rmi://152.10.10.40/PlasticizerCasing"));
+            casingsTemp.put("AcheAway", (GelatinCasing) Naming.lookup("rmi://152.10.10.40/GelatinCasing"));
+        }
+        catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace();}
         return casingsTemp;
     }
 
@@ -29,8 +37,12 @@ public class GelCapRecipes {
     private static HashMap<String, SolutionGenerator> getSolutions() {
         HashMap<String, SolutionGenerator> 
             solutionsTemp = new HashMap<String, SolutionGenerator>();
-        solutionsTemp.put("Dreamly", new OilSolution());
-        solutionsTemp.put("AcheAway", new SalineSolution());
+        try
+        {
+            solutionsTemp.put("Dreamly", (OilSolution) Naming.lookup("rmi://152.10.10.40/OilSolution"));
+            solutionsTemp.put("AcheAway", (SalineSolution) Naming.lookup("rmi://152.10.10.40/SalineSolution"));
+        }
+        catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace();}
         return solutionsTemp;
     }
 
@@ -42,8 +54,12 @@ public class GelCapRecipes {
     private static HashMap<String, ActiveGenerator> getActives() {
         HashMap<String, ActiveGenerator> 
             activesTemp = new HashMap<String, ActiveGenerator>();
-        activesTemp.put("Dreamly", new ZolpidemActive());
-        activesTemp.put("AcheAway", new AcetaminophenActive());
+        try
+        {
+            activesTemp.put("Dreamly", (ZolpidemActive) Naming.lookup("rmi://152.10.10.40/ZolpidemActive"));
+            activesTemp.put("AcheAway", (AcetaminophenActive) Naming.lookup("rmi://152.10.10.40/AcetaminophenActive"));
+        }
+        catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace();}
         return activesTemp;
     }
 }
