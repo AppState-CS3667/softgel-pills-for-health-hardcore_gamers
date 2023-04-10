@@ -122,7 +122,7 @@ public abstract class GelCap {
     /*
      * accept method
      * 
-     * visits the inspectors 
+     * calls the inspect method on the inspector passed
      *
      * @param insp - an inspector object
      */
