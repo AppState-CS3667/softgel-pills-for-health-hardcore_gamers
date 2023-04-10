@@ -118,4 +118,15 @@ public abstract class GelCap {
     public String getActive() {
         return active;
     }
+
+    /*
+     * accept method
+     * 
+     * calls the inspect method on the inspector passed
+     *
+     * @param insp - an inspector object
+     */
+    public void accept(Inspector insp) {
+        insp.inspect(this);
+    }
 }
