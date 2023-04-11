@@ -5,6 +5,31 @@ package pills;
  */
 public class AdultGelCapFactory extends GelCapFactory {
 
+    private static AdultGelCapFactory instance;
+
+    /*
+     * AdultGelCapFactory
+     * 
+     * Constructor for this singleton class
+     */
+    private AdultGelCapFactory() {}
+
+    /*
+     * getInstance
+     * 
+     * Retrives the instance of AdultGelCapFactory(Singleton) or 
+     *  creates a new one of it does not exist.
+     * 
+     */
+    public static AdultGelCapFactory getInstance() {
+        if (instance == null) {
+            synchronized(AdultGelCapFactory.class) {
+                instance = new AdultGelCapFactory();
+            }	
+        }
+        return instance;
+    }
+
     /*
      * constructDreamly method
      * 
@@ -19,6 +44,7 @@ public class AdultGelCapFactory extends GelCapFactory {
         System.out.print("Constructing adult version of Dreamly\n");
         return new AdultDreamly(casing, solution, active);
     }
+
     /*
      * constructAcheAway method
      * 
