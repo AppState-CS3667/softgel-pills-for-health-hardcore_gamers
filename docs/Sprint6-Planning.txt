@@ -10,9 +10,11 @@ Backlog:
         - Update Dreamly
         - Update AcheAway
         - Create Null Dreamly
+        - Generator Tests
     
     Subteam B:
         - Update Adult and Child Dreamly 
         - Update Adult and Child AcheAway
         - Create Null AcheAway
         - SoftGelPillStore tests (Shawn)
+        - Generator Tests
