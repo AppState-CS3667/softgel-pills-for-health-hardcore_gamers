@@ -21,12 +21,18 @@ public class GelCapRecipes {
     private static HashMap<String, CasingGenerator> getCasings() {
         HashMap<String, CasingGenerator> 
             casingsTemp = new HashMap<String, CasingGenerator>();
-        try
-        {
-            casingsTemp.put("Dreamly", (PlasticizerCasing) Naming.lookup("rmi://152.10.10.40/PlasticizerCasing"));
-            casingsTemp.put("AcheAway", (GelatinCasing) Naming.lookup("rmi://152.10.10.40/GelatinCasing"));
+        try {
+            //tries to create casings with remote method invocation 
+            //connection to host machine
+            casingsTemp.put("Dreamly", (PlasticizerCasing) 
+                Naming.lookup("rmi://152.10.10.40/PlasticizerCasing"));
+            casingsTemp.put("AcheAway", (GelatinCasing) 
+                Naming.lookup("rmi://152.10.10.40/GelatinCasing"));
         }
-        catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace();}
+        //catches any execeptions related to RMI and prints the stack trace
+        catch (MalformedURLException | RemoteException | NotBoundException e) { 
+            e.printStackTrace(); 
+        }
         return casingsTemp;
     }
 
@@ -37,12 +43,18 @@ public class GelCapRecipes {
     private static HashMap<String, SolutionGenerator> getSolutions() {
         HashMap<String, SolutionGenerator> 
             solutionsTemp = new HashMap<String, SolutionGenerator>();
-        try
-        {
-            solutionsTemp.put("Dreamly", (OilSolution) Naming.lookup("rmi://152.10.10.40/OilSolution"));
-            solutionsTemp.put("AcheAway", (SalineSolution) Naming.lookup("rmi://152.10.10.40/SalineSolution"));
+        try {
+            //tries to create solutions with remote method invocation 
+            //connection to host machine
+            solutionsTemp.put("Dreamly", (OilSolution) 
+                Naming.lookup("rmi://152.10.10.40/OilSolution"));
+            solutionsTemp.put("AcheAway", (SalineSolution) 
+                Naming.lookup("rmi://152.10.10.40/SalineSolution"));
         }
-        catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace();}
+        //catches any execeptions related to RMI and prints the stack trace
+        catch (MalformedURLException | RemoteException | NotBoundException e) { 
+            e.printStackTrace(); 
+        }
         return solutionsTemp;
     }
 
@@ -54,12 +66,18 @@ public class GelCapRecipes {
     private static HashMap<String, ActiveGenerator> getActives() {
         HashMap<String, ActiveGenerator> 
             activesTemp = new HashMap<String, ActiveGenerator>();
-        try
-        {
-            activesTemp.put("Dreamly", (ZolpidemActive) Naming.lookup("rmi://152.10.10.40/ZolpidemActive"));
-            activesTemp.put("AcheAway", (AcetaminophenActive) Naming.lookup("rmi://152.10.10.40/AcetaminophenActive"));
+        try {
+            //tries to create actives with remote method invocation 
+            //connection to host machine
+            activesTemp.put("Dreamly", (ZolpidemActive) 
+                Naming.lookup("rmi://152.10.10.40/ZolpidemActive"));
+            activesTemp.put("AcheAway", (AcetaminophenActive) 
+                Naming.lookup("rmi://152.10.10.40/AcetaminophenActive"));
         }
-        catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace();}
+        //catches any execeptions related to RMI and prints the stack trace
+        catch (MalformedURLException | RemoteException | NotBoundException e) { 
+            e.printStackTrace(); 
+        }
         return activesTemp;
     }
 }
