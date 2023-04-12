@@ -1,6 +1,13 @@
 package pills;
 
+/*
+ * Inspector abstract class
+ */
 public abstract class Inspector {
+
+    /*
+     * inspect methods to be overridden by classes that extend this
+     */
     public void inspect(AdultAcheAway e) {
     }
 
@@ -19,6 +26,9 @@ public abstract class Inspector {
     public void inspect(NullDreamly e) {
     }
 
+    /*
+     * abstract methods to be implemented by classes that extend this
+     */
     public abstract String report();
 
     public abstract void reset();
