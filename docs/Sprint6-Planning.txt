@@ -1,0 +1,20 @@
+Sprint 6 Planning:
+
+Subteams:
+- Subteam A: Savannah, Aidan, Christian
+- Subteam B: Logan, Shawn
+
+Backlog:
+    Subteam A:  
+        - Update GelCap
+        - Update Dreamly
+        - Update AcheAway
+        - Create Null Dreamly
+        - Generator Tests
+    
+    Subteam B:
+        - Update Adult and Child Dreamly 
+        - Update Adult and Child AcheAway
+        - Create Null AcheAway
+        - SoftGelPillStore tests (Shawn)
+        - Generator Tests
