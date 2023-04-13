@@ -11,6 +11,8 @@ public abstract class Dreamly extends GelCap {
      *
      */
 
+    public static final AcheAway NULL = null;
+    
     public Dreamly(double strength, double size, String color, String casing, 
         String solution, String active) {
 
