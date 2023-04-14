@@ -126,7 +126,5 @@ public abstract class GelCap {
      *
      * @param insp - an inspector object
      */
-    public void accept(Inspector insp) {
-        insp.inspect(this);
-    }
+    abstract void accept(Inspector insp);
 }
