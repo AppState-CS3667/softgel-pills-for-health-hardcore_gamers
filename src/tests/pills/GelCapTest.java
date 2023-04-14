@@ -62,7 +62,6 @@ public class GelCapTest {
     // Private Helper Class
     private class GelCapMock extends GelCap {
         public GelCapMock(String name, double strength,
-
             double size, String color, String casing, 
             String solution, String active) {
 
@@ -79,6 +78,9 @@ public class GelCapTest {
         protected void addActive() {
             active = "Z";
             System.out.print("Z\n");
+        }
+        public void accept(Inspector insp) {
+            
         }
     }
 }
