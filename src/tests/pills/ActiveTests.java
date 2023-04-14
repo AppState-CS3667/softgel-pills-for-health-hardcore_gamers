@@ -21,6 +21,10 @@ public class ActiveTests {
         + "area ... \n" + "Carefully extracting 2.00mg of zolpidem\n"
         + "Returning 2.00mg of zolpidem\n";
 
+    // Port numbers
+    private static final int AcetaminophenPort = 1094;
+    private static final int ZolpidemPort = 1093;
+
     private AcetaminophenActive aceActive;
     private ZolpidemActive zolActive;
     private ByteArrayOutputStream baos;	

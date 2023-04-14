@@ -17,6 +17,10 @@ public class CasingTest {
     private static final String GELATIN = "gelatin";
     private static final String PLASTICIZER = "plasticizer";
 
+    // Port numbers
+    public static final int GelatinPort = 1098;
+    public static final int PlasticizerPort = 1097;
+
     private GelatinCasing gelCase; 
     private PlasticizerCasing plastCase; 
     private ByteArrayOutputStream baos;
@@ -24,8 +28,8 @@ public class CasingTest {
 
     @BeforeEach
     public void beforeEach() {
-        this.gelCase = new GelatinCasing();
-        this.plastCase = new PlasticizerCasing();
+        this.gelCase = new GelatinCasing(GelatinPort);
+        this.plastCase = new PlasticizerCasing(PlasticizerPort);
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
