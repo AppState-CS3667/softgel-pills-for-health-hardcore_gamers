@@ -33,8 +33,8 @@ public class ActiveTests {
 
     @BeforeEach
     public void beforeEach() {			
-        this.aceActive = new AcetaminophenActive();
-        this.zolActive = new ZolpidemActive();	
+        this.aceActive = new AcetaminophenActive(AcetaminophenPort);
+        this.zolActive = new ZolpidemActive(ZolpidemPort);	
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
