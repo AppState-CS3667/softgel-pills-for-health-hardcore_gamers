@@ -22,6 +22,10 @@ public class SolutionTest {
     private static SalineSolution ss;
     private static OilSolution os;
 
+    // Port numbers
+    private static final int OilPort = 1096;
+    private static final int SalinePort = 1095;
+
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
 
@@ -32,8 +36,8 @@ public class SolutionTest {
     */
     @BeforeEach
     public void beforeEach() {
-        this.ss = new SalineSolution();
-        this.os = new OilSolution();
+        this.ss = new SalineSolution(SalinePort);
+        this.os = new OilSolution(OilPort);
 
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
