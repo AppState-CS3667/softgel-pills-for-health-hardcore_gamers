@@ -11,4 +11,15 @@ public class AdultAcheAway extends AcheAway {
     public AdultAcheAway(String casing, String solution, String active) {
         super(STRENGTH, SIZE, COLOR, casing, solution, active);
     }
+
+    /*
+     * accept method
+     * 
+     * calls the inspect method on the inspector passed
+     *
+     * @param insp - an inspector object
+     */
+    public void accept(Inspector insp) {
+        insp.inspect(this);
+    }
 }
