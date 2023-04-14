@@ -1,6 +1,9 @@
 package pills;
 
 public abstract class Dreamly extends GelCap {
+    
+    public static final Dreamly NULL = null;
+    
     /*
      * Constructor for class Dreamly that calls the 
      * super constructor of the GelCap class.
@@ -10,9 +13,6 @@ public abstract class Dreamly extends GelCap {
      * @param strength. Pill color. 
      *
      */
-
-    public static final Dreamly NULL = null;
-    
     public Dreamly(double strength, double size, String color, String casing, 
         String solution, String active) {
 
