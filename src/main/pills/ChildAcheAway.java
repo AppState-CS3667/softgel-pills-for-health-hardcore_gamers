@@ -11,4 +11,7 @@ public class ChildAcheAway extends AcheAway {
     public ChildAcheAway(String casing, String solution, String active) {
         super(STRENGTH, SIZE, COLOR, casing, solution, active);
     }
+    public void accept(Inspector insp) {
+        insp.inspect(this);
+    }
 }
