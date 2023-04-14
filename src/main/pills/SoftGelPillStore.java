@@ -180,10 +180,10 @@ public class SoftGelPillStore  {
         customerAge = age;
         final int ADULTAGE = 18;
         if (customerAge < ADULTAGE) {
-            factory = new ChildGelCapFactory();
+            factory = ChildGelCapFactory.getInstance();
         }
         else {
-            factory = new AdultGelCapFactory();
+            factory = AdultGelCapFactory.getInstance();
         }
 
         isLoggedIn = true;

@@ -15,7 +15,7 @@ public class ChildDreamly extends Dreamly {
     public ChildDreamly(String casing, String solution, String active) {
         super(STRENGTH, SIZE, COLOR, casing, solution, active);
     }
-
+    
     /*
      * accept method
      * 

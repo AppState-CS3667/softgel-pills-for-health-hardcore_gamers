@@ -20,3 +20,8 @@ Backlog:
         - Update ActiveGenerator
         - Update CasingGenerator
         - Update 6 Generator classes
+
+Review: We have completed the tasks allocated to each subteam.
+We feel that our code is as up to date as possible and we are ready
+to move on to Sprint 6. The next sprint we will remember to ad comments 
+as we go.
