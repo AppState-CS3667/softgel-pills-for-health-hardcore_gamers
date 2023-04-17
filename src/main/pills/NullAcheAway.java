@@ -5,7 +5,8 @@ package pills;
  */
 public class NullAcheAway extends AcheAway {
     /*
-     * NullAcheAway no-arg constructor that give falsy values to the super const.
+     * NullAcheAway no-arg constructor 
+     * that give falsy values to the super const.
      */
     public NullAcheAway() {
         super(0.0, 0.0, "", "", "", "");
