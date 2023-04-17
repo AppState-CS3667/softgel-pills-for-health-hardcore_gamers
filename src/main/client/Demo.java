@@ -42,7 +42,9 @@ public class Demo {
                     break;
                 case 2: 
                     GelCap[] order = store.checkOut();
-                    if (order != null) orders.add(order);
+                    if (order != null) {
+                        orders.add(order);
+                    }
                     break;
                 case 3:
                     exit = store.logOut();
@@ -52,7 +54,9 @@ public class Demo {
         int orderNum = 0;
         for (GelCap[] order : orders) {
             System.out.printf("Order Number %d\n", ++orderNum);
-            for (GelCap g : order) System.out.printf("\t%s\n", g);
+            for (GelCap g : order) {
+                System.out.printf("\t%s\n", g);
+            }
             System.out.println();
         }
         input.close();
@@ -67,7 +71,8 @@ public class Demo {
         try {
             int choice = Integer.parseInt(selection);
             return choice == 1 || choice == 2 || choice == 3;
-        } catch (NumberFormatException e) {
+        }
+        catch (NumberFormatException e) {
             return false;
         }
     }

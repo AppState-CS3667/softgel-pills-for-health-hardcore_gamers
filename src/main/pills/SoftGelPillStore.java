@@ -1,7 +1,5 @@
 package pills;
 
-import static org.junit.jupiter.api.Assertions.fail;
-
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -75,13 +73,11 @@ public class SoftGelPillStore  {
                 + "order before you can checkout\n");
             return null;
         }
-        else if(consistentOrder() == false) 
-        {
+        else if (consistentOrder() == false) {
             System.out.print("Your order is not consistent\n");
             return null;
         }
-        else if(tooBigFailRate(fi.getFailRate()))
-        {
+        else if (tooBigFailRate(fi.getFailRate())) {
             System.out.print("The fail rate on your order is too large\n");
             return null;
         }
@@ -273,13 +269,11 @@ public class SoftGelPillStore  {
      * 
      * @return Dreamly order strength.
      */
-    public double getDreamlyStrength(int orderNum)
-    {
+    public double getDreamlyStrength(int orderNum) {
         //use a strength inspector to calc
         StrengthInspector si = new StrengthInspector();
         si.reset();
-        for(int i = 0; i < currentOrder.size(); i++)
-        {
+        for (int i = 0; i < currentOrder.size(); i++) {
             GelCap pill = currentOrder.get(i);
             //call accept in double dispatch to get the GelCap type
             pill.accept(si);
@@ -292,13 +286,11 @@ public class SoftGelPillStore  {
      * 
      * @return AcheAway order strength.
      */
-    public double getAcheAwayStrength(int oderNum)
-    {
+    public double getAcheAwayStrength(int oderNum) {
         //use a strength inspector to calc
         StrengthInspector si = new StrengthInspector();
         si.reset();
-        for(int i = 0; i < currentOrder.size(); i++)
-        {
+        for (int i = 0; i < currentOrder.size(); i++) {
             GelCap pill = currentOrder.get(i);
             //call accept in double dispatch to get the GelCap type
             pill.accept(si);
@@ -309,8 +301,7 @@ public class SoftGelPillStore  {
     /*
      * prints the current order from the ArrayList.
      */
-    public void printCurrentOrder()
-    {
+    public void printCurrentOrder() {
         System.out.println(currentOrder.toString());
     }
 
@@ -321,10 +312,8 @@ public class SoftGelPillStore  {
      * @return boolean true if order fail rate too large.
      * @return boolean false if order fail rate ok.
      */
-    private boolean tooBigFailRate(double failRate)
-    {
-        if (failRate >= 15)
-        {
+    private boolean tooBigFailRate(double failRate) {
+        if (failRate >= 15) {
             return false;
         }
         return true;
@@ -336,12 +325,10 @@ public class SoftGelPillStore  {
      * 
      * @return fail rate.
      */
-    private double checkFailRate()
-    {
+    private double checkFailRate() {
         FailureInspector fi = new FailureInspector();
         fi.reset();
-        for(int i = 0; i < currentOrder.size(); i++)
-        {
+        for (int i = 0; i < currentOrder.size(); i++) {
             GelCap pill = currentOrder.get(i);
             //call accept in double dispatch to get the GelCap type
             pill.accept(fi);
@@ -356,12 +343,10 @@ public class SoftGelPillStore  {
      * @return true if consistent.
      * @return false if not consistent.
      */
-    private boolean consistentOrder()
-    {
+    private boolean consistentOrder() {
         ConsistencyInspector ci = new ConsistencyInspector();
         ci.reset();
-        for(int i = 0; i < currentOrder.size(); i++)
-        {
+        for (int i = 0; i < currentOrder.size(); i++) {
             GelCap pill = currentOrder.get(i);
             //call accept in double dispatch to get the GelCap type
             pill.accept(ci);

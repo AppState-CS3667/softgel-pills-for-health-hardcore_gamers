@@ -2,7 +2,7 @@ package pills;
 
 public abstract class AcheAway extends GelCap {
 
-	public static final AcheAway NULL = null;
+    public static final AcheAway NULL = null;
 
 	/*
 	 * Constructor for the AcheAway class that calls the GelCaps constructor.

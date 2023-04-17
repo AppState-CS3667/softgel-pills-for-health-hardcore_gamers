@@ -12,7 +12,9 @@ public class AdultGelCapFactory extends GelCapFactory {
      * 
      * Constructor for this singleton class
      */
-    private AdultGelCapFactory() {}
+    private AdultGelCapFactory() {
+
+    }
 
     /*
      * getInstance
@@ -23,7 +25,7 @@ public class AdultGelCapFactory extends GelCapFactory {
      */
     public static AdultGelCapFactory getInstance() {
         if (instance == null) {
-            synchronized(AdultGelCapFactory.class) {
+            synchronized (AdultGelCapFactory.class) {
                 instance = new AdultGelCapFactory();
             }	
         }
