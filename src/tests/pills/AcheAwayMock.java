@@ -6,6 +6,12 @@ public class AcheAwayMock extends AcheAway {
                     String solution, String active) {
         super(strength, size, color, casing, solution, active);
     }
+<<<<<<< HEAD
 
     public void accept(Inspector insp) {}
+=======
+    public void accept(Inspector insp) {
+            
+    }
+>>>>>>> origin/main
 }
