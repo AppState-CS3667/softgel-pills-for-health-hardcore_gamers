@@ -3,9 +3,12 @@ package pills;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.rmi.RemoteException;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class SolutionTest {
 
@@ -23,8 +26,8 @@ public class SolutionTest {
     private static OilSolution os;
 
     // Port numbers
-    private static final int OilPort = 1096;
-    private static final int SalinePort = 1095;
+    private static final int OIL_PORT = 1096;
+    private static final int SALINE_PORT = 1095;
 
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
@@ -36,8 +39,14 @@ public class SolutionTest {
     */
     @BeforeEach
     public void beforeEach() {
-        this.ss = new SalineSolution(SalinePort);
-        this.os = new OilSolution(OilPort);
+        try {
+            this.ss = new SalineSolution(SALINE_PORT);
+            this.os = new OilSolution(OIL_PORT);
+        }
+        catch (RemoteException e) {
+            this.ss = null;
+            this.os = null;
+        }
 
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
@@ -59,7 +68,12 @@ public class SolutionTest {
     */
     @Test
     public void testSaline() {
-        assertEquals(TEST_SALINE, ss.generateSolution());
+        try {
+            assertEquals(TEST_SALINE, ss.generateSolution());
+        }
+        catch (RemoteException e) {
+            fail("Error: RemoteException when creating a new saline solution.");
+        }
         assertEquals(TEST_SALINE_OUT, getOutput());
     }
 
@@ -70,7 +84,12 @@ public class SolutionTest {
     */
     @Test
     public void testOil() {
-        assertEquals(TEST_OIL, os.generateSolution());
+        try {
+            assertEquals(TEST_OIL, os.generateSolution());
+        }
+        catch (RemoteException e) {
+            fail("Error: RemoteException when creating a new oil solution.");
+        }
         assertEquals(TEST_OIL_OUT, getOutput());
     }
 
