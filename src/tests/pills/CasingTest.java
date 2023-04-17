@@ -1,11 +1,14 @@
 package pills;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.rmi.RemoteException;
 
 public class CasingTest {
     private static final String GEL = "Mixing gelatin, water, "
@@ -28,8 +31,15 @@ public class CasingTest {
 
     @BeforeEach
     public void beforeEach() {
-        this.gelCase = new GelatinCasing(GelatinPort);
-        this.plastCase = new PlasticizerCasing(PlasticizerPort);
+        try {
+            this.gelCase = new GelatinCasing(GelatinPort);
+            this.plastCase = new PlasticizerCasing(PlasticizerPort);
+        }
+        catch(RemoteException e)
+        {
+            gelCase = null;
+            plastCase = null;
+        }
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
@@ -37,16 +47,26 @@ public class CasingTest {
 
     @Test
     public void testGelatinCasing() {
-        String tempGel = gelCase.generateCasing();
+        try {
+            String tempGel = gelCase.generateCasing();
+	        assertEquals(GELATIN, tempGel);
+        }
+        catch(RemoteException e) {
+            fail("ERROR: RemoteException error when calling generateCasing");
+        }
         assertEquals(GEL, getOutput());
-	assertEquals(GELATIN, tempGel);
     }
 
     @Test
     public void testPlasticizerCasing() {
-        String tempPlast = plastCase.generateCasing();
+        try {
+            String tempPlast = plastCase.generateCasing();
+	        assertEquals(PLASTICIZER, tempPlast);
+        }
+        catch(RemoteException e) {
+            fail("ERROR: RemoteException error when calling generateCasing");
+        }
         assertEquals(PLAST, getOutput());
-	assertEquals(PLASTICIZER, tempPlast);
     }
 
     @AfterEach
