@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.rmi.RemoteException;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class ActiveTests {
@@ -34,13 +35,14 @@ public class ActiveTests {
 
 
     @BeforeEach
-    public void beforeEach() {
-        try {	
+    public void beforeEach() {			
+        try {
+
             this.aceActive = new AcetaminophenActive(AcetaminophenPort);
             this.zolActive = new ZolpidemActive(ZolpidemPort);
         }
         catch (RemoteException e) {
-            fail();
+            fail("ERROR: RemoteException Error when calling generateActive.");
         }
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
@@ -54,26 +56,25 @@ public class ActiveTests {
     @Test
     public void testAcetaminophenGenerator() {
         try {
-            assertEquals(ACETAMINOPHEN_RETURN, 
-                aceActive.generateActive(TEST_AMOUNT));
-            assertEquals(ACETAMINOPHEN_PRINT, getOutput());
-        }
 
-        catch (RemoteException e) {
-            fail();
+            assertEquals(ACETAMINOPHEN_RETURN, aceActive.generateActive(TEST_AMOUNT));
         }
+        catch (RemoteException e) {
+            fail("ERROR: RemoteException Error when calling generateActive.");
+        }
+        assertEquals(ACETAMINOPHEN_PRINT, getOutput());
     }
 
     @Test
     public void testZolpidemGenerator() {
         try {
             assertEquals(ZOLPIDEM_RETURN, zolActive.generateActive(TEST_AMOUNT));
-            assertEquals(ZOLPIDEM_PRINT, getOutput());
         }
-        
         catch (RemoteException e) {
-            fail();
+            fail("ERROR: RemoteException Error when calling generateActive.");
         }
+        assertEquals(ZOLPIDEM_PRINT, getOutput());
+
     }
 
     private String getOutput() {

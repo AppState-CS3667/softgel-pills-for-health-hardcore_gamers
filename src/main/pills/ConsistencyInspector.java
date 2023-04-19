@@ -80,7 +80,7 @@ public class ConsistencyInspector extends Inspector {
         else if (childCount > 0 && adultCount == 0) {
             return true;
         }
-        else if (childCount == 0 && adultCount == 0) {
+        if (childCount == 0 && adultCount == 0) {
             return true;
         }
         else {
