@@ -24,8 +24,8 @@ public class ActiveTests {
         + "Returning 2.00mg of zolpidem\n";
 
     // Port numbers
-    private static final int AcetaminophenPort = 1094;
-    private static final int ZolpidemPort = 1093;
+    private static final int ACETAMINOHENPORT = 1094;
+    private static final int ZOLPIDEMPORT = 1093;
 
     private AcetaminophenActive aceActive;
     private ZolpidemActive zolActive;
@@ -36,8 +36,8 @@ public class ActiveTests {
     @BeforeEach
     public void beforeEach() {			
         try {
-            this.aceActive = new AcetaminophenActive(AcetaminophenPort);
-            this.zolActive = new ZolpidemActive(ZolpidemPort);
+            this.aceActive = new AcetaminophenActive(ACETAMINOHENPORT);
+            this.zolActive = new ZolpidemActive(ZOLPIDEMPORT);
         }
         catch (RemoteException e) {
             aceActive = null; 
@@ -55,7 +55,8 @@ public class ActiveTests {
     @Test
     public void testAcetaminophenGenerator() {
         try {
-            assertEquals(ACETAMINOPHEN_RETURN, aceActive.generateActive(TEST_AMOUNT));
+            assertEquals(ACETAMINOPHEN_RETURN, 
+                aceActive.generateActive(TEST_AMOUNT));
         }
         catch (RemoteException e) {
             fail("ERROR: RemoteException Error when calling generateActive.");
@@ -66,7 +67,8 @@ public class ActiveTests {
     @Test
     public void testZolpidemGenerator() {
         try {
-            assertEquals(ZOLPIDEM_RETURN, zolActive.generateActive(TEST_AMOUNT));
+            assertEquals(ZOLPIDEM_RETURN, 
+                zolActive.generateActive(TEST_AMOUNT));
         }
         catch (RemoteException e) {
             fail("ERROR: RemoteException Error when calling generateActive.");
