@@ -20,11 +20,13 @@ public class GelCapFactoryTest {
     public static final String ACTIVE = "Z";
 
     public static final String DREAMLY_GOOD = "Creating a Dreamly pill " 
-        + "... \nReturning a good Dreamly GelCap Pill\n";
+        + "... \ngetDreamly called ...\nconstructDreamly called ...\n"
+        + "quality check passed ...\nReturning a good Dreamly GelCap Pill\n";
     public static final String DREAMLY_BAD = "Creating a Dreamly pill " 
         + "... \nError during Dreamly production. Returning null\n";
     public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill " 
-        + "... \nReturning a good AcheAway GelCap Pill\n";
+        + "... \ngetAcheAway called ...\nconstructAcheAway called ...\n"
+        + "quality check passed ...\nReturning a good AcheAway GelCap Pill\n";
 
     public static final String ACHEAWAY_BAD = "Creating a AcheAway pill " 
         + "... \nError during AcheAway production. Returning null\n";
@@ -217,7 +219,7 @@ public class GelCapFactoryTest {
 
         protected Dreamly constructDreamly(String casing,
             String solution, String active) {
-	    System.out.print("constructDreamly called.");
+	    System.out.print("constructDreamly called ...\n");
 	    return new DreamlyMock(STRENGTH, SIZE, COLOR,
             SOLUTION, CASING, ACTIVE);
         }
@@ -234,7 +236,7 @@ public class GelCapFactoryTest {
 	 */
         protected AcheAway constructAcheAway(String casing,
             String solution, String active) {
-	    System.out.print("constructAcheAway called.");
+	    System.out.print("constructAcheAway called ...\n");
 	    return new AcheAwayMock(STRENGTH, SIZE, COLOR,
             SOLUTION, CASING, ACTIVE);
         }
@@ -245,7 +247,7 @@ public class GelCapFactoryTest {
 	 * for testing purposes this method returns 0
 	 */
         protected double getDreamlyStrength() {
-	    System.out.print("getDreamly called.");
+	    System.out.print("getDreamly called ...\n");
 	    return 0;        
 	}
 
@@ -255,7 +257,7 @@ public class GelCapFactoryTest {
 	 * for testing purposes this method returns 0
 	 */
         protected double getAcheAwayStrength() {
-	    System.out.print("getAcheAway called.");
+	    System.out.print("getAcheAway called ...\n");
 	    return 0;        
         }
     }

@@ -75,11 +75,11 @@ public abstract class GelCapFactory {
     private final boolean qualityCheck() {
 	double check = Math.random();
 	if (check <= qp) {
-	    System.out.print("quality check passed\n");
+	    System.out.print("quality check passed ...\n");
 	    return true;
 	}
 	else {
-	    System.out.print("quality check failed\n");
+	    System.out.print("quality check failed ...\n");
 	    return false;
 	}
     }
