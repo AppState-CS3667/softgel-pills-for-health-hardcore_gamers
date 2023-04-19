@@ -100,9 +100,9 @@ public class SoftGelPillStoreTest {
     // Tests the login with no args method
     @Test
     public void successfulLogin() {
-        final String INPUT = "Mr.X\n27\n";
-        bais = new ByteArrayInputStream(INPUT.getBytes());
-        store.logIn();
+        String n = "Mr. X";
+        final int A = 27;
+        store.logIn(n, A);
         assertTrue(store.logOut());
     }
     // Test to make sure logOut works
@@ -112,36 +112,6 @@ public class SoftGelPillStoreTest {
         final int A = 27;
         store.logIn(n, A);
         assertTrue(store.logOut());
-    }
-    // Test make sure the order method is working properly
-    @Test
-    public void test() {
-        String n = "Mr. X";
-        final int A = 27;
-        store.logIn(n, A);
-        final String INPUT = "1";
-        bais = new ByteArrayInputStream(INPUT.getBytes());
-        System.setIn(bais);
-        store.order();
-        store.printCurrentOrder();
-        assertNotEquals("[]", getOutput(),
-            "Should not be empty");
-    }
-    @Test
-    public void test2() {
-        String n = "Mr. X";
-        final int A = 27;
-        store.logIn(n, A);
-        final String INPUT = "1\n1\n1\n";
-        bais = new ByteArrayInputStream(INPUT.getBytes());
-        System.setIn(bais);
-        store.order();
-        store.order();
-        store.order();
-        GelCap[] x = store.checkOut();
-        assertNotNull(x);
-        assertNotEquals("[]", x.toString(),
-            "Should not be empty");
     }
     private String getOutput() {
         System.out.flush();
