@@ -1,0 +1,15 @@
+Sprint 7 Planning:
+
+Subteams:
+- Subteam A: Savannah, Aidan, Christian
+- Subteam B: Logan, Shawn
+
+Backlog:
+    - Subteam A:
+        - Make Demo
+        - Update Tests
+        - Checkstyle Errors
+    - Subteam B:
+        - Make Demo
+        - Update Tests
+        - Checkstyle Errors
