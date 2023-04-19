@@ -24,9 +24,9 @@ public class GelCapRecipes {
         try {
             //tries to create casings with remote method invocation 
             //connection to host machine
-            casingsTemp.put("Dreamly", (PlasticizerCasing) 
+            casingsTemp.put("Dreamly", (CasingGenerator) 
                 Naming.lookup("rmi://152.10.10.40/PlasticizerCasing"));
-            casingsTemp.put("AcheAway", (GelatinCasing) 
+            casingsTemp.put("AcheAway", (CasingGenerator) 
                 Naming.lookup("rmi://152.10.10.40/GelatinCasing"));
         }
         //catches any execeptions related to RMI and prints the stack trace
@@ -46,9 +46,9 @@ public class GelCapRecipes {
         try {
             //tries to create solutions with remote method invocation 
             //connection to host machine
-            solutionsTemp.put("Dreamly", (OilSolution) 
+            solutionsTemp.put("Dreamly", (SolutionGenerator) 
                 Naming.lookup("rmi://152.10.10.40/OilSolution"));
-            solutionsTemp.put("AcheAway", (SalineSolution) 
+            solutionsTemp.put("AcheAway", (SolutionGenerator) 
                 Naming.lookup("rmi://152.10.10.40/SalineSolution"));
         }
         //catches any execeptions related to RMI and prints the stack trace
@@ -69,9 +69,9 @@ public class GelCapRecipes {
         try {
             //tries to create actives with remote method invocation 
             //connection to host machine
-            activesTemp.put("Dreamly", (ZolpidemActive) 
+            activesTemp.put("Dreamly", (ActiveGenerator) 
                 Naming.lookup("rmi://152.10.10.40/ZolpidemActive"));
-            activesTemp.put("AcheAway", (AcetaminophenActive) 
+            activesTemp.put("AcheAway", (ActiveGenerator) 
                 Naming.lookup("rmi://152.10.10.40/AcetaminophenActive"));
         }
         //catches any execeptions related to RMI and prints the stack trace

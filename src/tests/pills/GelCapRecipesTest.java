@@ -21,25 +21,25 @@ public class GelCapRecipesTest {
     @Test
     public void testCasings() {
         assertTrue(GelCapRecipes.CASINGS.get("Dreamly")
-            instanceof PlasticizerCasing);
+            instanceof CasingGenerator);
         assertTrue(GelCapRecipes.CASINGS.get("AcheAway")
-            instanceof GelatinCasing);
+            instanceof CasingGenerator);
     }
     // Test that GelCapRecipes Solutions are correct
     @Test
     public void testSolutions() {
         assertTrue(GelCapRecipes.SOLUTIONS.get("Dreamly")
-            instanceof OilSolution);
+            instanceof SolutionGenerator);
         assertTrue(GelCapRecipes.SOLUTIONS.get("AcheAway")
-            instanceof SalineSolution);
+            instanceof SolutionGenerator);
     }
     // Test that GelCapRecipes Actives are correct
     @Test
     public void testActives() {
         assertTrue(GelCapRecipes.ACTIVES.get("Dreamly")
-            instanceof ZolpidemActive);
+            instanceof ActiveGenerator);
         assertTrue(GelCapRecipes.ACTIVES.get("AcheAway") 
-            instanceof AcetaminophenActive);
+            instanceof ActiveGenerator);
     }
 
     @AfterEach
