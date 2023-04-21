@@ -14,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,9 +25,9 @@ public class SoftGelPillStoreTest {
     // Private Fields
     private static final Scanner INPUT = new Scanner(System.in);
     private static final PrintStream OUTPUT = System.out;
-    private ByteArrayInputStream bais;
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
+    private ByteArrayInputStream bais;
     private InputStream oldIn;
     private SoftGelPillStore store;
 
@@ -112,6 +112,22 @@ public class SoftGelPillStoreTest {
         final int A = 27;
         store.logIn(n, A);
         assertTrue(store.logOut());
+    }
+    // Test make sure the order method is working properly
+    @Test
+    public void test() {
+        final String ourInput = "J\n27\n1\n";
+        bais = new ByteArrayInputStream(ourInput.getBytes());
+        System.setIn(bais);	
+        store.logIn();
+        store.order();
+        store.printCurrentOrder();
+        assertNotEquals("[]", getOutput(),
+            "Should not be empty");
+        GelCap[] x = store.checkOut();
+        assertNotNull(x);
+        assertNotEquals("[]", x.toString(),
+            "Should not be empty");
     }
     private String getOutput() {
         System.out.flush();
