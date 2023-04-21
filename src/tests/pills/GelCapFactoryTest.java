@@ -23,13 +23,18 @@ public class GelCapFactoryTest {
         + "... \ngetDreamly called ...\nconstructDreamly called ...\n"
         + "quality check passed ...\nReturning a good Dreamly GelCap Pill\n";
     public static final String DREAMLY_BAD = "Creating a Dreamly pill " 
-        + "... \nError during Dreamly production. Returning null\n";
+        + "... \ngetDreamly called ...\nconstructDreamly called ...\n"
+        + "quality check failed ...\nError during Dreamly production. " 
+        + "Returning null\n";
     public static final String ACHEAWAY_GOOD = "Creating a AcheAway pill " 
         + "... \ngetAcheAway called ...\nconstructAcheAway called ...\n"
         + "quality check passed ...\nReturning a good AcheAway GelCap Pill\n";
 
     public static final String ACHEAWAY_BAD = "Creating a AcheAway pill " 
-        + "... \nError during AcheAway production. Returning null\n";
+        + "... \ngetAcheAway called ...\nconstructAcheAway called ...\n"
+        + "quality check failed ...\nError during AcheAway production. " 
+        + "Returning null\n";
+
 
     private GelCapFactory gcf;
     private ByteArrayOutputStream baos;
@@ -68,41 +73,32 @@ public class GelCapFactoryTest {
 
 	    // og = String for good output 
         //(output if it returns a good Dreamly pill)  
-            String og = "";
-
+           
 	    // Constants for the stringsubset methods to trim the output
-            final int STR1START = 0;
-            final int STR1END = 29;
-            final int STR2START = 358;
-            final int GOODOUTPUTLENGTH = 395;
+            //final int STR1START = 0;
+            //final int STR1END = 29;
+            //final int STR2START = 358;
+            //final int GOODOUTPUTLENGTH = 395;
 
             // if output is good pill
-            if (o.length() == GOODOUTPUTLENGTH) {
-                og = o.substring(STR1START, STR1END) + o.substring(STR2START);
-            }
-
+            
 	    //if output is bad pill
-            String ob = "";
-            if (o.length() > GOODOUTPUTLENGTH) {
-                ob = o.substring(STR1START, STR1END) + o.substring(STR2START);
-            }
-
+           
 	    // if output is good and equals expected output
-	    if (DREAMLY_GOOD.equals(og)) {
+	    if (DREAMLY_GOOD.equals(o)) {
                 s++;
 	    }
 
 
 	    // if output is bad and equals expected output
-	    else if (DREAMLY_BAD.equals(ob)) {
+	    else if (DREAMLY_BAD.equals(o)) {
                 f++;
 	    }
 
 	    // Ouput failed. Prints error message
 	    else {
                 fail("ERROR: Output was not as expected.\nExpected: " 
-                    + DREAMLY_GOOD + "\nACTUAL: " + og + "\nACTUAL: " + ob  
-                    + "\nACTUAL: " + o + "\nLength: " + o.length());
+                    + DREAMLY_GOOD + "\nACTUAL: " + o);
 	    }
         }
 	// Test to make sure temp is either a Dreamly object or null
@@ -112,7 +108,8 @@ public class GelCapFactoryTest {
         final int N_ONE = 84;
         final int N_TWO = 96;
 
-	assertTrue(s >= N_ONE && s <= N_TWO);
+        
+        assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
     /* 
@@ -135,52 +132,47 @@ public class GelCapFactoryTest {
 
 	    // og = String for good output 
         //(output if it returns a good Dreamly pill)  
-            String og = "";
-
+            
 	    // Constants for the stringsubset methods to trim the output
-            final int STR1START = 0;
-            final int STR1END = 30;
-            final int STR2START = 394;
-            final int GOODOUTPUTLENGTH = 432;
+            //final int STR1START = 0;
+            //final int STR1END = 30;
+            //final int STR2START = 394;
+            //final int GOODOUTPUTLENGTH = 432;
 
             // if output is good pill
-            if (o.length() == GOODOUTPUTLENGTH) {
-	        og = o.substring(STR1START, STR1END) + o.substring(STR2START);
-            }
+            
 
 	    //if output is bad pill
-            String ob = "";
-            if (o.length() > GOODOUTPUTLENGTH) {
-                ob = o.substring(STR1START, STR1END) + o.substring(STR2START);
-            }
+           
 
 	    // if output is good and equals expected output
-	    if (ACHEAWAY_GOOD.equals(og)) {
+	    if (ACHEAWAY_GOOD.equals(o)) {
                 s++;
 	    }
 
 	    // if output is bad and equals expected output
-	    else if (ACHEAWAY_BAD.equals(ob)) {
+	    else if (ACHEAWAY_BAD.equals(o)) {
                 f++;
 	    }
 
 	    // Ouput failed. Prints error message
 	    else {
                 fail("ERROR: Output was not as expected.\nExpected: " 
-                    + ACHEAWAY_GOOD + "\nACTUAL: " + og 
-                    + "\nACTUAL: " + ob + "\nACTUAL: " + o + "\nLength: "
-                     + o.length());
+                    + ACHEAWAY_GOOD + "\nACTUAL: " + o);
+                    
 	    }
-	}
 	// Test to make sure temp is either a Dreamly object or null
-        assertTrue(temp instanceof AcheAway || temp == null);
-
+        
+            assertTrue(temp instanceof AcheAway || temp == null);
+        }
 	// Constants for testing successes
         final int N_ONE = 84;
         final int N_TWO = 96;
-
 	assertTrue(s >= N_ONE && s <= N_TWO);
+        
+        
     }
+    
 
     /*
      * Sets system.out to the oldOut after each test
