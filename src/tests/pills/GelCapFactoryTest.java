@@ -102,7 +102,7 @@ public class GelCapFactoryTest {
 	    }
         }
 	// Test to make sure temp is either a Dreamly object or null
-        assertTrue(temp instanceof Dreamly || temp == null);
+        assertTrue(temp instanceof Dreamly || temp instanceof NullDreamly);
 
 	// Constants for testing successes
         final int N_ONE = 84;
@@ -163,7 +163,7 @@ public class GelCapFactoryTest {
 	    }
 	// Test to make sure temp is either a Dreamly object or null
         
-            assertTrue(temp instanceof AcheAway || temp == null);
+            assertTrue(temp instanceof AcheAway || temp instanceof NullAcheAway);
         }
 	// Constants for testing successes
         final int N_ONE = 84;
