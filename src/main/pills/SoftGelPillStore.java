@@ -298,7 +298,7 @@ public class SoftGelPillStore  {
         }
         return si.getAcheAwayStrength();
     }
-    
+
     /*
      * prints the current order from the ArrayList.
      */
@@ -315,9 +315,9 @@ public class SoftGelPillStore  {
      */
     private boolean tooBigFailRate(double failRate) {
         if (failRate >= 15) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     /*
