@@ -66,7 +66,8 @@ public class SoftGelPillStore  {
      * @return gcOrderArr array of gel caps in the current order.
      */
     public GelCap[] checkOut() {
-        FailureInspector fi = new FailureInspector();
+        //call method to walk through failure inspector
+        double fi = checkFailRate();
 
         if (isLoggedIn == false || currentOrder == null) {
             System.out.print("You need to log in and" 
@@ -77,7 +78,7 @@ public class SoftGelPillStore  {
             System.out.print("Your order is not consistent\n");
             return null;
         }
-        else if (tooBigFailRate(fi.getFailRate())) {
+        else if (tooBigFailRate(fi)) {
             System.out.print("The fail rate on your order is too large\n");
             return null;
         }
@@ -112,7 +113,7 @@ public class SoftGelPillStore  {
 
         boolean loop = true;
         int choice;
-        while (loop) {
+        while (loop) { //don't loop here, loop in demo since ordering one pill
             try {
                 System.out.print("Options:\n 1) " 
                     + "Dreamly\n 2) AcheAway\n 3) Cancel\n");
@@ -297,7 +298,7 @@ public class SoftGelPillStore  {
         }
         return si.getAcheAwayStrength();
     }
-
+    
     /*
      * prints the current order from the ArrayList.
      */
@@ -328,6 +329,10 @@ public class SoftGelPillStore  {
     private double checkFailRate() {
         FailureInspector fi = new FailureInspector();
         fi.reset();
+        if(currentOrder == null)
+        {
+            return 0;
+        }
         for (int i = 0; i < currentOrder.size(); i++) {
             GelCap pill = currentOrder.get(i);
             //call accept in double dispatch to get the GelCap type
