@@ -24,7 +24,7 @@ public class Demo {
         System.out.println("Log In: ");
         store.logIn();
         boolean exit = false;
-        while (!exit) {
+        loop : while (!exit) {
             String choice = "";
            // while (!validSelection(choice)) {
                 System.out.println("=========================");
@@ -50,7 +50,7 @@ public class Demo {
                         orders.add(order);
                     }
                     store.logOut();
-                    break;
+                    break loop;
                 case 3:
                     exit = store.logOut();
                     break;
