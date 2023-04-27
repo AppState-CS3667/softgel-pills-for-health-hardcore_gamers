@@ -1,11 +1,25 @@
 package pills;
 
+
+
+
+
+
+
+
 /*
  * GelCap Class -
  * hardcore_gamers
  */
 
-//Imports 
+
+
+
+
+
+
+
+//Imports
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -14,8 +28,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,9 +39,9 @@ public class SoftGelPillStoreTest {
     // Private Fields
     private static final Scanner INPUT = new Scanner(System.in);
     private static final PrintStream OUTPUT = System.out;
-    private ByteArrayInputStream bais;
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
+    private ByteArrayInputStream bais;
     private InputStream oldIn;
     private SoftGelPillStore store;
 
@@ -39,7 +53,6 @@ public class SoftGelPillStoreTest {
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
     }
-
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
@@ -51,11 +64,9 @@ public class SoftGelPillStoreTest {
         this.store = new SoftGelPillStore(INPUT, OUTPUT);
         assertEquals(INPUT, store.getInput());
         assertEquals(OUTPUT, store.getOutput());
-
         this.store = new SoftGelPillStore(INPUT);
         assertEquals(INPUT, store.getInput());
         assertEquals(System.out, store.getOutput());
-
         this.store = new SoftGelPillStore(OUTPUT);
         assertEquals(OUTPUT, store.getOutput());
     }
@@ -100,21 +111,81 @@ public class SoftGelPillStoreTest {
     // Tests the login with no args method
     @Test
     public void successfulLogin() {
-        String n = "Mr. X";
-        final int A = 27;
-        store.logIn(n, A);
+        final String ourInput = "J\n27\n";
+        bais = new ByteArrayInputStream(ourInput.getBytes());
+        System.setIn(bais);
+        store = new SoftGelPillStore();
+        store.logIn();
         assertTrue(store.logOut());
     }
     // Test to make sure logOut works
     @Test
     public void successfulLogOut() {
-        String n = "Mr. X";
-        final int A = 27;
-        store.logIn(n, A);
+        final String ourInput = "J\n27\n";
+        bais = new ByteArrayInputStream(ourInput.getBytes());
+        System.setIn(bais);
+        store = new SoftGelPillStore();
+        store.logIn();
         assertTrue(store.logOut());
     }
+    /**
+     * Test to make sure you can't logout
+     * with an item in the cart without
+     * confirming
+     */
+    @Test
+    public void failedLogOut(){
+        final String ourInput = "J\n27\n1\nN\n";
+        bais = new ByteArrayInputStream(ourInput.getBytes());
+        System.setIn(bais);
+        store = new SoftGelPillStore();
+        store.logIn();
+        store.order();
+        boolean x = store.logOut();
+        assertFalse(x);
+    }
+    /**
+     * Test make sure the print order
+     * method is working properly
+     */
+    @Test
+    public void testPrintOrder() {
+        final String ourInput = "J\n27\n1\n";
+        bais = new ByteArrayInputStream(ourInput.getBytes());
+        System.setIn(bais);
+        store = new SoftGelPillStore();
+        store.logIn();
+        store.order();
+        baos.reset();
+        store.printCurrentOrder();
+        String y = getOutput();
+        assertNotEquals("[]", y, "Shouldn't be empty");
+    }
+    /**
+     * Test to assure that the checkout
+     * method is working properly
+     */
+    @Test
+    public void successfulCheckOut(){
+        final String ourInput = "J\n27\n1\n1\n2\n";
+        bais = new ByteArrayInputStream(ourInput.getBytes());
+        System.setIn(bais);
+        store = new SoftGelPillStore();
+        store.logIn();
+        store.order();
+        store.order();
+        store.order();
+        GelCap[] x = store.checkOut();
+        assertNotNull(x);  
+    }
+    /**
+     * Test to confirm you can logout even if you have items
+     * in the cart, as long as you are sure you want to check out
+     */
     private String getOutput() {
         System.out.flush();
-        return baos.toString().replaceAll("\r", "");
+        String x = baos.toString().replaceAll("\r", "");
+        baos.reset();
+        return x;
     }
 }
