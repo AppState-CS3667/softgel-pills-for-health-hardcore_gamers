@@ -115,8 +115,10 @@ public class SoftGelPillStore  {
         int choice;
         while (loop) { //don't loop here, loop in demo since ordering one pill
             try {
+                System.out.println("=================================");
                 System.out.print("Options:\n 1) " 
                     + "Dreamly\n 2) AcheAway\n 3) Cancel\n");
+                System.out.println("=================================");
                 choice = input.nextInt();
 
                 if (choice == 1) {

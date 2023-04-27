@@ -27,13 +27,12 @@ public class Demo {
         loop : while (!exit) {
             String choice = "";
            // while (!validSelection(choice)) {
-                System.out.println("=========================");
-                System.out.println("Choose from the following menu");
-                System.out.println("=========================");
-                System.out.println("1) Order");
-                System.out.println("2) Checkout");
-                System.out.println("3) Logout");
-                System.out.println("=========================");
+                System.out.println("=================================");
+                System.out.println("Choose from the following Menu:");
+                System.out.println(" 1) Order");
+                System.out.println(" 2) Checkout");
+                System.out.println(" 3) Logout");
+                System.out.println("=================================");
                 input.nextLine();
                 choice = input.nextLine();
                 if (!validSelection(choice)) {
