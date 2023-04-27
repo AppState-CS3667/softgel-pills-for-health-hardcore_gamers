@@ -27,14 +27,6 @@ public class Demo {
         loop : while (!exit) {
             String choice = "";
            // while (!validSelection(choice)) {
-<<<<<<< HEAD
-                System.out.println("=================================");
-                System.out.println("Choose from the following Menu:");
-                System.out.println(" 1) Order");
-                System.out.println(" 2) Checkout");
-                System.out.println(" 3) Logout");
-                System.out.println("=================================");
-=======
                 System.out.println("=========================");
                 System.out.println("Choose from the following menu");
                 System.out.println("=========================");
@@ -43,7 +35,6 @@ public class Demo {
                 System.out.println("3) Checkout");
                 System.out.println("4) Logout");
                 System.out.println("=========================");
->>>>>>> 2511d6c (Working on Manage Order)
                 input.nextLine();
                 choice = input.nextLine();
                 if (!validSelection(choice)) {
