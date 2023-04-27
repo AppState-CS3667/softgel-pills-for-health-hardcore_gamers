@@ -305,6 +305,7 @@ public class SoftGelPillStore  {
      * prints the current order from the ArrayList.
      */
     public void printCurrentOrder() {
+        //System.out.println();
         System.out.println(currentOrder.toString());
     }
 
@@ -371,4 +372,11 @@ public class SoftGelPillStore  {
         currentOrder.remove(index);
     }
 
+    /*
+     * Returns the size of the current order ArrayList.
+     */
+    public int getOrderSize()
+    {
+        return currentOrder.size();
+    }
 }
