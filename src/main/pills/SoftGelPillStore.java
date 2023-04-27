@@ -359,4 +359,14 @@ public class SoftGelPillStore  {
         return ci.soFarConsistent();
     }
 
+    /*
+     * Removes a pill from the current order ArrayList.
+     * 
+     * @param index the index of the pill to be removed.
+     */
+    public void removePill(int index)
+    {
+        currentOrder.remove(index);
+    }
+
 }
