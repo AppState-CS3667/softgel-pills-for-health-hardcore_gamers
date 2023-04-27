@@ -1,5 +1,6 @@
 package client;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import pills.GelCap;
@@ -8,8 +9,8 @@ import pills.SoftGelPillStore;
 /**
  * Demo class that provides an interface to use the SoftGelPillStore.
  * 
- * @author Willow Sapphire
- * @version 02/24/2023
+ * @author hardcore_gamers
+ * @version 04/26/2023
  */
 public class Demo {
     /**
@@ -26,21 +27,19 @@ public class Demo {
         boolean exit = false;
         loop : while (!exit) {
             String choice = "";
-           // while (!validSelection(choice)) {
-                System.out.println("=========================");
-                System.out.println("Choose from the following menu");
-                System.out.println("=========================");
-                System.out.println("1) Order");
-                System.out.println("2) Manage Order");
-                System.out.println("3) Checkout");
-                System.out.println("4) Logout");
-                System.out.println("=========================");
-                input.nextLine();
-                choice = input.nextLine();
-                if (!validSelection(choice)) {
-                    System.out.println("Please select an option from the menu");
-                }
-            //}
+            System.out.println("=========================");
+            System.out.println("Choose from the following menu");
+            System.out.println("=========================");
+            System.out.println("1) Order");
+            System.out.println("2) Manage Order");
+            System.out.println("3) Checkout");
+            System.out.println("4) Logout");
+            System.out.println("=========================");
+            input.nextLine();
+            choice = input.nextLine();
+            if (!validSelection(choice)) {
+                System.out.println("Please select an option from the menu");
+            }
             switch (Integer.parseInt(choice)) {
                 case 1:
                     store.order();
@@ -55,6 +54,7 @@ public class Demo {
                     + " from your order? Y or N");
                     choice = input.nextLine();
                     if (choice.equals("Y".toLowerCase())) {
+                        System.out.println("Note: The Order List starts with pill 1.");
                         System.out.println("Which item would you like to remove?");
                         choice = input.nextLine();
                         int rem = -1;
@@ -64,7 +64,7 @@ public class Demo {
                         catch (NumberFormatException e) {
                             System.out.println("That is not a valid number.");
                         }
-                        store.removePill(rem);
+                        store.removePill(rem - 1);
                         break;
                     }
                     else {
@@ -106,6 +106,42 @@ public class Demo {
         }
         catch (NumberFormatException e) {
             return false;
+        }
+    }
+
+    /*
+     * helper method to print a menu for inspector checks
+     */
+    private static void inspectorMenu() {
+        Scanner input = new Scanner(System.in);
+        boolean loop = true;
+        int choice;
+        while (loop) { //don't loop here, loop in demo since ordering one pill
+            try {
+                System.out.println("=================================");
+                System.out.print("Options:\n 1) " 
+                    + "Check Fail Rate\n 2) Check if Fail Rate too Big\n" 
+                    + "3) Check if Consistent Order\n");
+                System.out.println("=================================");
+                choice = input.nextInt();
+
+                /*
+                if (choice == 1) {
+                    
+                }
+                else if (choice == 2) {
+                    currentOrder.add(factory.produceAcheAway());
+                    loop = false;
+                }
+                else if (choice == 3) {
+                    loop = false;
+                }
+                */
+            }
+            catch (InputMismatchException e) {
+                System.out.print("Please enter a 1, 2, or 3\n");
+                input.nextLine();
+            }
         }
     }
 }
