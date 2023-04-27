@@ -54,7 +54,7 @@ public class Demo {
                     if (choice.equals("Y".toLowerCase())) {
                         System.out.println("Which item would you like to remove?");
                         choice = input.nextLine();
-                        int rem;
+                        int rem = -1;
                         try {
                             rem = Integer.parseInt(choice);
                         }
