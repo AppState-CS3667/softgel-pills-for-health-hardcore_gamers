@@ -47,6 +47,9 @@ public class Demo {
                     break;
                 case 2:
                     System.out.println("Your current order is :");
+                    //for (int i = 1; i <= store.getOrderSize(); i++) {
+                    //    System.out.print(i + "\t\t\t\t");
+                    //}
                     store.printCurrentOrder();
                     System.out.println("Would you like to remove an item"
                     + " from your order? Y or N");
