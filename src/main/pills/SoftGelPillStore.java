@@ -113,7 +113,7 @@ public class SoftGelPillStore  {
 
         boolean loop = true;
         int choice;
-        while (loop) { //don't loop here, loop in demo since ordering one pill
+        while (loop) {
             try {
                 System.out.println("=================================");
                 System.out.print("Options:\n 1) " 
@@ -332,8 +332,7 @@ public class SoftGelPillStore  {
     private double checkFailRate() {
         FailureInspector fi = new FailureInspector();
         fi.reset();
-        if(currentOrder == null)
-        {
+        if (currentOrder == null) {
             return 0;
         }
         for (int i = 0; i < currentOrder.size(); i++) {
@@ -367,16 +366,14 @@ public class SoftGelPillStore  {
      * 
      * @param index the index of the pill to be removed.
      */
-    public void removePill(int index)
-    {
+    public void removePill(int index) {
         currentOrder.remove(index);
     }
 
     /*
      * Returns the size of the current order ArrayList.
      */
-    public int getOrderSize()
-    {
+    public int getOrderSize() {
         return currentOrder.size();
     }
 }
