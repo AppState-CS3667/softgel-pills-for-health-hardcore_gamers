@@ -1,5 +1,6 @@
 package client;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import pills.GelCap;
@@ -106,6 +107,42 @@ public class Demo {
         }
         catch (NumberFormatException e) {
             return false;
+        }
+    }
+
+    /*
+     * helper method to print a menu for inspector checks
+     */
+    private static void inspectorMenu() {
+        Scanner input = new Scanner(System.in);
+        boolean loop = true;
+        int choice;
+        while (loop) { //don't loop here, loop in demo since ordering one pill
+            try {
+                System.out.println("=================================");
+                System.out.print("Options:\n 1) " 
+                    + "Check Fail Rate\n 2) Check if Fail Rate too Big\n" 
+                    + "3) Check if Consistent Order\n");
+                System.out.println("=================================");
+                choice = input.nextInt();
+
+                /*
+                if (choice == 1) {
+                    
+                }
+                else if (choice == 2) {
+                    currentOrder.add(factory.produceAcheAway());
+                    loop = false;
+                }
+                else if (choice == 3) {
+                    loop = false;
+                }
+                */
+            }
+            catch (InputMismatchException e) {
+                System.out.print("Please enter a 1, 2, or 3\n");
+                input.nextLine();
+            }
         }
     }
 }
