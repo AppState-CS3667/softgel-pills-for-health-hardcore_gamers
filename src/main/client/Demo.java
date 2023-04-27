@@ -24,18 +24,21 @@ public class Demo {
         System.out.println("Log In: ");
         store.logIn();
         boolean exit = false;
-        while (!exit) {
+        loop : while (!exit) {
             String choice = "";
-            while (!validSelection(choice)) {
-                System.out.println("Choose from the following menu");
-                System.out.println("1) Order");
-                System.out.println("2) Checkout");
-                System.out.println("3) Logout");
+           // while (!validSelection(choice)) {
+                System.out.println("=================================");
+                System.out.println("Choose from the following Menu:");
+                System.out.println(" 1) Order");
+                System.out.println(" 2) Checkout");
+                System.out.println(" 3) Logout");
+                System.out.println("=================================");
+                input.nextLine();
                 choice = input.nextLine();
                 if (!validSelection(choice)) {
                     System.out.println("Please select an option from the menu");
                 }
-            }
+            //}
             switch (Integer.parseInt(choice)) {
                 case 1:
                     store.order();
@@ -45,9 +48,11 @@ public class Demo {
                     if (order != null) {
                         orders.add(order);
                     }
-                    break;
+                    store.logOut();
+                    break loop;
                 case 3:
                     exit = store.logOut();
+                    break;
             }
         }
         System.out.println("Here is what you ordered:");
