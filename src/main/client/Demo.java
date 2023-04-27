@@ -27,12 +27,23 @@ public class Demo {
         loop : while (!exit) {
             String choice = "";
            // while (!validSelection(choice)) {
+<<<<<<< HEAD
                 System.out.println("=================================");
                 System.out.println("Choose from the following Menu:");
                 System.out.println(" 1) Order");
                 System.out.println(" 2) Checkout");
                 System.out.println(" 3) Logout");
                 System.out.println("=================================");
+=======
+                System.out.println("=========================");
+                System.out.println("Choose from the following menu");
+                System.out.println("=========================");
+                System.out.println("1) Order");
+                System.out.println("2) Manage Order");
+                System.out.println("3) Checkout");
+                System.out.println("4) Logout");
+                System.out.println("=========================");
+>>>>>>> 2511d6c (Working on Manage Order)
                 input.nextLine();
                 choice = input.nextLine();
                 if (!validSelection(choice)) {
@@ -43,14 +54,36 @@ public class Demo {
                 case 1:
                     store.order();
                     break;
-                case 2: 
+                case 2:
+                    System.out.println("Your current order is :");
+                    store.printCurrentOrder();
+                    System.out.println("Would you like to remove an item"
+                    + " from your order? Y or N");
+                    choice = input.nextLine();
+                    if (choice.equals("Y".toLowerCase())) {
+                        System.out.println("Which item would you like to remove?");
+                        choice = input.nextLine();
+                        int rem;
+                        try {
+                            rem = Integer.parseInt(choice);
+                        }
+                        catch (NumberFormatException e) {
+                            System.out.println("That is not a valid number.");
+                        }
+                        store.removePill(rem);
+                        break;
+                    }
+                    else {
+                        break;
+                    }
+                case 3: 
                     GelCap[] order = store.checkOut();
                     if (order != null) {
                         orders.add(order);
                     }
                     store.logOut();
                     break loop;
-                case 3:
+                case 4:
                     exit = store.logOut();
                     break;
             }
@@ -75,7 +108,7 @@ public class Demo {
     private static boolean validSelection(String selection) {
         try {
             int choice = Integer.parseInt(selection);
-            return choice == 1 || choice == 2 || choice == 3;
+            return choice == 1 || choice == 2 || choice == 3 || choice == 4;
         }
         catch (NumberFormatException e) {
             return false;
