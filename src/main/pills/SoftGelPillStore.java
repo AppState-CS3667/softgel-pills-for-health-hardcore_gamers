@@ -107,18 +107,19 @@ public class SoftGelPillStore  {
             return;
         }
         else {
-            System.out.println("Hello " + customerName 
-                +  ". What would you like to order?\n");
+            System.out.println("===========================================");
+            System.out.print("Hello " + customerName 
+                +  "! What would you like to order?\n");
         }
 
         boolean loop = true;
         int choice;
         while (loop) {
             try {
-                System.out.println("=================================");
+                System.out.println("===========================================");
                 System.out.print("Options:\n 1) " 
                     + "Dreamly\n 2) AcheAway\n 3) Cancel\n");
-                System.out.println("=================================");
+                System.out.println("===========================================");
                 choice = input.nextInt();
 
                 if (choice == 1) {
@@ -136,7 +137,7 @@ public class SoftGelPillStore  {
                 }
             }
             catch (InputMismatchException e) {
-                System.out.print("Please enter a 1, 2, or 3\n");
+                System.out.print("ERROR: Invalid Input!\nPlease enter a 1, 2, or 3\n");
                 input.nextLine();
             }
 
@@ -148,19 +149,19 @@ public class SoftGelPillStore  {
      * once gets valid age passes to 2 arg log-in.
      */
     public void logIn() {
-        System.out.println("What is your name?");
-        String name = input.nextLine();
-        
+        System.out.print(" What is your name? ");
+        String name = input.nextLine();        
         boolean loop = true;
         int age = -1;
         while (loop) {
             try {
-                System.out.println("What is your age?");
+                System.out.print(" What is your age? ");
                 age = input.nextInt();
+                System.out.println();
                 loop = false;
             }
             catch (InputMismatchException e) {
-                System.out.println("Please enter a valid age.");
+                System.out.println("ERROR: Invalid Age!\nPlease enter a valid age.");
                 input.nextLine();
             }
         }
