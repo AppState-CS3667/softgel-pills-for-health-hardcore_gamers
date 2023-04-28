@@ -316,7 +316,9 @@ public class SoftGelPillStore  {
      * @return boolean true if order fail rate too large.
      * @return boolean false if order fail rate ok.
      */
-    private boolean tooBigFailRate(double failRate) {
+    public boolean tooBigFailRate(double failRate) {
+        //changed to public so that the client can monitor and 
+        //change their order as needed.
         if (failRate >= 15) {
             return true;
         }
@@ -329,7 +331,9 @@ public class SoftGelPillStore  {
      * 
      * @return fail rate.
      */
-    private double checkFailRate() {
+    public double checkFailRate() {
+        //changed to public so that the client can monitor and 
+        //change their order as needed.
         FailureInspector fi = new FailureInspector();
         fi.reset();
         if(currentOrder == null)
@@ -351,7 +355,9 @@ public class SoftGelPillStore  {
      * @return true if consistent.
      * @return false if not consistent.
      */
-    private boolean consistentOrder() {
+    public boolean consistentOrder() {
+        //changed to public so that the client can monitor and 
+        //change their order as needed.
         ConsistencyInspector ci = new ConsistencyInspector();
         ci.reset();
         for (int i = 0; i < currentOrder.size(); i++) {
