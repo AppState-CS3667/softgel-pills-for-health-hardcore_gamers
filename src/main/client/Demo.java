@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.puppycrawl.tools.checkstyle.checks.indentation.ElseHandler;
+
 import pills.GelCap;
 import pills.SoftGelPillStore;
 
@@ -13,14 +15,16 @@ import pills.SoftGelPillStore;
  * @version 04/26/2023
  */
 public class Demo {
+
+    public static Scanner input = new Scanner(System.in);
+    public static SoftGelPillStore store = new SoftGelPillStore(input, System.out);
+
     /**
      * A simple interface to interact with the SoftGelPillStore.
      * 
      * @param args unused
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        SoftGelPillStore store = new SoftGelPillStore(input, System.out);
         ArrayList<GelCap[]> orders = new ArrayList<>();
         System.out.println("Log In: ");
         store.logIn();
@@ -77,6 +81,15 @@ public class Demo {
                     store.logOut();
                     break loop;
                 case 4:
+                    if(store.getOrderSize() < 1) {
+                        System.out.println("There must be at least one item in your "
+                                            + "order to inspect it.");
+                    }
+                    else {
+                        inspectorMenu();
+                    }
+                    break;
+                case 5:
                     exit = store.logOut();
                     break;
             }
@@ -101,21 +114,21 @@ public class Demo {
     private static boolean validSelection(String selection) {
         try {
             int choice = Integer.parseInt(selection);
-            return choice == 1 || choice == 2 || choice == 3 || choice == 4;
+            return choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5;
         }
         catch (NumberFormatException e) {
             return false;
         }
     }
 
-    /*
+     /*
      * helper method to print a menu for inspector checks
      */
     private static void inspectorMenu() {
-        Scanner input = new Scanner(System.in);
         boolean loop = true;
         int choice;
-        while (loop) { //don't loop here, loop in demo since ordering one pill
+        double fi = store.checkFailRate();
+        while (loop) {
             try {
                 System.out.println("=================================");
                 System.out.print("Options:\n 1) " 
@@ -124,18 +137,32 @@ public class Demo {
                 System.out.println("=================================");
                 choice = input.nextInt();
 
-                /*
+                
                 if (choice == 1) {
-                    
+                    double failRate = store.checkFailRate();
+                    System.out.println("The current fail rate on your order is: " + failRate);
+                    loop = false;
                 }
                 else if (choice == 2) {
-                    currentOrder.add(factory.produceAcheAway());
+                    boolean tooBig = store.tooBigFailRate(fi);
+                    if(!tooBig) {
+                        System.out.println("The fail rate on your order is okay.");
+                    }
+                    else {
+                        System.out.println("The fail rate on your order is too large.");
+                    }
                     loop = false;
                 }
                 else if (choice == 3) {
+                    boolean consistent = store.consistentOrder();
+                    if(!consistent) {
+                        System.out.println("Your order is not consistent.");
+                    }
+                    else {
+                        System.out.println("Your order is consistent.");
+                    }
                     loop = false;
                 }
-                */
             }
             catch (InputMismatchException e) {
                 System.out.print("Please enter a 1, 2, or 3\n");
