@@ -2,9 +2,6 @@ package client;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import com.puppycrawl.tools.checkstyle.checks.indentation.ElseHandler;
-
 import pills.GelCap;
 import pills.SoftGelPillStore;
 
@@ -37,7 +34,8 @@ public class Demo {
             System.out.println(" 1) Order");
             System.out.println(" 2) Manage Order");
             System.out.println(" 3) Checkout");
-            System.out.println(" 4) Logout");
+            System.out.println(" 4) Inspect Order");
+            System.out.println(" 5) Logout");
             System.out.println("===========================================");
             input.nextLine();
             choice = input.nextLine();
