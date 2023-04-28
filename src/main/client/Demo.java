@@ -31,15 +31,14 @@ public class Demo {
         boolean exit = false;
         loop : while (!exit) {
             String choice = "";
-            System.out.println("=========================");
+            System.out.println("===========================================");
             System.out.println("Choose from the following menu");
-            System.out.println("=========================");
-            System.out.println("1) Order");
-            System.out.println("2) Manage Order");
-            System.out.println("3) Checkout");
-            System.out.println("4) Inspect Order");
-            System.out.println("5) Logout");
-            System.out.println("=========================");
+            System.out.println("===========================================");
+            System.out.println(" 1) Order");
+            System.out.println(" 2) Manage Order");
+            System.out.println(" 3) Checkout");
+            System.out.println(" 4) Logout");
+            System.out.println("===========================================");
             input.nextLine();
             choice = input.nextLine();
             if (!validSelection(choice)) {
@@ -50,11 +49,10 @@ public class Demo {
                     store.order();
                     break;
                 case 2:
-                    System.out.println("Your current order is :");
-                    //for (int i = 1; i <= store.getOrderSize(); i++) {
-                    //    System.out.print(i + "\t\t\t\t");
-                    //}
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.println("Your current order is:");
                     store.printCurrentOrder();
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println("Would you like to remove an item"
                     + " from your order? Y or N");
                     choice = input.nextLine();

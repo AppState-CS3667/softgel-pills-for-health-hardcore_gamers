@@ -107,18 +107,19 @@ public class SoftGelPillStore  {
             return;
         }
         else {
-            System.out.println("Hello " + customerName 
-                +  ". What would you like to order?\n");
+            System.out.println("===========================================");
+            System.out.print("Hello " + customerName 
+                +  "! What would you like to order?\n");
         }
 
         boolean loop = true;
         int choice;
-        while (loop) { //don't loop here, loop in demo since ordering one pill
+        while (loop) {
             try {
-                System.out.println("=================================");
+                System.out.println("===========================================");
                 System.out.print("Options:\n 1) " 
                     + "Dreamly\n 2) AcheAway\n 3) Cancel\n");
-                System.out.println("=================================");
+                System.out.println("===========================================");
                 choice = input.nextInt();
 
                 if (choice == 1) {
@@ -136,7 +137,7 @@ public class SoftGelPillStore  {
                 }
             }
             catch (InputMismatchException e) {
-                System.out.print("Please enter a 1, 2, or 3\n");
+                System.out.print("ERROR: Invalid Input!\nPlease enter a 1, 2, or 3\n");
                 input.nextLine();
             }
 
@@ -148,19 +149,19 @@ public class SoftGelPillStore  {
      * once gets valid age passes to 2 arg log-in.
      */
     public void logIn() {
-        System.out.println("What is your name?");
-        String name = input.nextLine();
-        
+        System.out.print(" What is your name? ");
+        String name = input.nextLine();        
         boolean loop = true;
         int age = -1;
         while (loop) {
             try {
-                System.out.println("What is your age?");
+                System.out.print(" What is your age? ");
                 age = input.nextInt();
+                System.out.println();
                 loop = false;
             }
             catch (InputMismatchException e) {
-                System.out.println("Please enter a valid age.");
+                System.out.println("ERROR: Invalid Age!\nPlease enter a valid age.");
                 input.nextLine();
             }
         }
@@ -336,8 +337,7 @@ public class SoftGelPillStore  {
         //change their order as needed.
         FailureInspector fi = new FailureInspector();
         fi.reset();
-        if(currentOrder == null)
-        {
+        if (currentOrder == null) {
             return 0;
         }
         for (int i = 0; i < currentOrder.size(); i++) {
@@ -373,16 +373,14 @@ public class SoftGelPillStore  {
      * 
      * @param index the index of the pill to be removed.
      */
-    public void removePill(int index)
-    {
+    public void removePill(int index) {
         currentOrder.remove(index);
     }
 
     /*
      * Returns the size of the current order ArrayList.
      */
-    public int getOrderSize()
-    {
+    public int getOrderSize() {
         return currentOrder.size();
     }
 }
