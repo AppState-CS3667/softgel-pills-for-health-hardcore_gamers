@@ -131,7 +131,7 @@ public class Demo {
                 System.out.println("=================================");
                 System.out.print("Options:\n 1) " 
                     + "Check Fail Rate\n 2) Check if Fail Rate too Big\n" 
-                    + "3) Check if Consistent Order\n");
+                    + " 3) Check if Consistent Order\n");
                 System.out.println("=================================");
                 choice = input.nextInt();
 
