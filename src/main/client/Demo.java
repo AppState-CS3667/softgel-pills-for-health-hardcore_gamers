@@ -149,6 +149,11 @@ public class Demo {
         }
     }
 
+    /*
+     * manageOrder
+     * 
+     * Helper method that allows the client to remove from their order.
+     */
     private static void manageOrder() {
         String choice;
         boolean loop = true;
