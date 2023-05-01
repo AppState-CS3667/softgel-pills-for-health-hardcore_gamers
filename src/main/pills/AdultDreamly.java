@@ -1,5 +1,11 @@
 package pills;
 
+/*
+ * AdultDreamly class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class AdultDreamly extends Dreamly {
     public static final double STRENGTH = 5.2;
     public static final double SIZE = 12.24;

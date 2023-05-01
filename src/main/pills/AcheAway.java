@@ -1,5 +1,11 @@
 package pills;
 
+/*
+ * AcheAway class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public abstract class AcheAway extends GelCap {
 
     public static final AcheAway NULL = null;

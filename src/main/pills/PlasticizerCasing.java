@@ -2,6 +2,12 @@ package pills;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
+/*
+ * PlasticizerCasing class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class PlasticizerCasing extends UnicastRemoteObject 
     implements CasingGenerator {
 
@@ -21,5 +27,4 @@ public class PlasticizerCasing extends UnicastRemoteObject
             + "Returning plasticizer casing ... \n");
         return "plasticizer";
     }
-
 }

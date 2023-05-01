@@ -1,9 +1,10 @@
 package pills;
 
-
 /*
- * GelCap Class -
- * hardcore_gamers
+ * GelCap class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public abstract class GelCap {
     protected String name;
@@ -23,7 +24,6 @@ public abstract class GelCap {
      * @param size = pill size
      * @param color = pill color
      */
-
     public GelCap(String name, double strength, double size, String color, 
         String casing, String solution, String active) {
 
@@ -45,6 +45,7 @@ public abstract class GelCap {
     public String toString() {
         return String.format("%.2fmg %S pill", strength, name);
     }
+
     /*
      * description method
      * 

@@ -1,7 +1,10 @@
 package pills;
 
 /*
- * FailureInspector class
+ * FailureInspector class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public class FailureInspector extends Inspector {
     

@@ -5,11 +5,11 @@ import java.util.Scanner;
 import pills.GelCap;
 import pills.SoftGelPillStore;
 
-/**
+/*
  * Demo class that provides an interface to use the SoftGelPillStore.
  * 
  * @author hardcore_gamers
- * @version 04/26/2023
+ * @version 05/01/2023
  */
 public class Demo {
 

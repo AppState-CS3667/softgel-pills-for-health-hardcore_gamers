@@ -34,9 +34,9 @@ public class SolutionTest {
 
 
     /*
-        lifecycle hook that sets up the solution
-        objects and redirects System.out
-    */
+     * lifecycle hook that sets up the solution
+     * objects and redirects System.out
+     */
     @BeforeEach
     public void beforeEach() {
         try {
@@ -54,18 +54,18 @@ public class SolutionTest {
     }
 
     /*
-        sets System to out
-    */
+     * sets System to out
+     */
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
     }
 
     /*
-        tests the return value from
-        generateSolution and the print
-        statement
-    */
+     * tests the return value from
+     * generateSolution and the print
+     * statement
+     */
     @Test
     public void testSaline() {
         try {
@@ -78,10 +78,10 @@ public class SolutionTest {
     }
 
     /*
-        tests the return value from
-        generateSolution and the print
-        statement
-    */
+     * tests the return value from
+     * generateSolution and the print
+     * statement
+     */
     @Test
     public void testOil() {
         try {
@@ -94,10 +94,10 @@ public class SolutionTest {
     }
 
     /*
-        displays the print statement
-        so it can be compared in testOil
-        and testSaline
-    */
+     * displays the print statement
+     * so it can be compared in testOil
+     * and testSaline
+     */
     private String getOutput() {
         System.out.flush();
         return baos.toString().replaceAll("\r", "");

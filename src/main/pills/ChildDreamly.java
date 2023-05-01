@@ -1,8 +1,10 @@
 package pills;
 
 /*
- * GelCap Class -
- * hardcore_gamers
+ * ChildDreamly class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public class ChildDreamly extends Dreamly {
     public static final double STRENGTH = 1.25;

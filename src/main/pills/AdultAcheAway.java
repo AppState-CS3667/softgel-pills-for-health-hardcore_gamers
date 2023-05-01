@@ -1,5 +1,11 @@
 package pills;
 
+/*
+ * AdultAcheAway class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class AdultAcheAway extends AcheAway {
     public static final double STRENGTH = 825.00;
     public static final double SIZE = 8.50;

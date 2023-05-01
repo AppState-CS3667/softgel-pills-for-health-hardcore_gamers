@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/*
+ * SoftGelPillStore class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class SoftGelPillStore  {
 
     private GelCapFactory factory;

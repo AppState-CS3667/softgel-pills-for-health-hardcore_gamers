@@ -1,7 +1,10 @@
 package pills;
 
 /*
- * StrengthInspector class
+ * StrengthInspector class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public class StrengthInspector extends Inspector {
     
@@ -82,8 +85,6 @@ public class StrengthInspector extends Inspector {
     /*
      * getAcheAwayStrength method
      * returns the current total of all acheaway pills in the order
-     * 
-     * 
      */
     public double getAcheAwayStrength() {
         return acheAwayStrength;
