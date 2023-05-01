@@ -37,7 +37,7 @@ public class Demo {
             System.out.println(" 4) Inspect Order");
             System.out.println(" 5) Logout");
             System.out.println("===========================================");
-            input.nextLine();
+
             choice = input.nextLine();
             if (!validSelection(choice)) {
                 System.out.println("Please select an option from the menu");
@@ -111,7 +111,7 @@ public class Demo {
                 System.out.println("=================================");
                 System.out.print("Options:\n 1) " 
                     + "Check Fail Rate\n 2) Check if Fail Rate too Big\n" 
-                    + "3) Check if Consistent Order\n");
+                    + " 3) Check if Consistent Order\n");
                 System.out.println("=================================");
                 choice = input.nextInt();
 
@@ -169,26 +169,28 @@ public class Demo {
                 store.printCurrentOrder();
                 System.out.println("Note: The Order List starts with pill 1.");
                 System.out.println("Which item would you like to remove?");
-                choice = input.nextLine();
                 int rem = -1;
                 boolean check = true;
                 while (check) {
+                    choice = input.nextLine();
                     try {
                         rem = Integer.parseInt(choice);
+                        check = false;
                     }
                     catch (NumberFormatException e) {
                         System.out.println("That is not a valid number.");
-                        input.next();
-                    }
-                    if (rem > store.getOrderSize() || rem < store.getOrderSize()) {
-                        System.out.println("That is not a valid pill.");
-                    }
-                    else {
-                        store.removePill(rem - 1);
-                        check = false;
-                        loop = false;
                     }
                 }
+                if (rem < store.getOrderSize()) {
+                    rem -= 1;
+                    store.removePill(rem);
+                    loop = false;
+                }
+                else {
+                    System.out.println("That is not a valid pill.");
+                    System.out.println("Rem is: " + rem);
+                }
+                
             }
             else {
                 loop = false;
