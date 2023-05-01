@@ -37,7 +37,7 @@ public class Demo {
             System.out.println(" 4) Inspect Order");
             System.out.println(" 5) Logout");
             System.out.println("===========================================");
-            input.nextLine();
+
             choice = input.nextLine();
             if (!validSelection(choice)) {
                 System.out.println("Please select an option from the menu");
@@ -111,7 +111,7 @@ public class Demo {
                 System.out.println("=================================");
                 System.out.print("Options:\n 1) " 
                     + "Check Fail Rate\n 2) Check if Fail Rate too Big\n" 
-                    + "3) Check if Consistent Order\n");
+                    + " 3) Check if Consistent Order\n");
                 System.out.println("=================================");
                 choice = input.nextInt();
 

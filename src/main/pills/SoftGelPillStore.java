@@ -141,6 +141,7 @@ public class SoftGelPillStore  {
                 else if (choice == 3) {
                     loop = false;
                 }
+                input.nextLine();
             }
             catch (InputMismatchException e) {
                 System.out.print("ERROR: Invalid Input!\nPlease enter a 1, 2, or 3\n");
@@ -164,6 +165,7 @@ public class SoftGelPillStore  {
                 System.out.print(" What is your age? ");
                 age = input.nextInt();
                 System.out.println();
+                input.nextLine();
                 loop = false;
             }
             catch (InputMismatchException e) {
