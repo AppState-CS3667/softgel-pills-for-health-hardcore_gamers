@@ -19,15 +19,10 @@ public abstract class GelCap {
      * GelCap Constructor
      * 
      * @param strength pill strength
-	 * 
 	 * @param size pill size
-	 * 
 	 * @param color pill color
-	 * 
 	 * @param casing pill casing
-	 * 
 	 * @param solution pill solution
-	 * 
 	 * @param active pill active
      */
     public GelCap(String name, double strength, double size, String color, 
@@ -43,8 +38,6 @@ public abstract class GelCap {
     }
 
     /*
-     * toString method
-     * 
      * return the strength and name of the pill.
      */
     @Override
@@ -53,8 +46,6 @@ public abstract class GelCap {
     }
 
     /*
-     * description method
-     * 
      * returns a string of every attribute of the pill.
      */
     public String description() {
@@ -64,8 +55,6 @@ public abstract class GelCap {
     }
 
     /*
-     * getName method
-     * 
      * returns the pill's name.
      */
     public String getName() {
@@ -73,8 +62,6 @@ public abstract class GelCap {
     }
 
     /*
-     * getStrength method
-     * 
      * returns the pill's strength.
      */
     public double getStrength() {
@@ -82,8 +69,6 @@ public abstract class GelCap {
     }
 
     /*
-     * getSize method
-     * 
      * returns the pill's size.
      */
     public double getSize() {
@@ -91,8 +76,6 @@ public abstract class GelCap {
     }
 
     /*
-     * getColor method
-     * 
      * returns the pill's color.
      */
     public String getColor() {
@@ -100,8 +83,6 @@ public abstract class GelCap {
     }
 
     /*
-     * getCasing method
-     * 
      * returns the pill's casing material.
      */
     public String getCasing() {
@@ -109,8 +90,6 @@ public abstract class GelCap {
     }
 
     /*
-     * getSolution method
-     * 
      * returns the pill's solution.
      */
     public String getSolution() {
@@ -118,8 +97,6 @@ public abstract class GelCap {
     }
 
     /*
-     * getActive method
-     * 
      * returns the pill's active ingredient.
      */
     public String getActive() {
@@ -127,8 +104,6 @@ public abstract class GelCap {
     }
 
     /*
-     * accept method
-     * 
      * calls the inspect method on the inspector passed
      *
      * @param insp - an inspector object

@@ -22,7 +22,8 @@ public class GelCapRecipes {
     /*
      * puts Dreamly and plasticizer casing, AcheAway and gelatin 
      * casing in hashmap
-     * returns casings hashmap.
+     * 
+     * @return casingTemps - a casings hashmap.
      */
     private static HashMap<String, CasingGenerator> getCasings() {
         HashMap<String, CasingGenerator> 
@@ -44,7 +45,8 @@ public class GelCapRecipes {
 
     /*
      * puts Dreamly and oil solution, AcheAway and saline solution in hashmap
-     * returns solutions hashamp.
+     * 
+     * @return solutionsTemp - a solutions hashamp.
      */
     private static HashMap<String, SolutionGenerator> getSolutions() {
         HashMap<String, SolutionGenerator> 
@@ -67,7 +69,8 @@ public class GelCapRecipes {
     /*
      * puts Dreamly and zolpidem active, 
      * AcheAway and acetaminophen active in hashmap
-     * returns actives hashmap.
+     * 
+     * @return activesTemp - an actives hashmap.
      */
     private static HashMap<String, ActiveGenerator> getActives() {
         HashMap<String, ActiveGenerator> 

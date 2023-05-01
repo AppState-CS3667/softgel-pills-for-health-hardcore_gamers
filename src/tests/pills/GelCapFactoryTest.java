@@ -147,7 +147,8 @@ public class GelCapFactoryTest {
                     + ACHEAWAY_GOOD + "\nACTUAL: " + o);     
             }
 	        // Test to make sure temp is either a Dreamly object or null
-            assertTrue(temp instanceof AcheAway || temp instanceof NullAcheAway);
+            assertTrue(temp instanceof AcheAway 
+                        || temp instanceof NullAcheAway);
         }
         // Constants for testing successes
         final int N_ONE = 84;
@@ -189,9 +190,10 @@ public class GelCapFactoryTest {
          * 
          * @return DreamlyMock Dreamly pill
          */
-        protected Dreamly constructDreamly(String casing, String solution, String active) {
+        protected Dreamly constructDreamly(String casing, String solution, 
+                                            String active) {
 	    System.out.print("constructDreamly called ...\n");
-	        return new DreamlyMock(STRENGTH, SIZE, COLOR,
+	    return new DreamlyMock(STRENGTH, SIZE, COLOR,
                 SOLUTION, CASING, ACTIVE);
         }
 
@@ -205,7 +207,8 @@ public class GelCapFactoryTest {
          * 
          * @return DreamlyMock Dreamly pill
          */
-        protected AcheAway constructAcheAway(String casing, String solution, String active) {
+        protected AcheAway constructAcheAway(String casing, String solution, 
+                                                String active) {
             System.out.print("constructAcheAway called ...\n");
             return new AcheAwayMock(STRENGTH, SIZE, COLOR,
                 SOLUTION, CASING, ACTIVE);
@@ -219,7 +222,7 @@ public class GelCapFactoryTest {
         protected double getDreamlyStrength() {
             System.out.print("getDreamly called ...\n");
             return 0;        
-	    }
+	}
 
         /*
          * gets the strength of a AcheAway pill.

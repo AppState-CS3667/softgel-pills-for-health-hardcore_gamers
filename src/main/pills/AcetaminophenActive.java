@@ -11,11 +11,17 @@ import java.rmi.RemoteException;
 public class AcetaminophenActive extends UnicastRemoteObject 
     implements ActiveGenerator {
     
+    /*
+     * Constructor that calls the super constructor.
+     * 
+     * @param port - the port number (used for Proxy).
+     */
     public AcetaminophenActive(int port) throws RemoteException {
         super(port);
     }
+    
     /*
-     * generateActive method
+     * Method that generates (prints out) the actives
      * 
      * @param amount mg of acetaminophen to print
      * @return the string "acetaminophen"

@@ -21,7 +21,8 @@ public class OilSolution extends UnicastRemoteObject
     }
 
     /*
-     * overrides the generateSolution string from the SolutionGenerator interface.
+     * overrides the generateSolution string from the 
+     * SolutionGenerator interface.
      * prints the returned solution and returns oil.
      * 
      * @return oil the oil casing that was generated.

@@ -8,7 +8,8 @@ import java.rmi.RemoteException;
  * @author hardcore_gamers
  * @version 05/01/2023
  */
-public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerator {
+public class ZolpidemActive extends UnicastRemoteObject 
+                            implements ActiveGenerator {
     
     /*
      * Zolpidem constructor that calls the super constructor.
@@ -20,7 +21,8 @@ public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerat
     }
 
     /*
-     * overrides the generateActive string from the ActiveGenerator interface.
+     * overrides the generateActive string from the 
+     * ActiveGenerator interface.
      * prints the returned zolpidem active and returns zolpidem.
      * 
      * @return zolpidem the zolpidem active that was generated.

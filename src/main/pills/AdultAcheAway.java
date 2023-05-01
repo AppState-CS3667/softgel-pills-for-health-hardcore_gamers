@@ -15,9 +15,7 @@ public class AdultAcheAway extends AcheAway {
      * Constructor for AdultAcheAway class that calls the super constructor.
      * 
      * @param casing pill casing
-	 * 
 	 * @param solution pill solution
-	 * 
 	 * @param active pill active
      */
     public AdultAcheAway(String casing, String solution, String active) {
@@ -25,9 +23,7 @@ public class AdultAcheAway extends AcheAway {
     }
 
     /*
-     * accept method
-     * 
-     * calls the inspect method on the inspector passed
+     * Calls the inspect method on the inspector passed
      *
      * @param insp - an inspector object
      */

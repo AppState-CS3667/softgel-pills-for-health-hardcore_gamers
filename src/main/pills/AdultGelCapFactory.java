@@ -13,14 +13,11 @@ public class AdultGelCapFactory extends GelCapFactory {
     /*
      * Constructor for this singleton class
      */
-    private AdultGelCapFactory() {}
+    private AdultGelCapFactory() { }
 
     /*
-     * getInstance
-     * 
      * Retrives the instance of AdultGelCapFactory(Singleton) or 
-     *  creates a new one of it does not exist.
-     * 
+     * creates a new one of it does not exist.
      */
     public static AdultGelCapFactory getInstance() {
         if (instance == null) {
@@ -32,9 +29,7 @@ public class AdultGelCapFactory extends GelCapFactory {
     }
 
     /*
-     * constructDreamly method
-     * 
-     * returns a new Dreamly pill with specified casing, solution, active
+     * Returns a new Dreamly pill with specified casing, solution, active
      * 
      * @param casing casing for the Dreamly pill
      * @param solution solution for the Dreamly pill
@@ -47,9 +42,7 @@ public class AdultGelCapFactory extends GelCapFactory {
     }
 
     /*
-     * constructAcheAway method
-     * 
-     * returns a new AcheAway pill with specified casing, solution, active
+     * Returns a new AcheAway pill with specified casing, solution, active
      * 
      * @param casing casing for the AcheAway pill
      * @param solution solution for the AcheAway pill

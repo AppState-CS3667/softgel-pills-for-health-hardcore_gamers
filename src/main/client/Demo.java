@@ -14,7 +14,8 @@ import pills.SoftGelPillStore;
 public class Demo {
 
     public static Scanner input = new Scanner(System.in);
-    public static SoftGelPillStore store = new SoftGelPillStore(input, System.out);
+    public static SoftGelPillStore store = 
+                new SoftGelPillStore(input, System.out);
 
     /**
      * A simple interface to interact with the SoftGelPillStore.
@@ -26,7 +27,7 @@ public class Demo {
         System.out.println("Log In: ");
         store.logIn();
         boolean exit = false;
-        loop : while (!exit) {
+        loop: while (!exit) {
             String choice = "";
             System.out.println("===========================================");
             System.out.println("Choose from the following menu");
@@ -59,9 +60,9 @@ public class Demo {
                     store.logOut();
                     break loop;
                 case 4:
-                    if(store.getOrderSize() < 1) {
-                        System.out.println("There must be at least one item in your "
-                                            + "order to inspect it.");
+                    if (store.getOrderSize() < 1) {
+                        System.out.println("There must be at least" 
+                                + "one item in your order to inspect it.");
                     }
                     else {
                         inspectorMenu();
@@ -86,13 +87,15 @@ public class Demo {
 
     /**
      * Helper method that checks if use input is a 1, 2, or 3.
+     * 
      * @param selection the string entered by the user
      * @return true if the selection was valid, false otherwise
      */
     private static boolean validSelection(String selection) {
         try {
             int choice = Integer.parseInt(selection);
-            return choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5;
+            return choice == 1 || choice == 2 || choice == 3 
+                    || choice == 4 || choice == 5;
         }
         catch (NumberFormatException e) {
             return false;
@@ -100,7 +103,7 @@ public class Demo {
     }
 
      /*
-     * helper method to print a menu for inspector checks
+     * Helper method to print a menu for inspector checks
      */
     private static void inspectorMenu() {
         boolean loop = true;
@@ -118,28 +121,34 @@ public class Demo {
                 
                 if (choice == 1) {
                     double failRate = store.checkFailRate();
-                    System.out.println("The current fail rate on your order is: " + failRate);
+                    System.out.println("The current fail rate on"
+                                        + " your order is: " + failRate);
+                    input.nextLine();
                     loop = false;
                 }
                 else if (choice == 2) {
                     boolean tooBig = store.tooBigFailRate(fi);
-                    if(!tooBig) {
-                        System.out.println("The fail rate on your order is okay.");
+                    if (!tooBig) {
+                        System.out.println("The fail rate on your order "
+                                            + "is okay.");
                     }
                     else {
-                        System.out.println("The fail rate on your order is too large.");
+                        System.out.println("The fail rate on your order "
+                                            + "is too large.");
                     }
                     loop = false;
+                    input.nextLine();
                 }
                 else if (choice == 3) {
                     boolean consistent = store.consistentOrder();
-                    if(!consistent) {
+                    if (!consistent) {
                         System.out.println("Your order is not consistent.");
                     }
                     else {
                         System.out.println("Your order is consistent.");
                     }
                     loop = false;
+                    input.nextLine();
                 }
             }
             catch (InputMismatchException e) {
@@ -150,8 +159,6 @@ public class Demo {
     }
 
     /*
-     * manageOrder
-     * 
      * Helper method that allows the client to remove from their order.
      */
     private static void manageOrder() {
