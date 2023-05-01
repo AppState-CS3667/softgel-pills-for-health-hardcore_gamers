@@ -12,8 +12,7 @@ public class ConsistencyInspector extends Inspector {
     int childCount;
 
     /*
-     * report method
-     * reports the current status of the inspector
+     * Reports the current status of the inspector
      */
     @Override
     public String report() {
@@ -22,8 +21,7 @@ public class ConsistencyInspector extends Inspector {
     }
 
     /*
-     * reset method
-     * resets the inspector's accumulator variables to 0
+     * Resets the inspector's accumulator variables to 0
      */
     @Override
     public void reset() {
@@ -33,8 +31,7 @@ public class ConsistencyInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of adultCount by 1
+     * Increments the count of adultCount by 1
      * 
      * @param e - an AdultAcheAway pill
      */
@@ -43,8 +40,7 @@ public class ConsistencyInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of childCount by 1
+     * Increments the count of childCount by 1
      * 
      * @param e - a ChildAcheAway pill
      */
@@ -53,8 +49,7 @@ public class ConsistencyInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of adultCount by 1
+     * Increments the count of adultCount by 1
      * 
      * @param e - an AdultDreamly pill
      */
@@ -63,8 +58,7 @@ public class ConsistencyInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of childCount by 1
+     * Increments the count of childCount by 1
      * 
      * @param e - a ChildDreamly pill
      */
@@ -73,8 +67,7 @@ public class ConsistencyInspector extends Inspector {
     }
 
     /*
-     * soFarConsistent method
-     * returns true or false based on if the counts in the order are consistent
+     * Returns true or false based on if the counts in the order are consistent
      */
     public boolean soFarConsistent() {
         if (adultCount > 0 && childCount == 0) {

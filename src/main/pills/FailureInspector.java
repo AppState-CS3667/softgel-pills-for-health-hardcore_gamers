@@ -12,8 +12,7 @@ public class FailureInspector extends Inspector {
     int totalCount;
 
     /*
-     * report method
-     * reports the current status of the inspector
+     * Reports the current status of the inspector
      */
     @Override
     public String report() {
@@ -22,8 +21,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * reset method
-     * resets the inspector's accumulator variables to 0
+     * Resets the inspector's accumulator variables to 0
      */
     @Override
     public void reset() {
@@ -33,8 +31,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of totalCount by 1
+     * Increments the count of totalCount by 1
      * 
      * @param e - an AdultAcheAway pill
      */
@@ -43,8 +40,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of totalCount by 1
+     * Increments the count of totalCount by 1
      * 
      * @param e - a ChildAcheAway pill
      */
@@ -53,8 +49,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of totalCount by 1
+     * Increments the count of totalCount by 1
      * 
      * @param e - an AdultDreamly pill
      */
@@ -63,8 +58,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of totalCount by 1
+     * Increments the count of totalCount by 1
      * 
      * @param e - a ChildDreamly pill
      */
@@ -73,8 +67,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of totalCount and nullCount by 1
+     * Increments the count of totalCount and nullCount by 1
      * 
      * @param e - a NullAcheAway pill
      */
@@ -84,8 +77,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * increments the count of totalCount and nullCount by 1
+     * Increments the count of totalCount and nullCount by 1
      * 
      * @param e - a NullDreamly pill
      */
@@ -95,8 +87,7 @@ public class FailureInspector extends Inspector {
     }
 
     /*
-     * getFailRate method
-     * returns the current ratio of null pills to total pills 
+     * Returns the current ratio of null pills to total pills 
      */
     public double getFailRate() {
         return nullCount / totalCount;

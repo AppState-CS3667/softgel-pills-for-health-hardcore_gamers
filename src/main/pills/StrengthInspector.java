@@ -12,8 +12,7 @@ public class StrengthInspector extends Inspector {
     double acheAwayStrength;
 
     /*
-     * report method
-     * reports the current status of the inspector
+     * Reports the current status of the inspector
      */
     @Override
     public String report() {
@@ -22,8 +21,7 @@ public class StrengthInspector extends Inspector {
     }
 
     /*
-     * reset method
-     * resets the inspector's accumulator variables to 0
+     * Resets the inspector's accumulator variables to 0
      */
     @Override
     public void reset() {
@@ -33,8 +31,7 @@ public class StrengthInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * adds the adult acheaway strength to the total
+     * Adds the adult acheaway strength to the total
      * 
      * @params e - an AdultAcheAway pill
      */
@@ -43,8 +40,7 @@ public class StrengthInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * adds the child acheaway strength to the total
+     * Adds the child acheaway strength to the total
      * 
      * @params e - a ChildAcheAway pill
      */
@@ -53,8 +49,7 @@ public class StrengthInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * adds the adult dreamly strength to the total
+     * Adds the adult dreamly strength to the total
      * 
      * @params e - an AdultDreamly pill
      */
@@ -63,8 +58,7 @@ public class StrengthInspector extends Inspector {
     }
 
     /*
-     * inspect method
-     * adds the child dreamly strength to the total
+     * Adds the child dreamly strength to the total
      * 
      * @params e - a ChildDreamly pill
      */
@@ -73,18 +67,14 @@ public class StrengthInspector extends Inspector {
     }
 
     /*
-     * getDreamlyStrength method
-     * returns the current total of all dreamly pills in the order
-     * 
-     * 
+     * Returns the current total of all dreamly pills in the order
      */
     public double getDreamlyStrength() {
         return dreamlyStrength;
     }
 
     /*
-     * getAcheAwayStrength method
-     * returns the current total of all acheaway pills in the order
+     * Returns the current total of all acheaway pills in the order
      */
     public double getAcheAwayStrength() {
         return acheAwayStrength;

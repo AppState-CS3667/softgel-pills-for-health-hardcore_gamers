@@ -17,8 +17,6 @@ public class NullAcheAway extends AcheAway {
     }
 
     /*
-     * accept method
-     * 
      * calls the inspect method on the inspector passed
      *
      * @param insp - an inspector object

@@ -63,7 +63,7 @@ public class SoftGelPillStore  {
 
     /*
      * checks to make sure logged in. 
-     * checks to make sure consistent.
+     * checks to make sure order is consistent.
      * checks to make sure fail rate is not too big.
      * if logged in print the order, converts to array
      * and returns the array.
@@ -182,6 +182,9 @@ public class SoftGelPillStore  {
      * if less than 18 sets factory to child
      * else sets factory to adult.
      * sets logged in to true.
+     * 
+     * @param name - name of the user.
+     * @param age - the age of the user.
      */
     public void logIn(String name, int age) {
         customerName = name;
@@ -322,6 +325,7 @@ public class SoftGelPillStore  {
      * checks the fail rate. 10 is the average. 15 is too
      * large.
      * 
+     * @param failRate - the failRate.
      * @return boolean true if order fail rate too large.
      * @return boolean false if order fail rate ok.
      */

@@ -86,6 +86,7 @@ public class Demo {
 
     /**
      * Helper method that checks if use input is a 1, 2, or 3.
+     * 
      * @param selection the string entered by the user
      * @return true if the selection was valid, false otherwise
      */
@@ -100,7 +101,7 @@ public class Demo {
     }
 
      /*
-     * helper method to print a menu for inspector checks
+     * Helper method to print a menu for inspector checks
      */
     private static void inspectorMenu() {
         boolean loop = true;
@@ -153,8 +154,6 @@ public class Demo {
     }
 
     /*
-     * manageOrder
-     * 
      * Helper method that allows the client to remove from their order.
      */
     private static void manageOrder() {

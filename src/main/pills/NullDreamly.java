@@ -16,8 +16,6 @@ public class NullDreamly extends Dreamly {
     }
 
     /*
-     * accept method
-     * 
      * calls the inspect method on the inspector passed
      *
      * @param insp - an inspector object
