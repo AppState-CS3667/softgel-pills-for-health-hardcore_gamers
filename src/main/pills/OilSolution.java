@@ -10,11 +10,22 @@ import java.rmi.RemoteException;
  */
 public class OilSolution extends UnicastRemoteObject 
     implements SolutionGenerator {
-    
+
+    /*
+     * OilSolution constructor that calls the super constructor.
+     * 
+     * @param port the port that is used in the proxy.
+     */
     public OilSolution(int port) throws RemoteException {
         super(port);
     }
 
+    /*
+     * overrides the generateSolution string from the SolutionGenerator interface.
+     * prints the returned solution and returns oil.
+     * 
+     * @return oil the oil casing that was generated.
+     */
     public String generateSolution() throws RemoteException {
         System.out.println("Extracting pill"
             + "-sized quantity of oil ... ");

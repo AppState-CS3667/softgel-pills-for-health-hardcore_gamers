@@ -13,6 +13,12 @@ public class AdultDreamly extends Dreamly {
     
     /*
      * Constructor for AdultDreamly class that calls the super constructor.
+     * 
+     * @param casing pill casing
+	 * 
+	 * @param solution pill solution
+	 * 
+	 * @param active pill active
      */
     public AdultDreamly(String casing, String solution, String active) {
         super(STRENGTH, SIZE, COLOR, casing, solution, active);

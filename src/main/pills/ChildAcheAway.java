@@ -13,6 +13,12 @@ public class ChildAcheAway extends AcheAway {
     
     /*
      * Constructor for ChildAcheAway class that calls the super constructor.
+     * 
+     * @param casing pill casing
+	 * 
+	 * @param solution pill solution
+	 * 
+	 * @param active pill active
      */
     public ChildAcheAway(String casing, String solution, String active) {
         super(STRENGTH, SIZE, COLOR, casing, solution, active);
