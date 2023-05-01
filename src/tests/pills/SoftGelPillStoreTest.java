@@ -123,10 +123,10 @@ public class SoftGelPillStoreTest {
     /**
      * Test to make sure you can't logout
      * with an item in the cart without
-     * confirming
+     * confirming.
      */
     @Test
-    public void failedLogOut(){
+    public void failedLogOut() {
         final String ourInput = "J\n27\n1\nN\n";
         bais = new ByteArrayInputStream(ourInput.getBytes());
         System.setIn(bais);
@@ -139,7 +139,7 @@ public class SoftGelPillStoreTest {
 
     /**
      * Test make sure the print order
-     * method is working properly
+     * method is working properly.
      */
     @Test
     public void testPrintOrder() {
@@ -157,10 +157,10 @@ public class SoftGelPillStoreTest {
 
     /**
      * Test to assure that the checkout
-     * method is working properly
+     * method is working properly.
      */
     @Test
-    public void successfulCheckOut(){
+    public void successfulCheckOut() {
         final String ourInput = "J\n27\n1\n1\n2\n";
         bais = new ByteArrayInputStream(ourInput.getBytes());
         System.setIn(bais);
@@ -175,7 +175,9 @@ public class SoftGelPillStoreTest {
     
     /**
      * Test to confirm you can logout even if you have items
-     * in the cart, as long as you are sure you want to check out
+     * in the cart, as long as you are sure you want to check out.
+     * 
+     * @return x the string after flush
      */
     private String getOutput() {
         System.out.flush();

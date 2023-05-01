@@ -21,7 +21,8 @@ public class SalineSolution extends UnicastRemoteObject
     }
 
     /*
-     * overrides the generateSolution string from the SolutionGenerator interface.
+     * overrides the generateSolution string from the 
+     * SolutionGenerator interface.
      * prints the returned saline solution and returns saline.
      * 
      * @return saline the saline solution that was generated.

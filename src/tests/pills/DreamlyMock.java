@@ -15,5 +15,5 @@ public class DreamlyMock extends Dreamly {
         super(strength, size, color, casing, solution, active);
     }
 
-    public void accept(Inspector insp) {}
+    public void accept(Inspector insp) { }
 }

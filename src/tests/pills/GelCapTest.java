@@ -90,6 +90,6 @@ public class GelCapTest {
             System.out.print("Z\n");
         }
 
-        public void accept(Inspector insp) {}
+        public void accept(Inspector insp) { }
     }
 }
