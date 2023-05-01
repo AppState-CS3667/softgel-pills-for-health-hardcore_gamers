@@ -2,19 +2,18 @@ package pills;
 
 /*
  * ChildGelCapFactory class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public class ChildGelCapFactory extends GelCapFactory {
 
     private static ChildGelCapFactory instance;
 
     /*
-     * ChildGelCapFactory
-     * 
      * Constructor for this singleton class
      */
-    private ChildGelCapFactory() {
-
-    }
+    private ChildGelCapFactory() {}
 
     /*
      * getInstance

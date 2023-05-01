@@ -2,8 +2,11 @@ package pills;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
-/*
+/**
  * AcetaminophenActive class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public class AcetaminophenActive extends UnicastRemoteObject 
     implements ActiveGenerator {

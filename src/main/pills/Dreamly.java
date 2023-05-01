@@ -1,5 +1,11 @@
 package pills;
 
+/*
+ * Dreamly class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public abstract class Dreamly extends GelCap {
     
     public static final Dreamly NULL = null;

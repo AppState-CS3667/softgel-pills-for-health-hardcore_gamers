@@ -2,6 +2,12 @@ package pills;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
+/*
+ * ZolpidemActive class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class ZolpidemActive extends UnicastRemoteObject implements ActiveGenerator {
     
     public ZolpidemActive(int port) throws RemoteException {

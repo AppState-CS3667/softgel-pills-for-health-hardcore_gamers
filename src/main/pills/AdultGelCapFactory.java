@@ -2,19 +2,18 @@ package pills;
 
 /*
  * AdultGelCapFactory class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public class AdultGelCapFactory extends GelCapFactory {
 
     private static AdultGelCapFactory instance;
 
     /*
-     * AdultGelCapFactory
-     * 
      * Constructor for this singleton class
      */
-    private AdultGelCapFactory() {
-
-    }
+    private AdultGelCapFactory() {}
 
     /*
      * getInstance

@@ -2,6 +2,12 @@ package pills;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
+/*
+ * OilSolution class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class OilSolution extends UnicastRemoteObject 
     implements SolutionGenerator {
     

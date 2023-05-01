@@ -6,6 +6,12 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.NotBoundException;
 
+/*
+ * GelCapRecipes class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class GelCapRecipes {
     public static final HashMap<String, CasingGenerator> CASINGS = getCasings();
     public static final HashMap<String, SolutionGenerator> 

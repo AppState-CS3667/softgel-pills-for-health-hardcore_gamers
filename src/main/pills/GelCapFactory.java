@@ -1,19 +1,22 @@
 package pills;
 
 import java.rmi.RemoteException;
+
 /*
-	Class that produces AcheAway and Dreamly pills
-	Abstract with two child classes
-*/
+ * GelCapFactory class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public abstract class GelCapFactory {
 
-    //probability a quality check passes
+    // The probability a quality check passes
     public final double qp = 0.9;
 
     /*
-        constructs a Dreamly pill and performs a
-		quality check on said pill
-	*/
+     * constructs a Dreamly pill and performs a
+	 * quality check on said pill
+	 */
     public final Dreamly produceDreamly() {
         System.out.print("Creating a Dreamly pill ... \n");
 
@@ -41,9 +44,9 @@ public abstract class GelCapFactory {
     }
 
     /*
-        constructs an AcheAway pill and performs a
-		quality check on said pill
-	*/
+     * constructs an AcheAway pill and performs a
+	 * qality check on said pill
+	 */
     public final AcheAway produceAcheAway() {
         System.out.print("Creating a AcheAway pill ... \n");
         try {
@@ -69,20 +72,21 @@ public abstract class GelCapFactory {
     }
 
     /*
-        performs a quality check on a pill.
-		quality check has a 90% chance of passing
-	*/
+     * performs a quality check on a pill.
+	 * quality check has a 90% chance of passing
+	 */
     private final boolean qualityCheck() {
-	double check = Math.random();
-	if (check <= qp) {
-	    System.out.print("quality check passed ...\n");
-	    return true;
-	}
-	else {
-	    System.out.print("quality check failed ...\n");
-	    return false;
-	}
+        double check = Math.random();
+        if (check <= qp) {
+            System.out.print("quality check passed ...\n");
+            return true;
+        }
+        else {
+            System.out.print("quality check failed ...\n");
+            return false;
+        }
     }
+
     //abstract method to create a Dreamly pill
     protected abstract Dreamly constructDreamly(String casing, 
 										String solution, String active);
@@ -90,9 +94,10 @@ public abstract class GelCapFactory {
     //abstract method to create an AcheAway pill
     protected abstract AcheAway constructAcheAway(String casing, 
 										String solution, String active);
+
     //Helper method that returns a Dreamly pills strength
     protected abstract double getDreamlyStrength();
+
     //Helper method that returns a Dreamly pills strength
     protected abstract double getAcheAwayStrength();
 }
-

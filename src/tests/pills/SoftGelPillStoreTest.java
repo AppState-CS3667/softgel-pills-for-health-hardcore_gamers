@@ -1,24 +1,5 @@
 package pills;
 
-
-
-
-
-
-
-
-/*
- * GelCap Class -
- * hardcore_gamers
- */
-
-
-
-
-
-
-
-
 //Imports
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -53,11 +34,13 @@ public class SoftGelPillStoreTest {
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
     }
+
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
         System.setIn(oldIn);
     }
+
     // Tests to make sure the constructors works as intended
     @Test
     public void testConstructors() {
@@ -70,12 +53,14 @@ public class SoftGelPillStoreTest {
         this.store = new SoftGelPillStore(OUTPUT);
         assertEquals(OUTPUT, store.getOutput());
     }
+
     // Test to make sure input getter works as intended
     @Test
     public void testInputGetter() {
         this.store = new SoftGelPillStore(INPUT);
         assertEquals(INPUT, store.getInput());
     }
+
     // Test to make sure input setter works as intended
     @Test
     public void testInputSetter() {
@@ -83,12 +68,14 @@ public class SoftGelPillStoreTest {
         store.setInput(INPUT);
         assertEquals(INPUT, store.getInput());
     }
+
     // Test to make sure output getter works as intended
     @Test
     public void testOutputGetter() {
         this.store = new SoftGelPillStore(OUTPUT);
         assertEquals(OUTPUT, store.getOutput());
     }
+
     // Test to make sure output setter works as intended
     @Test
     public void testOutputSetter() {
@@ -96,18 +83,21 @@ public class SoftGelPillStoreTest {
         store.setOutput(OUTPUT);
         assertEquals(OUTPUT, store.getOutput());
     }
+
     // Test to make sure you can't
     // log out without logging in
     @Test
     public void noLogOutWithoutLogin() {
         assertFalse(store.logOut());
     }
+
     // Test to make sure you can't
     // checkout without logging in
     @Test
     public void noCheckOutWithoutLogin() {
         assertNull(store.checkOut());
     }
+
     // Tests the login with no args method
     @Test
     public void successfulLogin() {
@@ -118,6 +108,7 @@ public class SoftGelPillStoreTest {
         store.logIn();
         assertTrue(store.logOut());
     }
+
     // Test to make sure logOut works
     @Test
     public void successfulLogOut() {
@@ -128,6 +119,7 @@ public class SoftGelPillStoreTest {
         store.logIn();
         assertTrue(store.logOut());
     }
+
     /**
      * Test to make sure you can't logout
      * with an item in the cart without
@@ -144,6 +136,7 @@ public class SoftGelPillStoreTest {
         boolean x = store.logOut();
         assertFalse(x);
     }
+
     /**
      * Test make sure the print order
      * method is working properly
@@ -161,6 +154,7 @@ public class SoftGelPillStoreTest {
         String y = getOutput();
         assertNotEquals("[]", y, "Shouldn't be empty");
     }
+
     /**
      * Test to assure that the checkout
      * method is working properly
@@ -178,6 +172,7 @@ public class SoftGelPillStoreTest {
         GelCap[] x = store.checkOut();
         assertNotNull(x);  
     }
+    
     /**
      * Test to confirm you can logout even if you have items
      * in the cart, as long as you are sure you want to check out

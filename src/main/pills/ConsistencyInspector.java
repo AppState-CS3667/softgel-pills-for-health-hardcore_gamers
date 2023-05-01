@@ -1,7 +1,10 @@
 package pills;
 
 /*
- * ConsistencyInspector class
+ * ConsistencyInspector class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
  */
 public class ConsistencyInspector extends Inspector {
 

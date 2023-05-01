@@ -5,11 +5,11 @@ import java.util.Scanner;
 import pills.GelCap;
 import pills.SoftGelPillStore;
 
-/**
+/*
  * Demo class that provides an interface to use the SoftGelPillStore.
  * 
  * @author hardcore_gamers
- * @version 04/26/2023
+ * @version 05/01/2023
  */
 public class Demo {
 
@@ -42,35 +42,15 @@ public class Demo {
             if (!validSelection(choice)) {
                 System.out.println("Please select an option from the menu");
             }
+            
             switch (Integer.parseInt(choice)) {
                 case 1:
                     store.order();
                     break;
                 case 2:
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println("Your current order is:");
-                    store.printCurrentOrder();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println("Would you like to remove an item"
-                    + " from your order? Y or N");
-                    choice = input.nextLine();
-                    if (choice.equals("Y".toLowerCase())) {
-                        System.out.println("Note: The Order List starts with pill 1.");
-                        System.out.println("Which item would you like to remove?");
-                        choice = input.nextLine();
-                        int rem = -1;
-                        try {
-                            rem = Integer.parseInt(choice);
-                        }
-                        catch (NumberFormatException e) {
-                            System.out.println("That is not a valid number.");
-                        }
-                        store.removePill(rem - 1);
-                        break;
-                    }
-                    else {
-                        break;
-                    }
+                    manageOrder();
+                    //input.next();
+                    break;
                 case 3: 
                     GelCap[] order = store.checkOut();
                     if (order != null) {
@@ -165,6 +145,53 @@ public class Demo {
             catch (InputMismatchException e) {
                 System.out.print("Please enter a 1, 2, or 3\n");
                 input.nextLine();
+            }
+        }
+    }
+
+    /*
+     * manageOrder
+     * 
+     * Helper method that allows the client to remove from their order.
+     */
+    private static void manageOrder() {
+        String choice;
+        boolean loop = true;
+        while (loop) {
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("Your current order is:");
+            store.printCurrentOrder();
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("Would you like to remove an item"
+                + " from your order? Y or N");
+            choice = input.nextLine();
+            if (choice.toLowerCase().equals("y")) {
+                store.printCurrentOrder();
+                System.out.println("Note: The Order List starts with pill 1.");
+                System.out.println("Which item would you like to remove?");
+                choice = input.nextLine();
+                int rem = -1;
+                boolean check = true;
+                while (check) {
+                    try {
+                        rem = Integer.parseInt(choice);
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("That is not a valid number.");
+                        input.next();
+                    }
+                    if (rem > store.getOrderSize() || rem < store.getOrderSize()) {
+                        System.out.println("That is not a valid pill.");
+                    }
+                    else {
+                        store.removePill(rem - 1);
+                        check = false;
+                        loop = false;
+                    }
+                }
+            }
+            else {
+                loop = false;
             }
         }
     }

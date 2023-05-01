@@ -1,6 +1,5 @@
 package pills;
 
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
@@ -47,10 +46,10 @@ public class GelCapFactoryTest {
     @BeforeEach
     public void beforeEach() {
         this.gcf = new GelCapFactoryMock();
-	this.oldOut = System.out;
-	this.baos = new ByteArrayOutputStream();
-	// Sets system.out to a new Prinstream object using baos.
-	System.setOut(new PrintStream(baos));
+        this.oldOut = System.out;
+        this.baos = new ByteArrayOutputStream();
+        // Sets system.out to a new Prinstream object using baos.
+        System.setOut(new PrintStream(baos));
     }
 
     /* 
@@ -60,55 +59,48 @@ public class GelCapFactoryTest {
     public void testProduceDreamly() {
         // count of successes
         int s = 0;
-	// count of failures
-	int f = 0;
+        // count of failures
+        int f = 0;
 
         Dreamly temp = null; 
         for (int i = 0; i < 100; i++) {
-	    // Call the produceDreamly method on the mock object
+            // Call the produceDreamly method on the mock object
             temp = gcf.produceDreamly();
 
-	    // o = String for output
-	    String o = getOutput();
+            // o = String for output
+            String o = getOutput();
 
-	    // og = String for good output 
-        //(output if it returns a good Dreamly pill)  
-           
-	    // Constants for the stringsubset methods to trim the output
-            //final int STR1START = 0;
-            //final int STR1END = 29;
-            //final int STR2START = 358;
-            //final int GOODOUTPUTLENGTH = 395;
-
-            // if output is good pill
+            // og = String for good output 
+            //(output if it returns a good Dreamly pill)  
             
-	    //if output is bad pill
-           
-	    // if output is good and equals expected output
-	    if (DREAMLY_GOOD.equals(o)) {
+            // Constants for the stringsubset methods to trim the output
+                //final int STR1START = 0;
+                //final int STR1END = 29;
+                //final int STR2START = 358;
+                //final int GOODOUTPUTLENGTH = 395;
+            
+            // if output is good and equals expected output
+            if (DREAMLY_GOOD.equals(o)) {
                 s++;
-	    }
+            }
 
-
-	    // if output is bad and equals expected output
-	    else if (DREAMLY_BAD.equals(o)) {
+            // if output is bad and equals expected output
+            else if (DREAMLY_BAD.equals(o)) {
                 f++;
-	    }
+            }
 
-	    // Ouput failed. Prints error message
-	    else {
+            // Ouput failed. Prints error message
+            else {
                 fail("ERROR: Output was not as expected.\nExpected: " 
                     + DREAMLY_GOOD + "\nACTUAL: " + o);
-	    }
+            }
         }
-	// Test to make sure temp is either a Dreamly object or null
+	    // Test to make sure temp is either a Dreamly object or null
         assertTrue(temp instanceof Dreamly || temp instanceof NullDreamly);
 
-	// Constants for testing successes
+	    // Constants for testing successes
         final int N_ONE = 84;
         final int N_TWO = 96;
-
-        
         assertTrue(s >= N_ONE && s <= N_TWO);
     }
 
@@ -119,61 +111,50 @@ public class GelCapFactoryTest {
     public void testProduceAcheAway() {
         // count of successes
         int s = 0;
-	// count of failures
-	int f = 0;
+        // count of failures
+        int f = 0;
 
         AcheAway temp = null;
         for (int i = 0; i < 100; i++) {
-	    // Call the produceDreamly method on the mock object
+            // Call the produceDreamly method on the mock object
             temp = gcf.produceAcheAway();
 
-	    // o = String for output
-	    String o = getOutput();
+            // o = String for output
+            String o = getOutput();
 
-	    // og = String for good output 
-        //(output if it returns a good Dreamly pill)  
-            
-	    // Constants for the stringsubset methods to trim the output
-            //final int STR1START = 0;
-            //final int STR1END = 30;
-            //final int STR2START = 394;
-            //final int GOODOUTPUTLENGTH = 432;
+            // og = String for good output 
+            //(output if it returns a good Dreamly pill)  
+                
+            // Constants for the stringsubset methods to trim the output
+                //final int STR1START = 0;
+                //final int STR1END = 30;
+                //final int STR2START = 394;
+                //final int GOODOUTPUTLENGTH = 432;
 
-            // if output is good pill
-            
-
-	    //if output is bad pill
-           
-
-	    // if output is good and equals expected output
-	    if (ACHEAWAY_GOOD.equals(o)) {
+            // if output is good and equals expected output
+            if (ACHEAWAY_GOOD.equals(o)) {
                 s++;
-	    }
+            }
 
-	    // if output is bad and equals expected output
-	    else if (ACHEAWAY_BAD.equals(o)) {
+            // if output is bad and equals expected output
+            else if (ACHEAWAY_BAD.equals(o)) {
                 f++;
-	    }
+            }
 
-	    // Ouput failed. Prints error message
-	    else {
+            // Ouput failed. Prints error message
+            else {
                 fail("ERROR: Output was not as expected.\nExpected: " 
-                    + ACHEAWAY_GOOD + "\nACTUAL: " + o);
-                    
-	    }
-	// Test to make sure temp is either a Dreamly object or null
-        
+                    + ACHEAWAY_GOOD + "\nACTUAL: " + o);     
+            }
+	        // Test to make sure temp is either a Dreamly object or null
             assertTrue(temp instanceof AcheAway || temp instanceof NullAcheAway);
         }
-	// Constants for testing successes
+        // Constants for testing successes
         final int N_ONE = 84;
         final int N_TWO = 96;
-	assertTrue(s >= N_ONE && s <= N_TWO);
-        
-        
+        assertTrue(s >= N_ONE && s <= N_TWO);
     }
     
-
     /*
      * Sets system.out to the oldOut after each test
      */
@@ -187,9 +168,9 @@ public class GelCapFactoryTest {
      */
     private String getOutput() {
         System.out.flush();
-	String output = baos.toString().replaceAll("\r", "");
-	baos.reset();
-	return output;
+        String output = baos.toString().replaceAll("\r", "");
+        baos.reset();
+        return output;
     }
 
     /*
@@ -199,58 +180,55 @@ public class GelCapFactoryTest {
      */
     private class GelCapFactoryMock extends GelCapFactory {
 
-  /**
-	 * Constructs a new Dreamly mock object.
-     * 
-     * @param casing AcheAway casing
-     * @param solution AcheAway solution
-     * @param active ScheAway active
-     * 
-     * @return DreamlyMock Dreamly pill
-	 */
-
-        protected Dreamly constructDreamly(String casing,
-            String solution, String active) {
+        /*
+         * Constructs a new Dreamly mock object.
+         * 
+         * @param casing AcheAway casing
+         * @param solution AcheAway solution
+         * @param active ScheAway active
+         * 
+         * @return DreamlyMock Dreamly pill
+         */
+        protected Dreamly constructDreamly(String casing, String solution, String active) {
 	    System.out.print("constructDreamly called ...\n");
-	    return new DreamlyMock(STRENGTH, SIZE, COLOR,
-            SOLUTION, CASING, ACTIVE);
+	        return new DreamlyMock(STRENGTH, SIZE, COLOR,
+                SOLUTION, CASING, ACTIVE);
         }
 
 
-  /**
-	 * Constructs a new AcheAway mock object.
-     * 
-     * @param casing AcheAway casing
-     * @param solution AcheAway solution
-     * @param active ScheAway active
-     * 
-     * @return DreamlyMock Dreamly pill
-	 */
-        protected AcheAway constructAcheAway(String casing,
-            String solution, String active) {
-	    System.out.print("constructAcheAway called ...\n");
-	    return new AcheAwayMock(STRENGTH, SIZE, COLOR,
-            SOLUTION, CASING, ACTIVE);
+        /*
+         * Constructs a new AcheAway mock object.
+         * 
+         * @param casing AcheAway casing
+         * @param solution AcheAway solution
+         * @param active ScheAway active
+         * 
+         * @return DreamlyMock Dreamly pill
+         */
+        protected AcheAway constructAcheAway(String casing, String solution, String active) {
+            System.out.print("constructAcheAway called ...\n");
+            return new AcheAwayMock(STRENGTH, SIZE, COLOR,
+                SOLUTION, CASING, ACTIVE);
         }
 
         /*
-	 * gets the strength of a Dreamly pill.
-	 *
-	 * for testing purposes this method returns 0
-	 */
+         * gets the strength of a Dreamly pill.
+         *
+         * for testing purposes this method returns 0
+         */
         protected double getDreamlyStrength() {
-	    System.out.print("getDreamly called ...\n");
-	    return 0;        
-	}
+            System.out.print("getDreamly called ...\n");
+            return 0;        
+	    }
 
         /*
-	 * gets the strength of a AcheAway pill.
-	 *
-	 * for testing purposes this method returns 0
-	 */
+         * gets the strength of a AcheAway pill.
+         *
+         * for testing purposes this method returns 0
+         */
         protected double getAcheAwayStrength() {
-	    System.out.print("getAcheAway called ...\n");
-	    return 0;        
+            System.out.print("getAcheAway called ...\n");
+            return 0;        
         }
     }
 }
