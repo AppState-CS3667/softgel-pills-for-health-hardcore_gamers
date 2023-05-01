@@ -11,6 +11,11 @@ import java.rmi.RemoteException;
 public class PlasticizerCasing extends UnicastRemoteObject 
     implements CasingGenerator {
 
+    /*
+     * Plasticizer constructor that calls the super constructor.
+     * 
+     * @param port the port that is used in the proxy.
+     */
     public PlasticizerCasing(int port) throws RemoteException {
         super(port);
     }
@@ -18,6 +23,8 @@ public class PlasticizerCasing extends UnicastRemoteObject
     /*
      * overrides the generateCasing string from the CasingGenerator interface.
      * prints the returned plasticizer casing and returns plasticizer.
+     * 
+     * @return plasticizer the plasticizer casing that was generated.
      */
     @Override
     public String generateCasing() throws RemoteException {

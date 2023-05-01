@@ -18,11 +18,17 @@ public abstract class GelCap {
     /*
      * GelCap Constructor
      * 
-     * Parameters:
-     * @param = pill name
-     * @param strength = pill strength
-     * @param size = pill size
-     * @param color = pill color
+     * @param strength pill strength
+	 * 
+	 * @param size pill size
+	 * 
+	 * @param color pill color
+	 * 
+	 * @param casing pill casing
+	 * 
+	 * @param solution pill solution
+	 * 
+	 * @param active pill active
      */
     public GelCap(String name, double strength, double size, String color, 
         String casing, String solution, String active) {
