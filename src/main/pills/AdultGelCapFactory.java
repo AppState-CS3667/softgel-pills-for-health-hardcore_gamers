@@ -13,7 +13,7 @@ public class AdultGelCapFactory extends GelCapFactory {
     /*
      * Constructor for this singleton class
      */
-    private AdultGelCapFactory() {}
+    private AdultGelCapFactory() { }
 
     /*
      * Retrives the instance of AdultGelCapFactory(Singleton) or 

@@ -13,7 +13,7 @@ public class ChildGelCapFactory extends GelCapFactory {
     /*
      * Constructor for this singleton class
      */
-    private ChildGelCapFactory() {}
+    private ChildGelCapFactory() { }
 
     /*
      * Retrives the instance of ChildGelCapFactory(Singleton) or 

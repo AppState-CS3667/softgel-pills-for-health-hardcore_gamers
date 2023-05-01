@@ -122,10 +122,12 @@ public class SoftGelPillStore  {
         int choice;
         while (loop) {
             try {
-                System.out.println("===========================================");
+                System.out.println("====================="
+                                    + "======================");
                 System.out.print("Options:\n 1) " 
                     + "Dreamly\n 2) AcheAway\n 3) Cancel\n");
-                System.out.println("===========================================");
+                System.out.println("====================="
+                                    + "======================");
                 choice = input.nextInt();
 
                 if (choice == 1) {
@@ -144,7 +146,8 @@ public class SoftGelPillStore  {
                 input.nextLine();
             }
             catch (InputMismatchException e) {
-                System.out.print("ERROR: Invalid Input!\nPlease enter a 1, 2, or 3\n");
+                System.out.print("ERROR: Invalid Input!\n"
+                                + "Please enter a 1, 2, or 3\n");
                 input.nextLine();
             }
 
@@ -169,7 +172,8 @@ public class SoftGelPillStore  {
                 loop = false;
             }
             catch (InputMismatchException e) {
-                System.out.println("ERROR: Invalid Age!\nPlease enter a valid age.");
+                System.out.println("ERROR: Invalid Age!\n"
+                                    + "Please enter a valid age.");
                 input.nextLine();
             }
         }
