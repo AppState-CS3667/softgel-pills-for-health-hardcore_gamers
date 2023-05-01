@@ -119,6 +119,7 @@ public class Demo {
                 if (choice == 1) {
                     double failRate = store.checkFailRate();
                     System.out.println("The current fail rate on your order is: " + failRate);
+                    input.nextLine();
                     loop = false;
                 }
                 else if (choice == 2) {
@@ -130,6 +131,7 @@ public class Demo {
                         System.out.println("The fail rate on your order is too large.");
                     }
                     loop = false;
+                    input.nextLine();
                 }
                 else if (choice == 3) {
                     boolean consistent = store.consistentOrder();
@@ -140,6 +142,7 @@ public class Demo {
                         System.out.println("Your order is consistent.");
                     }
                     loop = false;
+                    input.nextLine();
                 }
             }
             catch (InputMismatchException e) {
