@@ -13,6 +13,8 @@ public class FailureInspector extends Inspector {
 
     /*
      * Reports the current status of the inspector
+     * 
+     * @return string of the nullCount and totalCount
      */
     @Override
     public String report() {
@@ -88,6 +90,8 @@ public class FailureInspector extends Inspector {
 
     /*
      * Returns the current ratio of null pills to total pills 
+     * 
+     * @return ration of null pills to the total pills
      */
     public double getFailRate() {
         return nullCount / totalCount;

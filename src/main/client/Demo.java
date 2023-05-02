@@ -71,6 +71,8 @@ public class Demo {
                 case 5:
                     exit = store.logOut();
                     break;
+                default:
+                    break;
             }
         }
         System.out.println("Here is what you ordered:");
