@@ -8,6 +8,14 @@ import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+/**
+ * GelCapFactoryTest class.
+ * This class is used for testing 
+ * the GelCapFactory class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class GelCapFactoryTest {
     //Fields for testing
     public static final String NAME = "Mr. A";

@@ -4,6 +4,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * AcheAwayTest class.
+ * This class is used for testing 
+ * the AcheAway class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class AcheAwayTest {
 
     public static final String TEST_CASING = "gelatin";

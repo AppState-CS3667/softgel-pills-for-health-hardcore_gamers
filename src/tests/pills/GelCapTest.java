@@ -5,6 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+/**
+ * GelCapTest class.
+ * This class is used for testing 
+ * the GelCap class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class GelCapTest {
     //Fields for testing
     public static final String NAME = "Mr. A";

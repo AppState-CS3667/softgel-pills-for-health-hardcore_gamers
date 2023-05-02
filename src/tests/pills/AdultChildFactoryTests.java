@@ -8,7 +8,15 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+/**
+ * AdultChildFactoryTests class.
+ * This class is used for testing 
+ * the AdultGelCapFactoryTests 
+ * and ChildGelCapFactoryTests classes.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class AdultChildFactoryTests {
     private static final double ADULT_DREAMLY_STRENGTH = 5.2;
     private static final String DREAMLY_CASING = "Plasticizer";
@@ -98,7 +106,12 @@ public class AdultChildFactoryTests {
     public void testChildSingleton() {
         assertEquals(cgcf.getInstance(), cgcf.getInstance());
     }
-
+    /**
+     * Test to confirm you can logout even if you have items
+     * in the cart, as long as you are sure you want to check out.
+     * 
+     * @return x the string after flush
+     */
     private String getOutput() {
         System.out.flush();
         return baos.toString().replaceAll("\r", "");
