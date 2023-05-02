@@ -13,6 +13,8 @@ public class StrengthInspector extends Inspector {
 
     /*
      * Reports the current status of the inspector
+     * 
+     * @return string of the dreamly strength and acheaway strength
      */
     @Override
     public String report() {
@@ -68,6 +70,8 @@ public class StrengthInspector extends Inspector {
 
     /*
      * Returns the current total of all dreamly pills in the order
+     * 
+     * @return dreamlyStrength - the strength of the dreamly pill
      */
     public double getDreamlyStrength() {
         return dreamlyStrength;
@@ -75,6 +79,8 @@ public class StrengthInspector extends Inspector {
 
     /*
      * Returns the current total of all acheaway pills in the order
+     * 
+     * @return acheAwayStrength - the strength of the acheaway pill
      */
     public double getAcheAwayStrength() {
         return acheAwayStrength;
