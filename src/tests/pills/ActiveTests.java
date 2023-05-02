@@ -9,6 +9,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.rmi.RemoteException;
 import static org.junit.jupiter.api.Assertions.fail;
 
+/**
+ * ActiveTests class.
+ * This class is used for testing 
+ * the AcheAway class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class ActiveTests {
     private static final String ACETAMINOPHEN_RETURN = "acetaminophen";
     private static final double TEST_AMOUNT = 2.00;
@@ -32,7 +40,11 @@ public class ActiveTests {
     private ByteArrayOutputStream baos;	
     private PrintStream oldOut;
 
-
+    /*
+     * Initializes ZolpidemActive and AcetaminophenActives by calling constructors.
+     * Initializes a new ByteArrayOutputStream.
+     * Sets the out field of System to a new PrintStream.
+     */
     @BeforeEach
     public void beforeEach() {			
         try {
@@ -46,11 +58,10 @@ public class ActiveTests {
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
     }
-    @AfterEach
-    public void afterEach() {
-        System.setOut(oldOut);
-    }
 
+    /*
+     * Tests that the Acetaminophen generator works properly.
+     */
     @Test
     public void testAcetaminophenGenerator() {
         try {
@@ -63,6 +74,9 @@ public class ActiveTests {
         assertEquals(ACETAMINOPHEN_PRINT, getOutput());
     }
 
+    /*
+     * Tests that the Zolpidem generator works properly.
+     */
     @Test
     public void testZolpidemGenerator() {
         try {
@@ -75,8 +89,21 @@ public class ActiveTests {
         assertEquals(ZOLPIDEM_PRINT, getOutput());
     }
 
+    /*
+     * Removes the \r characters from new output.
+     * 
+     * @return the string after flushing out \r characters
+     */
     private String getOutput() {
         System.out.flush();
         return baos.toString().replaceAll("\r", "");
+    }
+
+    /*
+     * Sets the out field of System back to System.out
+     */
+    @AfterEach
+    public void afterEach() {
+        System.setOut(oldOut);
     }
 }

@@ -34,6 +34,11 @@ public class SoftGelPillStoreTest {
     private InputStream oldIn;
     private SoftGelPillStore store;
 
+    /*
+     * Initializes a new SoftGelPillStore by calling constructors.
+     * Initializes a new ByteArrayOutputStream.
+     * Sets the out field of System to a new PrintStream.
+     */
     @BeforeEach
     public void beforeEach() {
         this.store = new SoftGelPillStore();
@@ -43,13 +48,9 @@ public class SoftGelPillStoreTest {
         System.setOut(new PrintStream(baos));
     }
 
-    @AfterEach
-    public void afterEach() {
-        System.setOut(oldOut);
-        System.setIn(oldIn);
-    }
-
-    // Tests to make sure the constructors works as intended
+    /*
+     * Tests to make sure the constructors works as intended.
+     */
     @Test
     public void testConstructors() {
         this.store = new SoftGelPillStore(INPUT, OUTPUT);
@@ -62,14 +63,18 @@ public class SoftGelPillStoreTest {
         assertEquals(OUTPUT, store.getOutput());
     }
 
-    // Test to make sure input getter works as intended
+    /*
+     * Test to make sure input getter works as intended.
+     */
     @Test
     public void testInputGetter() {
         this.store = new SoftGelPillStore(INPUT);
         assertEquals(INPUT, store.getInput());
     }
 
-    // Test to make sure input setter works as intended
+    /*
+     * Test to make sure input setter works as intended.
+     */
     @Test
     public void testInputSetter() {
         this.store = new SoftGelPillStore();
@@ -77,14 +82,18 @@ public class SoftGelPillStoreTest {
         assertEquals(INPUT, store.getInput());
     }
 
-    // Test to make sure output getter works as intended
+    /*
+     * Test to make sure output getter works as intended.
+     */
     @Test
     public void testOutputGetter() {
         this.store = new SoftGelPillStore(OUTPUT);
         assertEquals(OUTPUT, store.getOutput());
     }
 
-    // Test to make sure output setter works as intended
+    /*
+     * Test to make sure output getter works as intended.
+     */
     @Test
     public void testOutputSetter() {
         this.store = new SoftGelPillStore();
@@ -92,21 +101,27 @@ public class SoftGelPillStoreTest {
         assertEquals(OUTPUT, store.getOutput());
     }
 
-    // Test to make sure you can't
-    // log out without logging in
+    /*
+     * Test to make sure you can't
+     * log out without logging in.
+     */
     @Test
     public void noLogOutWithoutLogin() {
         assertFalse(store.logOut());
     }
 
-    // Test to make sure you can't
-    // checkout without logging in
+    /*
+     * Test to make sure you can't
+     * checkout without logging in.
+     */
     @Test
     public void noCheckOutWithoutLogin() {
         assertNull(store.checkOut());
     }
 
-    // Tests the login with no args method
+    /*
+     * Tests the login with no args method.
+     */
     @Test
     public void successfulLogin() {
         final String OURINPUT = "J\n27\n";
@@ -117,7 +132,9 @@ public class SoftGelPillStoreTest {
         assertTrue(store.logOut());
     }
 
-    // Test to make sure logOut works
+    /*
+     * Test to make sure logOut works.
+     */
     @Test
     public void successfulLogOut() {
         final String OURINPUT = "J\n27\n";
@@ -128,7 +145,7 @@ public class SoftGelPillStoreTest {
         assertTrue(store.logOut());
     }
 
-    /**
+    /*
      * Test to make sure you can't logout
      * with an item in the cart without
      * confirming.
@@ -145,7 +162,7 @@ public class SoftGelPillStoreTest {
         assertFalse(x);
     }
 
-    /**
+    /*
      * Test make sure the print order
      * method is working properly.
      */
@@ -163,7 +180,7 @@ public class SoftGelPillStoreTest {
         assertNotEquals("[]", y, "Shouldn't be empty");
     }
 
-    /**
+    /*
      * Test to assure that the checkout
      * method is working properly.
      */
@@ -181,16 +198,25 @@ public class SoftGelPillStoreTest {
         assertNotNull(x);  
     }
     
-    /**
-     * Test to confirm you can logout even if you have items
-     * in the cart, as long as you are sure you want to check out.
+    /*
+     * Removes the \r characters from new output.
      * 
-     * @return x the string after flush
+     * @return x the after flushing out \r character
      */
     private String getOutput() {
         System.out.flush();
         String x = baos.toString().replaceAll("\r", "");
         baos.reset();
         return x;
+    }
+
+    /*
+     * Sets the out field of System back to System.out
+     * Sets the in field of System back to System.in
+     */
+    @AfterEach
+    public void afterEach() {
+        System.setOut(oldOut);
+        System.setIn(oldIn);
     }
 }
