@@ -19,13 +19,20 @@ public class GelCapRecipesTest {
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
 
+    /*
+     * Initializes a new ByteArrayOutputStream.
+     * Sets the out field of System to a new PrintStream.
+     */
     @BeforeEach
     public void beforeEach() {
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
     }
-    // Test that GelCapRecipes Casings are correct
+
+    /*
+     * Test that GelCapRecipes Casings are correct.
+     */
     @Test
     public void testCasings() {
         assertTrue(GelCapRecipes.CASINGS.get("Dreamly")
@@ -33,7 +40,10 @@ public class GelCapRecipesTest {
         assertTrue(GelCapRecipes.CASINGS.get("AcheAway")
             instanceof CasingGenerator);
     }
-    // Test that GelCapRecipes Solutions are correct
+
+    /*
+     * Test that GelCapRecipes Solutions are correct.
+     */
     @Test
     public void testSolutions() {
         assertTrue(GelCapRecipes.SOLUTIONS.get("Dreamly")
@@ -41,7 +51,10 @@ public class GelCapRecipesTest {
         assertTrue(GelCapRecipes.SOLUTIONS.get("AcheAway")
             instanceof SolutionGenerator);
     }
-    // Test that GelCapRecipes Actives are correct
+
+    /*
+     * Test that GelCapRecipes Actives are correct.
+     */
     @Test
     public void testActives() {
         assertTrue(GelCapRecipes.ACTIVES.get("Dreamly")
@@ -50,6 +63,9 @@ public class GelCapRecipesTest {
             instanceof ActiveGenerator);
     }
 
+    /*
+     * Sets the out field of System back to System.out
+     */
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
