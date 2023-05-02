@@ -36,8 +36,7 @@ public class CasingTest {
             this.plastCase = new PlasticizerCasing(PLASTICIZERPORT);
         }
         catch (RemoteException e) {
-            gelCase = null;
-            plastCase = null;
+            fail("ERROR: RemoteException error when creating a new Casing.");
         }
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
@@ -51,7 +50,7 @@ public class CasingTest {
             assertEquals(GELATIN, tempGel);
         }
         catch (RemoteException e) {
-            fail("ERROR: RemoteException error when calling generateCasing");
+            fail("ERROR: RemoteException error when calling generateCasing.");
         }
         assertEquals(GEL, getOutput());
     }
@@ -63,7 +62,7 @@ public class CasingTest {
             assertEquals(PLASTICIZER, tempPlast);
         }
         catch (RemoteException e) {
-            fail("ERROR: RemoteException error when calling generateCasing");
+            fail("ERROR: RemoteException error when calling generateCasing.");
         }
         assertEquals(PLAST, getOutput());
     }
