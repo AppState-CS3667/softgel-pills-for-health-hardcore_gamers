@@ -41,7 +41,8 @@ public class ActiveTests {
     private PrintStream oldOut;
 
     /*
-     * Initializes ZolpidemActive and AcetaminophenActives by calling constructors.
+     * Initializes ZolpidemActive and 
+     * AcetaminophenActives by calling constructors.
      * Initializes a new ByteArrayOutputStream.
      * Sets the out field of System to a new PrintStream.
      */
