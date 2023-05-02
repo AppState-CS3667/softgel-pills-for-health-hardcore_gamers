@@ -101,8 +101,8 @@ public class SoftGelPillStoreTest {
     // Tests the login with no args method
     @Test
     public void successfulLogin() {
-        final String ourInput = "J\n27\n";
-        bais = new ByteArrayInputStream(ourInput.getBytes());
+        final String OURINPUT = "J\n27\n";
+        bais = new ByteArrayInputStream(OURINPUT.getBytes());
         System.setIn(bais);
         store = new SoftGelPillStore();
         store.logIn();
@@ -112,8 +112,8 @@ public class SoftGelPillStoreTest {
     // Test to make sure logOut works
     @Test
     public void successfulLogOut() {
-        final String ourInput = "J\n27\n";
-        bais = new ByteArrayInputStream(ourInput.getBytes());
+        final String OURINPUT = "J\n27\n";
+        bais = new ByteArrayInputStream(OURINPUT.getBytes());
         System.setIn(bais);
         store = new SoftGelPillStore();
         store.logIn();
@@ -127,8 +127,8 @@ public class SoftGelPillStoreTest {
      */
     @Test
     public void failedLogOut() {
-        final String ourInput = "J\n27\n1\nN\n";
-        bais = new ByteArrayInputStream(ourInput.getBytes());
+        final String OURINPUT = "J\n27\n1\nN\n";
+        bais = new ByteArrayInputStream(OURINPUT.getBytes());
         System.setIn(bais);
         store = new SoftGelPillStore();
         store.logIn();
@@ -143,8 +143,8 @@ public class SoftGelPillStoreTest {
      */
     @Test
     public void testPrintOrder() {
-        final String ourInput = "J\n27\n1\n";
-        bais = new ByteArrayInputStream(ourInput.getBytes());
+        final String OURINPUT = "J\n27\n1\n";
+        bais = new ByteArrayInputStream(OURINPUT.getBytes());
         System.setIn(bais);
         store = new SoftGelPillStore();
         store.logIn();
@@ -161,8 +161,8 @@ public class SoftGelPillStoreTest {
      */
     @Test
     public void successfulCheckOut() {
-        final String ourInput = "J\n27\n1\n1\n2\n";
-        bais = new ByteArrayInputStream(ourInput.getBytes());
+        final String OURINPUT = "J\n27\n1\n1\n2\n";
+        bais = new ByteArrayInputStream(OURINPUT.getBytes());
         System.setIn(bais);
         store = new SoftGelPillStore();
         store.logIn();
