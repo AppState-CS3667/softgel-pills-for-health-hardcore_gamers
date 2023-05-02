@@ -70,15 +70,19 @@ public class Demo {
                     break;
                 case 5:
                     exit = store.logOut();
-                    if (exit)
+                    if (exit) {
                         break loop;
-                    else
+                    }
+                    else {
                         break;
+                    }
                 default:
                     break;
             }
         }
-        System.out.println("Here is what you ordered:");
+        if (exit = false) {
+            System.out.println("Here is what you ordered:");
+        }
         int orderNum = 0;
         for (GelCap[] order : orders) {
             System.out.printf("Order Number %d\n", ++orderNum);
