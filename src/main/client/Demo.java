@@ -62,7 +62,7 @@ public class Demo {
                 case 4:
                     if (store.getOrderSize() < 1) {
                         System.out.println("There must be at least" 
-                                + "one item in your order to inspect it.");
+                                + " one item in your order to inspect it.");
                     }
                     else {
                         inspectorMenu();

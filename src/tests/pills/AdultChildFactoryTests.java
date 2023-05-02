@@ -43,6 +43,12 @@ public class AdultChildFactoryTests {
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
 
+    /*
+     * initializes Adult and Child GelCapFactories, getting an instance of
+     * each.
+     * Sets System.out to a new PrintStream.
+     * Initializes a ByteArrayOutputStream.
+     */
     @BeforeEach
     public void beforeEach() {
         agcf = agcf.getInstance();
@@ -52,23 +58,38 @@ public class AdultChildFactoryTests {
         System.setOut(new PrintStream(baos));
     }
 
+    /*
+     * Sets the out field of system back to System.out.
+     */
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
     }
 
+    /*
+     * Adult Dreamly strength should be 5.2.
+     * Adult AcheAway strength should be 825.00.
+     */
     @Test
     public void testAdultFactoryGetters() {
         assertEquals(ADULT_DREAMLY_STRENGTH, agcf.getDreamlyStrength());
         assertEquals(ADULT_ACHEAWAY_STRENGTH, agcf.getAcheAwayStrength());
     }
 
+    /*
+     * Child Dreamly strength should be 1.25.
+     * Child AcheAway strength should be 415.00.
+     */
     @Test
     public void testChildFactoryGetters() {
         assertEquals(CHILD_DREAMLY_STRENGTH, cgcf.getDreamlyStrength());
         assertEquals(CHILD_ACHEAWAY_STRENGTH, cgcf.getAcheAwayStrength());
     }
 
+    /*
+     * asserts that the Adult Dreamly constructor returns an Adult Dreamly 
+     * instance.
+     */
     @Test
     public void testAdultFactoryDreamlyConstructor() {
         assertTrue(agcf.constructDreamly(DREAMLY_CASING, DREAMLY_SOLUTION,
@@ -76,6 +97,10 @@ public class AdultChildFactoryTests {
         assertEquals(ADULT_DREAMLY_PRINT, getOutput());
     }
 
+    /*
+     * asserts that the Adult AcheAway constructor returns an Adult 
+     * AcheAway instance.
+     */
     @Test
     public void testAdultFactoryAcheAwayConstructor() {
         assertTrue(agcf.constructAcheAway(ACHEAWAY_CASING, ACHEAWAY_SOLUTION,
@@ -83,6 +108,10 @@ public class AdultChildFactoryTests {
         assertEquals(ADULT_ACHEAWAY_PRINT, getOutput());
     }
 
+    /*
+     * asserts that the Child Dreamly constructor returns a Child 
+     * Dreamly instance.
+     */
     @Test
     public void testChildFactoryDreamlyConstructor() {
         assertTrue(cgcf.constructDreamly(DREAMLY_CASING, DREAMLY_SOLUTION,
@@ -90,6 +119,10 @@ public class AdultChildFactoryTests {
         assertEquals(CHILD_DREAMLY_PRINT, getOutput());
     }
 
+    /*
+     * asserts that the Child AcheAway constructor returns a Child
+     * AcheAway instance.
+     */
     @Test
     public void testChildFactoryAcheAwayConstructor() {
         assertTrue(cgcf.constructAcheAway(ACHEAWAY_CASING, ACHEAWAY_SOLUTION,
@@ -97,11 +130,17 @@ public class AdultChildFactoryTests {
         assertEquals(CHILD_ACHEAWAY_PRINT, getOutput());
     }
 
+    /*
+     * asserts that the AdultGelCapFactory is a singleton.
+     */
     @Test
     public void testAdultSingleton() {
         assertEquals(agcf.getInstance(), agcf.getInstance());
     }
 
+    /*
+     * asserts that the ChildGelCapFactory is a singleton.
+     */
     @Test
     public void testChildSingleton() {
         assertEquals(cgcf.getInstance(), cgcf.getInstance());
