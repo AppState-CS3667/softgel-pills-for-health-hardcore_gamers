@@ -70,7 +70,10 @@ public class Demo {
                     break;
                 case 5:
                     exit = store.logOut();
-                    break;
+                    if (exit)
+                        break loop;
+                    else
+                        break;
                 default:
                     break;
             }
@@ -190,14 +193,13 @@ public class Demo {
                         System.out.println("That is not a valid number.");
                     }
                 }
-                if (rem < store.getOrderSize()) {
+                if (rem <= store.getOrderSize()) {
                     rem -= 1;
                     store.removePill(rem);
                     loop = false;
                 }
                 else {
                     System.out.println("That is not a valid pill.");
-                    System.out.println("Rem is: " + rem);
                 }
                 
             }
