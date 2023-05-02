@@ -225,12 +225,12 @@ public class SoftGelPillStore  {
             String yn;
             while (loop) {
                 try {
-                    System.out.print("You have an order that you have not " 
+                    System.out.println("You have an order that you have not " 
                         + "checked out. Are you sure you"
                         + " want to log out? (y/N)");
                     yn = input.nextLine();
     
-                    if (yn == "y") {
+                    if (yn.toLowerCase().equals("y")) {
                         loop = false;
                         continue;
                     }
