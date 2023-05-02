@@ -50,7 +50,6 @@ public class Demo {
                     break;
                 case 2:
                     manageOrder();
-                    //input.next();
                     break;
                 case 3: 
                     GelCap[] order = store.checkOut();
@@ -80,10 +79,13 @@ public class Demo {
                     break;
             }
         }
+
         if (exit = false) {
             System.out.println("Here is what you ordered:");
         }
+
         int orderNum = 0;
+
         for (GelCap[] order : orders) {
             System.out.printf("Order Number %d\n", ++orderNum);
             for (GelCap g : order) {
@@ -127,7 +129,6 @@ public class Demo {
                 System.out.println("=================================");
                 choice = input.nextInt();
 
-                
                 if (choice == 1) {
                     double failRate = store.checkFailRate();
                     System.out.println("The current fail rate on"
