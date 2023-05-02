@@ -16,6 +16,14 @@ import java.util.Scanner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
+/**
+ * SoftGelPillStoreTest class.
+ * This class is used for testing 
+ * the SoftGelPillStore class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class SoftGelPillStoreTest {
     // Private Fields
     private static final Scanner INPUT = new Scanner(System.in);

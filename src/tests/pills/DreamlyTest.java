@@ -4,6 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+/**
+ * DreamlyTest class.
+ * This class is used for testing 
+ * the Dreamly class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class DreamlyTest {
     private static final String TEST_NAME = "Dreamly";
     private static final String TEST_CASING = "X";
