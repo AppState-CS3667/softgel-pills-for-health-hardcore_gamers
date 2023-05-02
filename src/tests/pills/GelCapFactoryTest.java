@@ -42,7 +42,6 @@ public class GelCapFactoryTest {
         + "quality check failed ...\nError during AcheAway production. " 
         + "Returning null\n";
 
-
     private GelCapFactory gcf;
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
@@ -76,16 +75,7 @@ public class GelCapFactoryTest {
             temp = gcf.produceDreamly();
 
             // o = String for output
-            String o = getOutput();
-
-            // og = String for good output 
-            //(output if it returns a good Dreamly pill)  
-            
-            // Constants for the stringsubset methods to trim the output
-                //final int STR1START = 0;
-                //final int STR1END = 29;
-                //final int STR2START = 358;
-                //final int GOODOUTPUTLENGTH = 395;
+            String o = getOutput(); 
             
             // if output is good and equals expected output
             if (DREAMLY_GOOD.equals(o)) {
@@ -130,15 +120,6 @@ public class GelCapFactoryTest {
             // o = String for output
             String o = getOutput();
 
-            // og = String for good output 
-            //(output if it returns a good Dreamly pill)  
-                
-            // Constants for the stringsubset methods to trim the output
-                //final int STR1START = 0;
-                //final int STR1END = 30;
-                //final int STR2START = 394;
-                //final int GOODOUTPUTLENGTH = 432;
-
             // if output is good and equals expected output
             if (ACHEAWAY_GOOD.equals(o)) {
                 s++;
@@ -154,6 +135,7 @@ public class GelCapFactoryTest {
                 fail("ERROR: Output was not as expected.\nExpected: " 
                     + ACHEAWAY_GOOD + "\nACTUAL: " + o);     
             }
+
 	        // Test to make sure temp is either a Dreamly object or null
             assertTrue(temp instanceof AcheAway 
                         || temp instanceof NullAcheAway);
@@ -204,7 +186,6 @@ public class GelCapFactoryTest {
 	    return new DreamlyMock(STRENGTH, SIZE, COLOR,
                 SOLUTION, CASING, ACTIVE);
         }
-
 
         /*
          * Constructs a new AcheAway mock object.
