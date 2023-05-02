@@ -10,6 +10,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.rmi.RemoteException;
 
+/**
+ * CasingTest class.
+ * This class is used for testing the casing generators.
+ * 
+ * @author hardcore_gamers
+ * @version 5/01/2023
+ */
 public class CasingTest {
     // Port numbers
     public static final int GELATINPORT = 1098;
@@ -29,6 +36,11 @@ public class CasingTest {
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;
 
+    /*
+     * Initializes a new GelatinCasing and PlasticizerCasing
+     * Sets baos to a new ByteArrayOutputStream
+     * Sets output to a new PrintStream using baos
+     */
     @BeforeEach
     public void beforeEach() {
         try {
@@ -43,6 +55,9 @@ public class CasingTest {
         System.setOut(new PrintStream(baos));
     }
 
+    /*
+     * GELATIN is "gelatin"
+     */
     @Test
     public void testGelatinCasing() {
         try {
@@ -55,6 +70,9 @@ public class CasingTest {
         assertEquals(GEL, getOutput());
     }
 
+    /*
+     * PLASTICIZER is "plasticizer"
+     */
     @Test
     public void testPlasticizerCasing() {
         try {
@@ -67,11 +85,18 @@ public class CasingTest {
         assertEquals(PLAST, getOutput());
     }
 
+    /*
+     * Sets the output back to the original output
+     */
     @AfterEach
     public void afterEach() {
         System.setOut(oldOut);
     }
 
+    /*
+     * Flushes the output into baos.
+     * @return a string with baos output, minus carriage returns
+     */
     private String getOutput() {
         System.out.flush();
 	return baos.toString().replaceAll("\r", "");

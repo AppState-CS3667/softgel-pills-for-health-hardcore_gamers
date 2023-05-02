@@ -25,55 +25,78 @@ public class GelCapTest {
     // field to store the new output location
     private GelCap gc;
 
+    /*
+     * Initializes gc with a new GelCapMock using constants
+     */
     @BeforeEach
     public void beforeEach() {
         this.gc = new GelCapMock(NAME, STRENGTH, SIZE, COLOR, CASING, 
             SOLUTION, ACTIVE);
     }
 
-    //Simple test to make sure that name is correct
+    /*
+     * Simple test to make sure that name is correct
+     */
     @Test
     public void testName() {
         assertEquals(NAME, gc.getName());
     }
 
-    //Simple test to make sure that strength is correct
+    /*
+     * Simple test to make sure that strength is correct
+     */    
     @Test
     public void testStrength() {
         assertEquals(STRENGTH, gc.getStrength());
     }
 
-    //Simple test to make sure that color is correct
+    /*
+     * Simple test to make sure that color is correct
+     */    
     @Test
     public void testColor() {
         assertEquals(COLOR, gc.getColor());
     }
 
-    //Simple test to make sure that size is correct
+    /*
+     * Simple test to make sure that size is correct
+     */    
     @Test
     public void testSize() {
         assertEquals(SIZE, gc.getSize());
     }
 
-    //Simple test to make sure that casing is correct
+    /*
+     * Simple test to make sure that casing is correct
+     */    
     @Test
     public void testCasing() {
         assertEquals(CASING, gc.getCasing());
     }
 
-    //Simple test to make sure that solution is correct
+    /*
+     * Simple test to make sure that solution is correct
+     */    
     @Test
     public void testSolution() {
         assertEquals(SOLUTION, gc.getSolution());
     }
 
-    //Simple test to make sure that active is correct
+    /*
+     * Simple test to make sure that active is correct
+     */    
     @Test
     public void testActive() {
         assertEquals(ACTIVE, gc.getActive());
     }
     
-    // Private Helper Class
+    /*
+     * GelCapMock private class.
+     * Creates a instantible version of abstract GelCap
+     * 
+     * @author hardcore_gamers
+     * @version 5/01/2023
+     */
     private class GelCapMock extends GelCap {
         
         public GelCapMock(String name, double strength,
