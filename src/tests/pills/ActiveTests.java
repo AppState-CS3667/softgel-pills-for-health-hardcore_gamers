@@ -40,8 +40,7 @@ public class ActiveTests {
             this.zolActive = new ZolpidemActive(ZOLPIDEMPORT);
         }
         catch (RemoteException e) {
-            aceActive = null; 
-            zolActive = null;
+            fail("ERROR: RemoteException Error when creating a new active.");
         }
         this.oldOut = System.out;
         this.baos = new ByteArrayOutputStream();
