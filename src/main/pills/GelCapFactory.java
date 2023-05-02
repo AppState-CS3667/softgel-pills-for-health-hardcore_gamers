@@ -45,7 +45,11 @@ public abstract class GelCapFactory {
 
     /*
      * constructs an AcheAway pill and performs a
-	 * qality check on said pill
+	 * qality check on said pill.
+     * 
+     * @return dp - a good dreamly pill
+     * @return new NullDreamly() - a bad dreamly pill
+     * @return null
 	 */
     public final AcheAway produceAcheAway() {
         System.out.print("Creating a AcheAway pill ... \n");
@@ -73,7 +77,11 @@ public abstract class GelCapFactory {
 
     /*
      * performs a quality check on a pill.
-	 * quality check has a 90% chance of passing
+	 * quality check has a 90% chance of passing.\
+     * 
+     * @return ap - a good acheaway pill
+     * @return new NullAcheAway() - a bad acheaway pill
+     * @return null
 	 */
     private final boolean qualityCheck() {
         double check = Math.random();

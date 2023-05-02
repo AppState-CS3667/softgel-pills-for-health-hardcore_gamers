@@ -44,8 +44,7 @@ public class SolutionTest {
             this.os = new OilSolution(OIL_PORT);
         }
         catch (RemoteException e) {
-            this.ss = null;
-            this.os = null;
+            fail("Error: RemoteException when creating a new solution.");
         }
 
         this.oldOut = System.out;

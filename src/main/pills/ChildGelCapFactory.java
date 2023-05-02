@@ -19,6 +19,7 @@ public class ChildGelCapFactory extends GelCapFactory {
      * Retrives the instance of ChildGelCapFactory(Singleton) or 
      * creates a new one of it does not exist.
      * 
+     * @return instance a ChildGelCapFactory instance.
      */
     public static ChildGelCapFactory getInstance() {
         if (instance == null) {
@@ -35,6 +36,8 @@ public class ChildGelCapFactory extends GelCapFactory {
      * @param casing casing for the Dreamly pill
      * @param solution solution for the Dreamly pill
      * @param active active for the Dreamly pill
+     * 
+     * @return ChildDreamly object
      */
     protected Dreamly constructDreamly(String casing,
         String solution, String active) {
@@ -48,6 +51,8 @@ public class ChildGelCapFactory extends GelCapFactory {
      * @param casing casing for the AcheAway pill
      * @param solution solution for the AcheAway pill
      * @param active active for the AcheAway pill
+     * 
+     * @return ChildAcheAway object
      */
     protected AcheAway constructAcheAway(String casing, 
         String solution, String active) {
@@ -57,6 +62,8 @@ public class ChildGelCapFactory extends GelCapFactory {
 
     /*
      * getter for Dreamly strength
+     * 
+     * @return the ChildDreamly pill strength
      */
     protected double getDreamlyStrength() {
         return ChildDreamly.STRENGTH;
@@ -64,6 +71,8 @@ public class ChildGelCapFactory extends GelCapFactory {
 
     /*
      * getter for AcheAway strength
+     * 
+     * @return the ChildAcheAway pill strength
      */
     protected double getAcheAwayStrength() {
         return ChildAcheAway.STRENGTH;

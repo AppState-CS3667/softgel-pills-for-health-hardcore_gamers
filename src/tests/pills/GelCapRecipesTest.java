@@ -7,6 +7,14 @@ import org.junit.jupiter.api.AfterEach;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+/**
+ * GelCapRecipesTest class.
+ * This class is used for testing 
+ * the GelCapRecipes class.
+ * 
+ * @author hardcore_gamers
+ * @version 05/01/2023
+ */
 public class GelCapRecipesTest {
     private ByteArrayOutputStream baos;
     private PrintStream oldOut;

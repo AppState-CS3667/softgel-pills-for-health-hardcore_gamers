@@ -210,6 +210,10 @@ public class SoftGelPillStore  {
      * if logged in and order still is not checked out
      * asks for override. 
      * clears order and resets all variables.
+     * 
+     * @return false if not logged in, or in 
+     * process of ordering
+     * @return true if successfully logged out
      */
     public boolean logOut() {
         if (isLoggedIn == false) {
@@ -395,6 +399,8 @@ public class SoftGelPillStore  {
 
     /*
      * Returns the size of the current order ArrayList.
+     * 
+     * @return the size of the currentOrder ArrayList
      */
     public int getOrderSize() {
         return currentOrder.size();

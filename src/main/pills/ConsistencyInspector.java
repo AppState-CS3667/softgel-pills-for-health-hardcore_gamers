@@ -12,7 +12,9 @@ public class ConsistencyInspector extends Inspector {
     int childCount;
 
     /*
-     * Reports the current status of the inspector
+     * Reports the current status of the inspector.
+     * 
+     * @return string of the child and adult count
      */
     @Override
     public String report() {
@@ -67,7 +69,10 @@ public class ConsistencyInspector extends Inspector {
     }
 
     /*
-     * Returns true or false based on if the counts in the order are consistent
+     * Returns true or false based on if the counts in the order are consistent.
+     * 
+     * @return true if order is consistent
+     * @return false if order is not consistent
      */
     public boolean soFarConsistent() {
         if (adultCount > 0 && childCount == 0) {
