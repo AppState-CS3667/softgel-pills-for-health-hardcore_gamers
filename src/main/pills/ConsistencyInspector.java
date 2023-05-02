@@ -81,11 +81,8 @@ public class ConsistencyInspector extends Inspector {
         else if (childCount > 0 && adultCount == 0) {
             return true;
         }
-        if (childCount == 0 && adultCount == 0) {
-            return true;
-        }
         else {
-            return false;
+            return (childCount == 0 && adultCount == 0);
         }
     }
 }
